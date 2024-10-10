@@ -1,0 +1,14 @@
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\ElaboraOperazioniMassive.DAL.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\ElaboraOperazioniMassive.DAL.pdb
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\ElaboraOperazioniMassive.Entities.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\Oracle.DataAccess.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\bin\Debug\ElaboraOperazioniMassive.Entities.pdb
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\obj\x86\Debug\ElaboraOperazioniMassive.DAL.csproj.CoreCompileInputs.cache
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\obj\x86\Debug\ElaboraOperazioniMassive.DAL.csproj.CopyComplete
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\obj\x86\Debug\ElaboraOperazioniMassive.DAL.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\obj\x86\Debug\ElaboraOperazioniMassive.DAL.pdb
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.DAL\obj\x86\Debug\ElaboraOperazioniMassive.DAL.csprojAssemblyReference.cache

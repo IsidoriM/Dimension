@@ -1,0 +1,2529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://soa.inps.it/WS01317/data" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/WS01317/data">
+  <xs:import schemaLocation="WSIcona.xsd2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="WSIcona.xsd4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="WSIcona.xsd5.xsd" namespace="http://schemas.datacontract.org/2004/07/WSIcona20CLL.PUCEntities" />
+  <xs:import schemaLocation="WSIcona.xsd6.xsd" namespace="http://schemas.datacontract.org/2004/07/WSIcona20CLL.Enumeration.PUC" />
+  <xs:complexType name="GetAllegatiRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetDettaglioRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllegatiRequest" nillable="true" type="tns:GetAllegatiRequest" />
+  <xs:complexType name="GetDettaglioRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDettaglioRequest" nillable="true" type="tns:GetDettaglioRequest" />
+  <xs:complexType name="GetAllegatiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaAllegati" nillable="true" type="tns:ArrayOfAllegato" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllegatiResponse" nillable="true" type="tns:GetAllegatiResponse" />
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="returnCode" type="tns:EnEsito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+  <xs:simpleType name="EnEsito">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnEsito" nillable="true" type="tns:EnEsito" />
+  <xs:complexType name="ArrayOfAllegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Allegato" nillable="true" type="tns:Allegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAllegato" nillable="true" type="tns:ArrayOfAllegato" />
+  <xs:complexType name="Allegato">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AllegatoInvio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="idAnaMail" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Allegato" nillable="true" type="tns:Allegato" />
+  <xs:complexType name="AllegatoInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="allegato" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="nomeAllegato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AllegatoInvio" nillable="true" type="tns:AllegatoInvio" />
+  <xs:complexType name="GetAllegatiGlobaleArchiviRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetAllegatiRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="annoCreazioneEmail" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllegatiGlobaleArchiviRequest" nillable="true" type="tns:GetAllegatiGlobaleArchiviRequest" />
+  <xs:complexType name="GetAllegatiGlobaleArchiviResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetAllegatiResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllegatiGlobaleArchiviResponse" nillable="true" type="tns:GetAllegatiGlobaleArchiviResponse" />
+  <xs:complexType name="GetListaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CD_Stato" nillable="true" type="tns:EnCD_RC" />
+      <xs:element minOccurs="0" name="codiceFisConsulente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="invioAl" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="invioDal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="matricolaAzienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="paginaAttuale" type="xs:int" />
+      <xs:element minOccurs="0" name="recordPerPagina" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetListaRequest" nillable="true" type="tns:GetListaRequest" />
+  <xs:simpleType name="EnCD_RC">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ER" />
+      <xs:enumeration value="CI" />
+      <xs:enumeration value="DR" />
+      <xs:enumeration value="EA" />
+      <xs:enumeration value="EC" />
+      <xs:enumeration value="ED" />
+      <xs:enumeration value="EE" />
+      <xs:enumeration value="EI" />
+      <xs:enumeration value="IM" />
+      <xs:enumeration value="IT" />
+      <xs:enumeration value="NC" />
+      <xs:enumeration value="NE" />
+      <xs:enumeration value="NM" />
+      <xs:enumeration value="NR" />
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="XX" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnCD_RC" nillable="true" type="tns:EnCD_RC" />
+  <xs:complexType name="GetListaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseLista">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaComunicazioni" nillable="true" type="tns:ArrayOfDettaglioEmail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaResponse" nillable="true" type="tns:GetListaResponse" />
+  <xs:complexType name="ResponseLista">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroRecord" type="xs:long" />
+          <xs:element minOccurs="0" name="paginaAttuale" type="xs:int" />
+          <xs:element minOccurs="0" name="pagineTotali" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseLista" nillable="true" type="tns:ResponseLista" />
+  <xs:complexType name="ArrayOfDettaglioEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DettaglioEmail" nillable="true" type="tns:DettaglioEmail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDettaglioEmail" nillable="true" type="tns:ArrayOfDettaglioEmail" />
+  <xs:complexType name="DettaglioEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CD_Stato" type="tns:EnCD_RC" />
+      <xs:element minOccurs="0" name="DS_Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_Stato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_Ana_Mail" type="xs:int" />
+      <xs:element minOccurs="0" name="allegatiPresenti" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bodyType" type="tns:EnBodyType" />
+      <xs:element minOccurs="0" name="checkEsito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceApplicazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dataInserimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataInvio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataUltimaModifica" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="descrizioneApplicazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flagBody" type="tns:EnFlagBody" />
+      <xs:element minOccurs="0" name="flagDestinatari" type="tns:EnFlagDestinatari" />
+      <xs:element minOccurs="0" name="flagFrom" type="tns:EnFlagFrom" />
+      <xs:element minOccurs="0" name="flagPEC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="segnatura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DettaglioEmail" nillable="true" type="tns:DettaglioEmail" />
+  <xs:simpleType name="EnBodyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PLAINTEXT" />
+      <xs:enumeration value="HTML" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnBodyType" nillable="true" type="tns:EnBodyType" />
+  <xs:simpleType name="EnFlagBody">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ds_body" />
+      <xs:enumeration value="abAziende" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnFlagBody" nillable="true" type="tns:EnFlagBody" />
+  <xs:simpleType name="EnFlagDestinatari">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="emailInseritaDalChiamante">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="matricolaAzienda">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cfConsulente">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnFlagDestinatari" nillable="true" type="tns:EnFlagDestinatari" />
+  <xs:simpleType name="EnFlagFrom">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="inpsComunica" />
+      <xs:enumeration value="ds_from" />
+      <xs:enumeration value="sede_aziende" />
+      <xs:enumeration value="direttoreSede" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnFlagFrom" nillable="true" type="tns:EnFlagFrom" />
+  <xs:complexType name="GetListaExtRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetListaRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaExtRequest" nillable="true" type="tns:GetListaExtRequest" />
+  <xs:complexType name="GetListaExtResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseLista">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaComunicazioniExt" nillable="true" type="tns:ArrayOfDettaglioEmailExt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaExtResponse" nillable="true" type="tns:GetListaExtResponse" />
+  <xs:complexType name="ArrayOfDettaglioEmailExt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DettaglioEmailExt" nillable="true" type="tns:DettaglioEmailExt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDettaglioEmailExt" nillable="true" type="tns:ArrayOfDettaglioEmailExt" />
+  <xs:complexType name="DettaglioEmailExt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DettaglioEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descrizioneErroreInvio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DettaglioEmailExt" nillable="true" type="tns:DettaglioEmailExt" />
+  <xs:complexType name="GetDettaglioGlobaleArchiviRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetAllegatiGlobaleArchiviRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDettaglioGlobaleArchiviRequest" nillable="true" type="tns:GetDettaglioGlobaleArchiviRequest" />
+  <xs:complexType name="GetDettaglioGlobaleArchiviResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dettaglioComunicazione" nillable="true" type="tns:DettaglioEmailExtProtocolloDestinatari" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDettaglioGlobaleArchiviResponse" nillable="true" type="tns:GetDettaglioGlobaleArchiviResponse" />
+  <xs:complexType name="DettaglioEmailExtProtocolloDestinatari">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DettaglioEmailExtProtocollo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codAoo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="listaDestinatari" nillable="true" type="tns:ArrayOfDestinatario" />
+          <xs:element minOccurs="0" name="titolario" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DettaglioEmailExtProtocolloDestinatari" nillable="true" type="tns:DettaglioEmailExtProtocolloDestinatari" />
+  <xs:complexType name="DettaglioEmailExtProtocollo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DettaglioEmailExt">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="protocollazione" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DettaglioEmailExtProtocollo" nillable="true" type="tns:DettaglioEmailExtProtocollo" />
+  <xs:complexType name="ArrayOfDestinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Destinatario" nillable="true" type="tns:Destinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDestinatario" nillable="true" type="tns:ArrayOfDestinatario" />
+  <xs:complexType name="Destinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CD_Stato" type="tns:EnCD_RC_Destinatario" />
+      <xs:element minOccurs="0" name="DS_Stato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="destinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="idAnaMail" type="xs:long" />
+      <xs:element minOccurs="0" name="intermediario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="tns:EnTipoDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Destinatario" nillable="true" type="tns:Destinatario" />
+  <xs:simpleType name="EnCD_RC_Destinatario">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EE" />
+      <xs:enumeration value="MM" />
+      <xs:enumeration value="CE" />
+      <xs:enumeration value="IM" />
+      <xs:enumeration value="OK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnCD_RC_Destinatario" nillable="true" type="tns:EnCD_RC_Destinatario" />
+  <xs:simpleType name="EnTipoDestinatario">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BCC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnTipoDestinatario" nillable="true" type="tns:EnTipoDestinatario" />
+  <xs:complexType name="GetListaGlobaleArchiviRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetListaRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="annoCreazioneEmail" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaGlobaleArchiviRequest" nillable="true" type="tns:GetListaGlobaleArchiviRequest" />
+  <xs:complexType name="GetListaGlobaleArchiviResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseLista">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaComunicazioniExtProtocollo" nillable="true" type="tns:ArrayOfDettaglioEmailExtProtocollo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaGlobaleArchiviResponse" nillable="true" type="tns:GetListaGlobaleArchiviResponse" />
+  <xs:complexType name="ArrayOfDettaglioEmailExtProtocollo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DettaglioEmailExtProtocollo" nillable="true" type="tns:DettaglioEmailExtProtocollo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDettaglioEmailExtProtocollo" nillable="true" type="tns:ArrayOfDettaglioEmailExtProtocollo" />
+  <xs:complexType name="GetDettaglioResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comunicazione" nillable="true" type="tns:DettaglioEmailDestinatari" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDettaglioResponse" nillable="true" type="tns:GetDettaglioResponse" />
+  <xs:complexType name="DettaglioEmailDestinatari">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DettaglioEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaDestinatari" nillable="true" type="tns:ArrayOfDestinatario" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DettaglioEmailDestinatari" nillable="true" type="tns:DettaglioEmailDestinatari" />
+  <xs:complexType name="GetDettaglioExtRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetDettaglioRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDettaglioExtRequest" nillable="true" type="tns:GetDettaglioExtRequest" />
+  <xs:complexType name="GetDettaglioExtResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comunicazione" nillable="true" type="tns:DettaglioEmailDestinatariExt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDettaglioExtResponse" nillable="true" type="tns:GetDettaglioExtResponse" />
+  <xs:complexType name="DettaglioEmailDestinatariExt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DettaglioEmailDestinatari">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descrizioneErroreInvio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DettaglioEmailDestinatariExt" nillable="true" type="tns:DettaglioEmailDestinatariExt" />
+  <xs:complexType name="GetListaAnniArchiviatiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listaAnniArchiviati" nillable="true" type="q1:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaAnniArchiviatiResponse" nillable="true" type="tns:GetListaAnniArchiviatiResponse" />
+  <xs:complexType name="GetRicevutePECRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetDettaglioRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRicevutePECRequest" nillable="true" type="tns:GetRicevutePECRequest" />
+  <xs:complexType name="GetRicevutePECResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaRicevutePEC" nillable="true" type="tns:ArrayOfRicevutaPEC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRicevutePECResponse" nillable="true" type="tns:GetRicevutePECResponse" />
+  <xs:complexType name="ArrayOfRicevutaPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RicevutaPEC" nillable="true" type="tns:RicevutaPEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRicevutaPEC" nillable="true" type="tns:ArrayOfRicevutaPEC" />
+  <xs:complexType name="RicevutaPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Binario" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MsgID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoRicevuta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XML" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RicevutaPEC" nillable="true" type="tns:RicevutaPEC" />
+  <xs:complexType name="GetContattiRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetContattiRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaDatiContatti" nillable="true" type="tns:ArrayOfDatiContatto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetContattiRequest" nillable="true" type="tns:GetContattiRequest" />
+  <xs:complexType name="GetContattiRequestBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoComunicazione" type="tns:EnTipoComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetContattiRequestBase" nillable="true" type="tns:GetContattiRequestBase" />
+  <xs:simpleType name="EnTipoComunicazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ENTRAMBE" />
+      <xs:enumeration value="EMAIL" />
+      <xs:enumeration value="PEC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnTipoComunicazione" nillable="true" type="tns:EnTipoComunicazione" />
+  <xs:complexType name="ArrayOfDatiContatto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiContatto" nillable="true" type="tns:DatiContatto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiContatto" nillable="true" type="tns:ArrayOfDatiContatto" />
+  <xs:complexType name="DatiContatto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DatiContattoBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="finalita" type="tns:EnFinalitaInterrogazione" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DatiContatto" nillable="true" type="tns:DatiContatto" />
+  <xs:complexType name="DatiContattoBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cfUtente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiContattoBase" nillable="true" type="tns:DatiContattoBase" />
+  <xs:simpleType name="EnFinalitaInterrogazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INTERMEDIARIO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOGGETTO_AZIENDALE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnFinalitaInterrogazione" nillable="true" type="tns:EnFinalitaInterrogazione" />
+  <xs:complexType name="GetContattiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaContatti" nillable="true" type="tns:ArrayOfContatti" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetContattiResponse" nillable="true" type="tns:GetContattiResponse" />
+  <xs:complexType name="ArrayOfContatti">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contatti" nillable="true" type="tns:Contatti" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContatti" nillable="true" type="tns:ArrayOfContatti" />
+  <xs:complexType name="Contatti">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cfUtente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="finalita" type="tns:EnFinalita" />
+      <xs:element minOccurs="0" name="pec" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contatti" nillable="true" type="tns:Contatti" />
+  <xs:simpleType name="EnFinalita">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ISTIT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MARK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERMEDIARIO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOGGETTO_AZIENDALE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnFinalita" nillable="true" type="tns:EnFinalita" />
+  <xs:complexType name="GetRicevutePECDestinatarioByKeyGestRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRicevutePECDestinatarioRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRicevutePECDestinatarioByKeyGestRequest" nillable="true" type="tns:GetRicevutePECDestinatarioByKeyGestRequest" />
+  <xs:complexType name="GetRicevutePECDestinatarioRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PECDestinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoRicevuta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetRicevutePECDestinatarioRequest" nillable="true" type="tns:GetRicevutePECDestinatarioRequest" />
+  <xs:complexType name="GetRicevutePECDestinatarioByKeyGestResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRicevutePECResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRicevutePECDestinatarioByKeyGestResponse" nillable="true" type="tns:GetRicevutePECDestinatarioByKeyGestResponse" />
+  <xs:complexType name="GetRicevutePECDestinatarioByMsgIDRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRicevutePECDestinatarioRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msgID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRicevutePECDestinatarioByMsgIDRequest" nillable="true" type="tns:GetRicevutePECDestinatarioByMsgIDRequest" />
+  <xs:complexType name="GetRicevutePECDestinatarioByMsgIDResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRicevutePECResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRicevutePECDestinatarioByMsgIDResponse" nillable="true" type="tns:GetRicevutePECDestinatarioByMsgIDResponse" />
+  <xs:complexType name="CheckContattiRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetContattiRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaDatiContatti" nillable="true" type="tns:ArrayOfCheckDatiContatto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckContattiRequest" nillable="true" type="tns:CheckContattiRequest" />
+  <xs:complexType name="ArrayOfCheckDatiContatto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CheckDatiContatto" nillable="true" type="tns:CheckDatiContatto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCheckDatiContatto" nillable="true" type="tns:ArrayOfCheckDatiContatto" />
+  <xs:complexType name="CheckDatiContatto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DatiContattoBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="finalita" type="tns:EnFinalita" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckDatiContatto" nillable="true" type="tns:CheckDatiContatto" />
+  <xs:complexType name="CheckContattiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaContatti" nillable="true" type="tns:ArrayOfCheckContatti" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckContattiResponse" nillable="true" type="tns:CheckContattiResponse" />
+  <xs:complexType name="ArrayOfCheckContatti">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CheckContatti" nillable="true" type="tns:CheckContatti" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCheckContatti" nillable="true" type="tns:ArrayOfCheckContatti" />
+  <xs:complexType name="CheckContatti">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cfUtente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="finalita" type="tns:EnFinalita" />
+      <xs:element minOccurs="0" name="isEmail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isPEC" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckContatti" nillable="true" type="tns:CheckContatti" />
+  <xs:complexType name="InvioEmailExtRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvioRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaDestinatari" nillable="true" type="tns:ArrayOfDestinatarioInvio" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvioEmailExtRequest" nillable="true" type="tns:InvioEmailExtRequest" />
+  <xs:complexType name="InvioRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PEC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="allegatiPresenti" type="xs:boolean" />
+      <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="checkEsitoInvio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listaAllegati" nillable="true" type="tns:ArrayOfAllegatoInvio" />
+      <xs:element minOccurs="0" name="mittente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvioRequest" nillable="true" type="tns:InvioRequest" />
+  <xs:complexType name="ArrayOfAllegatoInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AllegatoInvio" nillable="true" type="tns:AllegatoInvio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAllegatoInvio" nillable="true" type="tns:ArrayOfAllegatoInvio" />
+  <xs:complexType name="ArrayOfDestinatarioInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DestinatarioInvio" nillable="true" type="tns:DestinatarioInvio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDestinatarioInvio" nillable="true" type="tns:ArrayOfDestinatarioInvio" />
+  <xs:complexType name="DestinatarioInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indirizzoDestinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="tns:EnTipoDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DestinatarioInvio" nillable="true" type="tns:DestinatarioInvio" />
+  <xs:complexType name="InvioEmailExtResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseInvio">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvioEmailExtResponse" nillable="true" type="tns:InvioEmailExtResponse" />
+  <xs:complexType name="ResponseInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CD_RC" type="tns:EnEsitoInvio" />
+      <xs:element minOccurs="0" name="dataInserimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInvio" nillable="true" type="tns:ResponseInvio" />
+  <xs:simpleType name="EnEsitoInvio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ER" />
+      <xs:enumeration value="IM" />
+      <xs:enumeration value="PK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnEsitoInvio" nillable="true" type="tns:EnEsitoInvio" />
+  <xs:complexType name="InvioEmailComunicazioneRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvioRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bodyType" nillable="true" type="tns:EnBodyType" />
+          <xs:element minOccurs="0" name="flagProtocollazione" type="xs:boolean" />
+          <xs:element minOccurs="0" name="listaDestinatari" nillable="true" type="tns:ArrayOfDestinatarioInvioComunicazione" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvioEmailComunicazioneRequest" nillable="true" type="tns:InvioEmailComunicazioneRequest" />
+  <xs:complexType name="ArrayOfDestinatarioInvioComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DestinatarioInvioComunicazione" nillable="true" type="tns:DestinatarioInvioComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDestinatarioInvioComunicazione" nillable="true" type="tns:ArrayOfDestinatarioInvioComunicazione" />
+  <xs:complexType name="DestinatarioInvioComunicazione">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DestinatarioInvio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cfUtente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="finalita" type="tns:EnFinalitaInvio" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DestinatarioInvioComunicazione" nillable="true" type="tns:DestinatarioInvioComunicazione" />
+  <xs:simpleType name="EnFinalitaInvio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ISTIT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MARK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERMEDIARIO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOGGETTO_AZIENDALE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GENERICA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnFinalitaInvio" nillable="true" type="tns:EnFinalitaInvio" />
+  <xs:complexType name="InvioEmailComunicazioneResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseInvio">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvioEmailComunicazioneResponse" nillable="true" type="tns:InvioEmailComunicazioneResponse" />
+  <xs:complexType name="CheckIndirizzoPECRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="soggetto" nillable="true" type="tns:Soggetto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckIndirizzoPECRequest" nillable="true" type="tns:CheckIndirizzoPECRequest" />
+  <xs:complexType name="Soggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipologiaSoggetto" type="tns:EnTipologiaSoggetto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Soggetto" nillable="true" type="tns:Soggetto" />
+  <xs:simpleType name="EnTipologiaSoggetto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INTERMEDIARIO" />
+      <xs:enumeration value="SOGGETTO_CONTRIBUENTE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnTipologiaSoggetto" nillable="true" type="tns:EnTipologiaSoggetto" />
+  <xs:complexType name="CheckIndirizzoPECResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataScadenzaValidazione" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataUltimaValidazione" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IndirizzoPecValidato" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Soggetto" nillable="true" type="tns:Soggetto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckIndirizzoPECResponse" nillable="true" type="tns:CheckIndirizzoPECResponse" />
+  <xs:complexType name="CheckListaIndirizziPECRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="listaSoggetti" nillable="true" type="tns:ArrayOfSoggetto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckListaIndirizziPECRequest" nillable="true" type="tns:CheckListaIndirizziPECRequest" />
+  <xs:complexType name="ArrayOfSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Soggetto" nillable="true" type="tns:Soggetto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSoggetto" nillable="true" type="tns:ArrayOfSoggetto" />
+  <xs:complexType name="CheckListaIndirizziPECResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaEsiti" nillable="true" type="tns:ArrayOfCheckIndirizzoPECResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckListaIndirizziPECResponse" nillable="true" type="tns:CheckListaIndirizziPECResponse" />
+  <xs:complexType name="ArrayOfCheckIndirizzoPECResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CheckIndirizzoPECResponse" nillable="true" type="tns:CheckIndirizzoPECResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCheckIndirizzoPECResponse" nillable="true" type="tns:ArrayOfCheckIndirizzoPECResponse" />
+  <xs:complexType name="VerificaStatoPECRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indirizzoPEC" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificaStatoPECRequest" nillable="true" type="tns:VerificaStatoPECRequest" />
+  <xs:complexType name="VerificaStatoPECResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdEsito" type="tns:EnEsitoVerificaStatoPEC" />
+      <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceStatoDestinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dataRicevuta" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataUltimaVerifica" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idStatoDestinatario" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="motivazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificaStatoPECResponse" nillable="true" type="tns:VerificaStatoPECResponse" />
+  <xs:simpleType name="EnEsitoVerificaStatoPEC">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ER" />
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="KO" />
+      <xs:enumeration value="WR" />
+      <xs:enumeration value="NV" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnEsitoVerificaStatoPEC" nillable="true" type="tns:EnEsitoVerificaStatoPEC" />
+  <xs:complexType name="RichiediVerificaPECRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzoPEC" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RichiediVerificaPECRequest" nillable="true" type="tns:RichiediVerificaPECRequest" />
+  <xs:complexType name="RichiediVerificaPECResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdEsito" type="tns:EnEsitoRichiediVerificaPEC" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RichiediVerificaPECResponse" nillable="true" type="tns:RichiediVerificaPECResponse" />
+  <xs:simpleType name="EnEsitoRichiediVerificaPEC">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnEsitoRichiediVerificaPEC" nillable="true" type="tns:EnEsitoRichiediVerificaPEC" />
+  <xs:complexType name="PUC_InvioComunicazioneRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_InvioRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bodyType" nillable="true" type="tns:PUC_EnBodyType" />
+          <xs:element minOccurs="0" name="flagProtocollazione" type="xs:boolean" />
+          <xs:element name="listaDestinatari" nillable="true" type="tns:ArrayOfPUC_DestinatarioInvioComunicazione" />
+          <xs:element minOccurs="0" name="riservato" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="segnatura" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sensibile" nillable="true" type="xs:boolean" />
+          <xs:element name="tipoComunicazione" nillable="true" type="tns:PUC_TipoComunicazione" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_InvioComunicazioneRequest" nillable="true" type="tns:PUC_InvioComunicazioneRequest" />
+  <xs:complexType name="PUC_InvioRequest">
+    <xs:sequence>
+      <xs:element name="allegatiPresenti" type="xs:boolean" />
+      <xs:element name="body" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element name="isPEC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="listaAllegati" nillable="true" type="tns:ArrayOfPUC_AllegatoInvio" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mittente" nillable="true" type="tns:PUC_MittenteComunicazione" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+      <xs:element name="subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_InvioRequest" nillable="true" type="tns:PUC_InvioRequest" />
+  <xs:complexType name="ArrayOfPUC_AllegatoInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_AllegatoInvio" nillable="true" type="tns:PUC_AllegatoInvio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_AllegatoInvio" nillable="true" type="tns:ArrayOfPUC_AllegatoInvio" />
+  <xs:complexType name="PUC_AllegatoInvio">
+    <xs:sequence>
+      <xs:element name="allegato" nillable="true" type="xs:base64Binary" />
+      <xs:element name="nomeFile" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_AllegatoInvio" nillable="true" type="tns:PUC_AllegatoInvio" />
+  <xs:complexType name="PUC_MittenteComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="replyTo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_MittenteComunicazione" nillable="true" type="tns:PUC_MittenteComunicazione" />
+  <xs:simpleType name="PUC_EnBodyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PLAINTEXT" />
+      <xs:enumeration value="HTML" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnBodyType" nillable="true" type="tns:PUC_EnBodyType" />
+  <xs:complexType name="ArrayOfPUC_DestinatarioInvioComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_DestinatarioInvioComunicazione" nillable="true" type="tns:PUC_DestinatarioInvioComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_DestinatarioInvioComunicazione" nillable="true" type="tns:ArrayOfPUC_DestinatarioInvioComunicazione" />
+  <xs:complexType name="PUC_DestinatarioInvioComunicazione">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_DestinatarioInvio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cdSoggetto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cdUfficioSoggetto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cfSoggetto" nillable="true" type="xs:string" />
+          <xs:element name="tipoSoggetto" type="tns:PUC_EnTipoSoggetto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_DestinatarioInvioComunicazione" nillable="true" type="tns:PUC_DestinatarioInvioComunicazione" />
+  <xs:complexType name="PUC_DestinatarioInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indirizzoEmail" nillable="true" type="xs:string" />
+      <xs:element name="tipo" type="tns:EnTipoDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_DestinatarioInvio" nillable="true" type="tns:PUC_DestinatarioInvio" />
+  <xs:simpleType name="PUC_EnTipoSoggetto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PF" />
+      <xs:enumeration value="PG" />
+      <xs:enumeration value="INTERMEDIARIO" />
+      <xs:enumeration value="SOGGETTO_AZIENDALE" />
+      <xs:enumeration value="PATRONATO" />
+      <xs:enumeration value="ENTE_PA" />
+      <xs:enumeration value="NON_DISPONIBILE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnTipoSoggetto" nillable="true" type="tns:PUC_EnTipoSoggetto" />
+  <xs:complexType name="PUC_TipoComunicazione">
+    <xs:sequence>
+      <xs:element name="lavorazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sottoLavorazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_TipoComunicazione" nillable="true" type="tns:PUC_TipoComunicazione" />
+  <xs:complexType name="PUC_InvioComunicazioneResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_ResponseInvio">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_InvioComunicazioneResponse" nillable="true" type="tns:PUC_InvioComunicazioneResponse" />
+  <xs:complexType name="PUC_ResponseInvio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdEsito" type="tns:PUC_EnEsitoInvio" />
+      <xs:element minOccurs="0" name="dataInserimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_ResponseInvio" nillable="true" type="tns:PUC_ResponseInvio" />
+  <xs:simpleType name="PUC_EnEsitoInvio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ER" />
+      <xs:enumeration value="IM" />
+      <xs:enumeration value="PK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnEsitoInvio" nillable="true" type="tns:PUC_EnEsitoInvio" />
+  <xs:complexType name="PUC_InvioComunicazioneByPNRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_InvioByPNRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Firma" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bodyType" nillable="true" type="tns:PUC_EnBodyType" />
+          <xs:element name="codiceTassonomico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gruppoUtentiPN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importoNotifica" type="xs:int" />
+          <xs:element name="listaDestinatari" nillable="true" type="tns:ArrayOfPUC_DestinatarioPN" />
+          <xs:element minOccurs="0" name="riservato" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="scadenzaPagamento" nillable="true" type="xs:string" />
+          <xs:element name="segnatura" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sensibile" nillable="true" type="xs:boolean" />
+          <xs:element name="tipoComunicazione" nillable="true" type="tns:PUC_TipoComunicazione" />
+          <xs:element name="tipoComunicazioneFisica" type="tns:EnComunicazioneFisica" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_InvioComunicazioneByPNRequest" nillable="true" type="tns:PUC_InvioComunicazioneByPNRequest" />
+  <xs:complexType name="PUC_InvioByPNRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listaAllegati" nillable="true" type="tns:ArrayOfPUC_AllegatoInvioPN" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element name="sede" nillable="true" type="xs:string" />
+      <xs:element name="subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_InvioByPNRequest" nillable="true" type="tns:PUC_InvioByPNRequest" />
+  <xs:complexType name="ArrayOfPUC_AllegatoInvioPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_AllegatoInvioPN" nillable="true" type="tns:PUC_AllegatoInvioPN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_AllegatoInvioPN" nillable="true" type="tns:ArrayOfPUC_AllegatoInvioPN" />
+  <xs:complexType name="PUC_AllegatoInvioPN">
+    <xs:sequence>
+      <xs:element name="base64" nillable="true" type="xs:string" />
+      <xs:element name="contentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indiceDocumento" nillable="true" type="xs:string" />
+      <xs:element name="nomeFile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="requiresAck" nillable="true" type="xs:boolean" />
+      <xs:element name="titolo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_AllegatoInvioPN" nillable="true" type="tns:PUC_AllegatoInvioPN" />
+  <xs:complexType name="ArrayOfPUC_DestinatarioPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_DestinatarioPN" nillable="true" type="tns:PUC_DestinatarioPN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_DestinatarioPN" nillable="true" type="tns:ArrayOfPUC_DestinatarioPN" />
+  <xs:complexType name="PUC_DestinatarioPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdSoggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdUfficioSoggetto" nillable="true" type="xs:string" />
+      <xs:element name="cfSoggetto" nillable="true" type="xs:string" />
+      <xs:element name="denonimazioneSoggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="domicilioDigitale" nillable="true" type="tns:PUC_DomicilioDigitale" />
+      <xs:element name="indirizzoFisico" nillable="true" type="tns:PUC_IndirizzoFisico" />
+      <xs:element minOccurs="0" name="pagamento" nillable="true" type="tns:PUC_Pagamento" />
+      <xs:element name="tipo" type="tns:EnTipoDestinatario" />
+      <xs:element name="tipoSoggetto" type="tns:PUC_EnTipoSoggetto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_DestinatarioPN" nillable="true" type="tns:PUC_DestinatarioPN" />
+  <xs:complexType name="PUC_DomicilioDigitale">
+    <xs:sequence>
+      <xs:element name="indirizzo" nillable="true" type="xs:string" />
+      <xs:element name="tipo" type="tns:PUC_EnTipoIndirizzo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_DomicilioDigitale" nillable="true" type="tns:PUC_DomicilioDigitale" />
+  <xs:simpleType name="PUC_EnTipoIndirizzo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PEC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnTipoIndirizzo" nillable="true" type="tns:PUC_EnTipoIndirizzo" />
+  <xs:complexType name="PUC_IndirizzoFisico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cap" nillable="true" type="xs:string" />
+      <xs:element name="comune" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="denPaeseEstero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dettagliIndirizzo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="frazione" nillable="true" type="xs:string" />
+      <xs:element name="indirizzo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="presso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="provincia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_IndirizzoFisico" nillable="true" type="tns:PUC_IndirizzoFisico" />
+  <xs:complexType name="PUC_Pagamento">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_PagamentoBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="F24_flatRate" nillable="true" type="tns:PUC_DocumentoPagamento" />
+          <xs:element minOccurs="0" name="F24_standard" nillable="true" type="tns:PUC_DocumentoPagamento" />
+          <xs:element minOccurs="0" name="bollettinoPagoPA" nillable="true" type="tns:PUC_DocumentoPagamento" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_Pagamento" nillable="true" type="tns:PUC_Pagamento" />
+  <xs:complexType name="PUC_PagamentoBase">
+    <xs:sequence>
+      <xs:element name="codAvvisoPagoPA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codAvvisoPagoPA2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_PagamentoBase" nillable="true" type="tns:PUC_PagamentoBase" />
+  <xs:complexType name="PUC_DocumentoPagamento">
+    <xs:sequence>
+      <xs:element name="Allegato" nillable="true" type="xs:string" />
+      <xs:element name="contentType" nillable="true" type="xs:string" />
+      <xs:element name="tipoDocumento" type="tns:PUC_EnTipoDocumentoPagamento" />
+      <xs:element name="titolo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_DocumentoPagamento" nillable="true" type="tns:PUC_DocumentoPagamento" />
+  <xs:simpleType name="PUC_EnTipoDocumentoPagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PAGOPA_FORM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F24_FLATRATE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F24_STANDARD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnTipoDocumentoPagamento" nillable="true" type="tns:PUC_EnTipoDocumentoPagamento" />
+  <xs:simpleType name="EnComunicazioneFisica">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AR_REGISTERED_LETTER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REGISTERED_LETTER_890" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnComunicazioneFisica" nillable="true" type="tns:EnComunicazioneFisica" />
+  <xs:complexType name="PUC_InvioComunicazioneByPNResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_InvioComunicazioneResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idStatoNotifica" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_InvioComunicazioneByPNResponse" nillable="true" type="tns:PUC_InvioComunicazioneByPNResponse" />
+  <xs:complexType name="PUC_GetListaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdSoggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdStato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdUfficioSoggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cfDestinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="immessaAl" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="immessaDal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="indirizzoEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="oggetto" nillable="true" type="xs:string" />
+      <xs:element name="paginaAttuale" type="xs:int" />
+      <xs:element name="recordPerPagina" type="xs:int" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetListaRequest" nillable="true" type="tns:PUC_GetListaRequest" />
+  <xs:complexType name="PUC_GetListaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_GetListaExtResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetListaResponse" nillable="true" type="tns:PUC_GetListaResponse" />
+  <xs:complexType name="PUC_GetListaExtResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_ResponseLista">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_DettaglioComunicazione" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetListaExtResponse" nillable="true" type="tns:PUC_GetListaExtResponse" />
+  <xs:complexType name="PUC_ResponseLista">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dataFineRicerca" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="dataInizioRicerca" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="numeroRecord" type="xs:long" />
+          <xs:element minOccurs="0" name="paginaAttuale" type="xs:int" />
+          <xs:element minOccurs="0" name="pagineTotali" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_ResponseLista" nillable="true" type="tns:PUC_ResponseLista" />
+  <xs:complexType name="PUC_Response">
+    <xs:sequence>
+      <xs:element name="cdEsito" type="tns:PUC_EnEsito" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_Response" nillable="true" type="tns:PUC_Response" />
+  <xs:simpleType name="PUC_EnEsito">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnEsito" nillable="true" type="tns:PUC_EnEsito" />
+  <xs:complexType name="ArrayOfPUC_DettaglioComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_DettaglioComunicazione" nillable="true" type="tns:PUC_DettaglioComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_DettaglioComunicazione" nillable="true" type="tns:ArrayOfPUC_DettaglioComunicazione" />
+  <xs:complexType name="PUC_DettaglioComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_Ana_Mail" type="xs:int" />
+      <xs:element minOccurs="0" name="allegatiPresenti" type="xs:boolean" />
+      <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bodyType" type="tns:PUC_EnBodyType" />
+      <xs:element minOccurs="0" name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdStato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dataInserimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataInvio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataUltimaModifica" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dsApplicazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsErroreInvio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsStato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flagBody" type="tns:PUC_EnFlagBody" />
+      <xs:element minOccurs="0" name="flagFrom" type="tns:PUC_EnFlagFrom" />
+      <xs:element minOccurs="0" name="flagPEC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="segnatura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_DettaglioComunicazione" nillable="true" type="tns:PUC_DettaglioComunicazione" />
+  <xs:simpleType name="PUC_EnFlagBody">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ds_body" />
+      <xs:enumeration value="Autogenerato" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnFlagBody" nillable="true" type="tns:PUC_EnFlagBody" />
+  <xs:simpleType name="PUC_EnFlagFrom">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="inpsComunica" />
+      <xs:enumeration value="ds_from" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnFlagFrom" nillable="true" type="tns:PUC_EnFlagFrom" />
+  <xs:complexType name="PUC_GetRicevutePECByChiaveGestionaleRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element name="intPregresso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetRicevutePECByChiaveGestionaleRequest" nillable="true" type="tns:PUC_GetRicevutePECByChiaveGestionaleRequest" />
+  <xs:complexType name="PUC_GetRicevutePECResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaRicevutePEC" nillable="true" type="tns:ArrayOfPUC_RicevutaPEC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetRicevutePECResponse" nillable="true" type="tns:PUC_GetRicevutePECResponse" />
+  <xs:complexType name="ArrayOfPUC_RicevutaPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_RicevutaPEC" nillable="true" type="tns:PUC_RicevutaPEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_RicevutaPEC" nillable="true" type="tns:ArrayOfPUC_RicevutaPEC" />
+  <xs:complexType name="PUC_RicevutaPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="binario" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="data" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="formato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoRicevuta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_RicevutaPEC" nillable="true" type="tns:PUC_RicevutaPEC" />
+  <xs:complexType name="PUC_GetRicevutePECByMessageIDRequest">
+    <xs:sequence>
+      <xs:element name="intPregresso" type="xs:int" />
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetRicevutePECByMessageIDRequest" nillable="true" type="tns:PUC_GetRicevutePECByMessageIDRequest" />
+  <xs:complexType name="PUC_GetDettaglioByChiaveGestionaleRequest">
+    <xs:sequence>
+      <xs:element name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetDettaglioByChiaveGestionaleRequest" nillable="true" type="tns:PUC_GetDettaglioByChiaveGestionaleRequest" />
+  <xs:complexType name="PUC_GetDettaglioResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comunicazione" nillable="true" type="tns:PUC_DettaglioComunicazioneExt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetDettaglioResponse" nillable="true" type="tns:PUC_GetDettaglioResponse" />
+  <xs:complexType name="PUC_DettaglioComunicazioneExt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_DettaglioComunicazione">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="allegati" nillable="true" type="tns:ArrayOfPUC_Allegato" />
+          <xs:element minOccurs="0" name="listaDestinatari" nillable="true" type="tns:ArrayOfPUC_DestinatarioComunicazione" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_DettaglioComunicazioneExt" nillable="true" type="tns:PUC_DettaglioComunicazioneExt" />
+  <xs:complexType name="ArrayOfPUC_Allegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_Allegato" nillable="true" type="tns:PUC_Allegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_Allegato" nillable="true" type="tns:ArrayOfPUC_Allegato" />
+  <xs:complexType name="PUC_Allegato">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_AllegatoInvio">
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int" />
+          <xs:element name="ID_AnaMail" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_Allegato" nillable="true" type="tns:PUC_Allegato" />
+  <xs:complexType name="ArrayOfPUC_DestinatarioComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_DestinatarioComunicazione" nillable="true" type="tns:PUC_DestinatarioComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_DestinatarioComunicazione" nillable="true" type="tns:ArrayOfPUC_DestinatarioComunicazione" />
+  <xs:complexType name="PUC_DestinatarioComunicazione">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_DestinatarioInvio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cdSoggetto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cdStato" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cdUfficioSoggetto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cfSoggetto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoSoggetto" nillable="true" type="tns:PUC_EnTipoSoggetto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_DestinatarioComunicazione" nillable="true" type="tns:PUC_DestinatarioComunicazione" />
+  <xs:complexType name="PUC_GetDettaglioByMessageIDRequest">
+    <xs:sequence>
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetDettaglioByMessageIDRequest" nillable="true" type="tns:PUC_GetDettaglioByMessageIDRequest" />
+  <xs:complexType name="PUC_CheckRicevutePECByChiaveGestionaleRequest">
+    <xs:sequence>
+      <xs:element name="intPregresso" type="xs:int" />
+      <xs:element name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_ComunicazioneChiaveGestionale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_CheckRicevutePECByChiaveGestionaleRequest" nillable="true" type="tns:PUC_CheckRicevutePECByChiaveGestionaleRequest" />
+  <xs:complexType name="ArrayOfPUC_ComunicazioneChiaveGestionale">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_ComunicazioneChiaveGestionale" nillable="true" type="tns:PUC_ComunicazioneChiaveGestionale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_ComunicazioneChiaveGestionale" nillable="true" type="tns:ArrayOfPUC_ComunicazioneChiaveGestionale" />
+  <xs:complexType name="PUC_ComunicazioneChiaveGestionale">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_ComunicazioneChiaveGestionale" nillable="true" type="tns:PUC_ComunicazioneChiaveGestionale" />
+  <xs:complexType name="PUC_CheckRicevutePECResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaEsitiRicevutePEC" nillable="true" type="tns:ArrayOfPUC_EsitiCheckRicevutePEC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_CheckRicevutePECResponse" nillable="true" type="tns:PUC_CheckRicevutePECResponse" />
+  <xs:complexType name="ArrayOfPUC_EsitiCheckRicevutePEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_EsitiCheckRicevutePEC" nillable="true" type="tns:PUC_EsitiCheckRicevutePEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_EsitiCheckRicevutePEC" nillable="true" type="tns:ArrayOfPUC_EsitiCheckRicevutePEC" />
+  <xs:complexType name="PUC_EsitiCheckRicevutePEC">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cdApplicazione" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="listaRicevute" nillable="true" type="tns:ArrayOfPUC_seRicevutaPEC" />
+          <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_EsitiCheckRicevutePEC" nillable="true" type="tns:PUC_EsitiCheckRicevutePEC" />
+  <xs:complexType name="ArrayOfPUC_seRicevutaPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_seRicevutaPEC" nillable="true" type="tns:PUC_seRicevutaPEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_seRicevutaPEC" nillable="true" type="tns:ArrayOfPUC_seRicevutaPEC" />
+  <xs:complexType name="PUC_seRicevutaPEC">
+    <xs:sequence>
+      <xs:element name="data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="descrizioneEstesa" nillable="true" type="xs:string" />
+      <xs:element name="destinatariPEC" nillable="true" type="tns:ArrayOfPUC_DestinatarioPEC" />
+      <xs:element minOccurs="0" name="formato" nillable="true" type="xs:string" />
+      <xs:element name="ricevutaMessageID" nillable="true" type="xs:string" />
+      <xs:element name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element name="tipoRicevuta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_seRicevutaPEC" nillable="true" type="tns:PUC_seRicevutaPEC" />
+  <xs:complexType name="ArrayOfPUC_DestinatarioPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_DestinatarioPEC" nillable="true" type="tns:PUC_DestinatarioPEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_DestinatarioPEC" nillable="true" type="tns:ArrayOfPUC_DestinatarioPEC" />
+  <xs:complexType name="PUC_DestinatarioPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdSoggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdUfficoSoggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cfSoggetto" nillable="true" type="xs:string" />
+      <xs:element name="indirizzoEmail" nillable="true" type="xs:string" />
+      <xs:element name="tipo" type="tns:PUC_EnTipoDestinatarioPEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_DestinatarioPEC" nillable="true" type="tns:PUC_DestinatarioPEC" />
+  <xs:simpleType name="PUC_EnTipoDestinatarioPEC">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnTipoDestinatarioPEC" nillable="true" type="tns:PUC_EnTipoDestinatarioPEC" />
+  <xs:complexType name="PUC_CheckRicevutePECByMessageIDRequest">
+    <xs:sequence>
+      <xs:element name="intPregresso" type="xs:int" />
+      <xs:element name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_ComunicazioneMessageID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_CheckRicevutePECByMessageIDRequest" nillable="true" type="tns:PUC_CheckRicevutePECByMessageIDRequest" />
+  <xs:complexType name="ArrayOfPUC_ComunicazioneMessageID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_ComunicazioneMessageID" nillable="true" type="tns:PUC_ComunicazioneMessageID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_ComunicazioneMessageID" nillable="true" type="tns:ArrayOfPUC_ComunicazioneMessageID" />
+  <xs:complexType name="PUC_ComunicazioneMessageID">
+    <xs:sequence>
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_ComunicazioneMessageID" nillable="true" type="tns:PUC_ComunicazioneMessageID" />
+  <xs:complexType name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleRequest">
+    <xs:sequence>
+      <xs:element name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleRequest" nillable="true" type="tns:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleRequest" />
+  <xs:complexType name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaStoricoEventiNotifica" nillable="true" type="tns:ArrayOfPUC_NotificaVariazioneEventoComunicazione" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneResponse" nillable="true" type="tns:PUC_EstrazioneStoricoVariazioneEventoComunicazioneResponse" />
+  <xs:complexType name="ArrayOfPUC_NotificaVariazioneEventoComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_NotificaVariazioneEventoComunicazione" nillable="true" type="tns:PUC_NotificaVariazioneEventoComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_NotificaVariazioneEventoComunicazione" nillable="true" type="tns:ArrayOfPUC_NotificaVariazioneEventoComunicazione" />
+  <xs:complexType name="PUC_NotificaVariazioneEventoComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdTipoEvento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dataVariazione" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="eventoComunicazione" nillable="true" type="tns:PUC_eComunicazione" />
+      <xs:element minOccurs="0" name="eventoDestinatario" nillable="true" type="tns:PUC_eDestinatario" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ricevutaPEC" nillable="true" type="tns:PUC_eRicevutaPEC" />
+      <xs:element minOccurs="0" name="tipoCanale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_NotificaVariazioneEventoComunicazione" nillable="true" type="tns:PUC_NotificaVariazioneEventoComunicazione" />
+  <xs:complexType name="PUC_eComunicazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdStato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_eComunicazione" nillable="true" type="tns:PUC_eComunicazione" />
+  <xs:complexType name="PUC_eDestinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdStato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cfDestinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzoEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="tns:PUC_EnTipoDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_eDestinatario" nillable="true" type="tns:PUC_eDestinatario" />
+  <xs:simpleType name="PUC_EnTipoDestinatario">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BCC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnTipoDestinatario" nillable="true" type="tns:PUC_EnTipoDestinatario" />
+  <xs:complexType name="PUC_eRicevutaPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="descrizioneEstesa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ricevutaMessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoRicevuta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_eRicevutaPEC" nillable="true" type="tns:PUC_eRicevutaPEC" />
+  <xs:complexType name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDRequest" nillable="true" type="tns:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDRequest" />
+  <xs:complexType name="PUC_CheckComunicazioniPECByChiaveGestionaleRequest">
+    <xs:sequence>
+      <xs:element name="intPregresso" type="xs:int" />
+      <xs:element name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_ComunicazioneChiaveGestionale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_CheckComunicazioniPECByChiaveGestionaleRequest" nillable="true" type="tns:PUC_CheckComunicazioniPECByChiaveGestionaleRequest" />
+  <xs:complexType name="PUC_CheckComunicazioniPECResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaEsitiComunicazioniPEC" nillable="true" type="tns:ArrayOfPUC_EsitiCheckComunicazioniPEC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_CheckComunicazioniPECResponse" nillable="true" type="tns:PUC_CheckComunicazioniPECResponse" />
+  <xs:complexType name="ArrayOfPUC_EsitiCheckComunicazioniPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_EsitiCheckComunicazioniPEC" nillable="true" type="tns:PUC_EsitiCheckComunicazioniPEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_EsitiCheckComunicazioniPEC" nillable="true" type="tns:ArrayOfPUC_EsitiCheckComunicazioniPEC" />
+  <xs:complexType name="PUC_EsitiCheckComunicazioniPEC">
+    <xs:sequence>
+      <xs:element name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element name="cdEsito" type="tns:PUC_EnEsitoCheckComunicazione" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsErrore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element name="statiDestinatari" nillable="true" type="tns:ArrayOfPUC_eDestinatario" />
+      <xs:element name="statoComunicazione" nillable="true" type="tns:PUC_eComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_EsitiCheckComunicazioniPEC" nillable="true" type="tns:PUC_EsitiCheckComunicazioniPEC" />
+  <xs:simpleType name="PUC_EnEsitoCheckComunicazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnEsitoCheckComunicazione" nillable="true" type="tns:PUC_EnEsitoCheckComunicazione" />
+  <xs:complexType name="ArrayOfPUC_eDestinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_eDestinatario" nillable="true" type="tns:PUC_eDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_eDestinatario" nillable="true" type="tns:ArrayOfPUC_eDestinatario" />
+  <xs:complexType name="PUC_CheckComunicazioniPECByMessageIDRequest">
+    <xs:sequence>
+      <xs:element name="intPregresso" type="xs:int" />
+      <xs:element name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_ComunicazioneMessageID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_CheckComunicazioniPECByMessageIDRequest" nillable="true" type="tns:PUC_CheckComunicazioniPECByMessageIDRequest" />
+  <xs:complexType name="AmbitoDettaglioComunicazioneRequest">
+    <xs:sequence>
+      <xs:element name="ambito" type="tns:AmbitoEnAmbito" />
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmbitoDettaglioComunicazioneRequest" nillable="true" type="tns:AmbitoDettaglioComunicazioneRequest" />
+  <xs:simpleType name="AmbitoEnAmbito">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PCP" />
+      <xs:enumeration value="PCI" />
+      <xs:enumeration value="ICO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AmbitoEnAmbito" nillable="true" type="tns:AmbitoEnAmbito" />
+  <xs:complexType name="AmbitoDettaglioComunicazioneResponse">
+    <xs:sequence>
+      <xs:element name="cdEsito" type="tns:AmbitoEnEsito" />
+      <xs:element minOccurs="0" name="dettaglioComunicazione" nillable="true" type="tns:AmbitoDettaglioComunicazione" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmbitoDettaglioComunicazioneResponse" nillable="true" type="tns:AmbitoDettaglioComunicazioneResponse" />
+  <xs:simpleType name="AmbitoEnEsito">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OC" />
+      <xs:enumeration value="ER" />
+      <xs:enumeration value="CN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AmbitoEnEsito" nillable="true" type="tns:AmbitoEnEsito" />
+  <xs:complexType name="AmbitoDettaglioComunicazione">
+    <xs:sequence>
+      <xs:element name="bodyType" type="tns:EnBodyType" />
+      <xs:element minOccurs="0" name="confermaRicezione" nillable="true" type="xs:string" />
+      <xs:element name="dsMittente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzoEmailMittente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listaAllegati" nillable="true" type="tns:ArrayOfaAllegato" />
+      <xs:element name="listaDestinatari" nillable="true" type="tns:ArrayOfaDestinatario" />
+      <xs:element minOccurs="0" name="listaRicevutePEC" nillable="true" type="tns:ArrayOfaRicevutaPEC" />
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+      <xs:element name="oggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="segnatura" nillable="true" type="xs:string" />
+      <xs:element name="testo" nillable="true" type="xs:string" />
+      <xs:element name="tipoComunicazione" type="tns:AmbitoEnTipoComunicazione" />
+      <xs:element minOccurs="0" name="tipoRicevuta" type="tns:AmbitoEnTipoRicevuta" />
+      <xs:element minOccurs="0" name="ufficioMittente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmbitoDettaglioComunicazione" nillable="true" type="tns:AmbitoDettaglioComunicazione" />
+  <xs:complexType name="ArrayOfaAllegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="aAllegato" nillable="true" type="tns:aAllegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfaAllegato" nillable="true" type="tns:ArrayOfaAllegato" />
+  <xs:complexType name="aAllegato">
+    <xs:sequence>
+      <xs:element name="identificativo" nillable="true" type="xs:string" />
+      <xs:element name="nomeFile" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="aAllegato" nillable="true" type="tns:aAllegato" />
+  <xs:complexType name="ArrayOfaDestinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="aDestinatario" nillable="true" type="tns:aDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfaDestinatario" nillable="true" type="tns:ArrayOfaDestinatario" />
+  <xs:complexType name="aDestinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzoEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
+      <xs:element name="tipo" type="tns:EnTipoDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="aDestinatario" nillable="true" type="tns:aDestinatario" />
+  <xs:complexType name="ArrayOfaRicevutaPEC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="aRicevutaPEC" nillable="true" type="tns:aRicevutaPEC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfaRicevutaPEC" nillable="true" type="tns:ArrayOfaRicevutaPEC" />
+  <xs:complexType name="aRicevutaPEC">
+    <xs:sequence>
+      <xs:element name="XML" nillable="true" type="xs:base64Binary" />
+      <xs:element name="data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="descrizioneEstesa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="destinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzoMail" nillable="true" type="xs:string" />
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mittente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="oggetto" nillable="true" type="xs:string" />
+      <xs:element name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element name="tipoRicevuta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="aRicevutaPEC" nillable="true" type="tns:aRicevutaPEC" />
+  <xs:simpleType name="AmbitoEnTipoComunicazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PEO" />
+      <xs:enumeration value="PEC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AmbitoEnTipoComunicazione" nillable="true" type="tns:AmbitoEnTipoComunicazione" />
+  <xs:simpleType name="AmbitoEnTipoRicevuta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sintetica" />
+      <xs:enumeration value="completa" />
+      <xs:enumeration value="breve" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AmbitoEnTipoRicevuta" nillable="true" type="tns:AmbitoEnTipoRicevuta" />
+  <xs:complexType name="AmbitoRicevutaPECRequest">
+    <xs:sequence>
+      <xs:element name="ambito" type="tns:AmbitoEnAmbito" />
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmbitoRicevutaPECRequest" nillable="true" type="tns:AmbitoRicevutaPECRequest" />
+  <xs:complexType name="AmbitoRicevutaPECResponse">
+    <xs:sequence>
+      <xs:element name="cdEsito" type="tns:AmbitoEnEsito" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ricevutaPEC" nillable="true" type="tns:aRicevutaPECExt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmbitoRicevutaPECResponse" nillable="true" type="tns:AmbitoRicevutaPECResponse" />
+  <xs:complexType name="aRicevutaPECExt">
+    <xs:sequence>
+      <xs:element name="binario" nillable="true" type="xs:base64Binary" />
+      <xs:element name="messageID" nillable="true" type="xs:string" />
+      <xs:element name="nomeFile" nillable="true" type="xs:string" />
+      <xs:element name="size" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="aRicevutaPECExt" nillable="true" type="tns:aRicevutaPECExt" />
+  <xs:complexType name="AmbitoAllegatoRequest">
+    <xs:sequence>
+      <xs:element name="ambito" type="tns:AmbitoEnAmbito" />
+      <xs:element name="identificativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nomeFile" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmbitoAllegatoRequest" nillable="true" type="tns:AmbitoAllegatoRequest" />
+  <xs:complexType name="AmbitoAllegatoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="allegato" nillable="true" type="tns:aAllegatoExt" />
+      <xs:element name="cdEsito" type="tns:AmbitoEnEsito" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmbitoAllegatoResponse" nillable="true" type="tns:AmbitoAllegatoResponse" />
+  <xs:complexType name="aAllegatoExt">
+    <xs:sequence>
+      <xs:element name="binario" nillable="true" type="xs:base64Binary" />
+      <xs:element name="identificativo" nillable="true" type="xs:string" />
+      <xs:element name="nomeFile" nillable="true" type="xs:string" />
+      <xs:element name="size" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="aAllegatoExt" nillable="true" type="tns:aAllegatoExt" />
+  <xs:complexType name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliRequest">
+    <xs:sequence>
+      <xs:element name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_ComunicazioneChiaveGestionale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliRequest" nillable="true" type="tns:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliRequest" />
+  <xs:complexType name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaEventiComunicazione" nillable="true" type="tns:ArrayOfPUC_EventoComunicazionePN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNResponse" nillable="true" type="tns:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNResponse" />
+  <xs:complexType name="ArrayOfPUC_EventoComunicazionePN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_EventoComunicazionePN" nillable="true" type="tns:PUC_EventoComunicazionePN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_EventoComunicazionePN" nillable="true" type="tns:ArrayOfPUC_EventoComunicazionePN" />
+  <xs:complexType name="PUC_EventoComunicazionePN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IUN" nillable="true" type="xs:string" />
+      <xs:element name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listaStoricoEventiNotifica" nillable="true" type="tns:ArrayOfPUC_NotificaVariazioneEventoComunicazionePN" />
+      <xs:element name="messageid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_EventoComunicazionePN" nillable="true" type="tns:PUC_EventoComunicazionePN" />
+  <xs:complexType name="ArrayOfPUC_NotificaVariazioneEventoComunicazionePN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_NotificaVariazioneEventoComunicazionePN" nillable="true" type="tns:PUC_NotificaVariazioneEventoComunicazionePN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_NotificaVariazioneEventoComunicazionePN" nillable="true" type="tns:ArrayOfPUC_NotificaVariazioneEventoComunicazionePN" />
+  <xs:complexType name="PUC_NotificaVariazioneEventoComunicazionePN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdStato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cdTipoEvento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dataVariazione" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="destinatariEvento" nillable="true" type="tns:ArrayOfPUC_eDestinatarioPN" />
+      <xs:element minOccurs="0" name="idStatoNotifica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statoAggregato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoCanale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_NotificaVariazioneEventoComunicazionePN" nillable="true" type="tns:PUC_NotificaVariazioneEventoComunicazionePN" />
+  <xs:complexType name="ArrayOfPUC_eDestinatarioPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_eDestinatarioPN" nillable="true" type="tns:PUC_eDestinatarioPN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_eDestinatarioPN" nillable="true" type="tns:ArrayOfPUC_eDestinatarioPN" />
+  <xs:complexType name="PUC_eDestinatarioPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cfDestinatario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="delegati" nillable="true" type="tns:ArrayOfPUC_Delegato" />
+      <xs:element minOccurs="0" name="domicilioDigitale" nillable="true" type="tns:PUC_oDomicilioDigitale" />
+      <xs:element minOccurs="0" name="indirizzoFisico" nillable="true" type="tns:PUC_oIndirizzoFisico" />
+      <xs:element minOccurs="0" name="tipo" type="tns:PUC_EnTipoDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_eDestinatarioPN" nillable="true" type="tns:PUC_eDestinatarioPN" />
+  <xs:complexType name="ArrayOfPUC_Delegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_Delegato" nillable="true" type="tns:PUC_Delegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_Delegato" nillable="true" type="tns:ArrayOfPUC_Delegato" />
+  <xs:complexType name="PUC_Delegato">
+    <xs:sequence>
+      <xs:element name="cfDelegato" nillable="true" type="xs:string" />
+      <xs:element name="nominativo" nillable="true" type="xs:string" />
+      <xs:element name="tipoDelegato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_Delegato" nillable="true" type="tns:PUC_Delegato" />
+  <xs:complexType name="PUC_oDomicilioDigitale">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_DomicilioDigitale">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="causaMancataConsegna" nillable="true" type="tns:PUC_InfoConsegna" />
+          <xs:element minOccurs="0" name="codiceDettaglioConsegna" nillable="true" type="tns:PUC_InfoConsegna" />
+          <xs:element minOccurs="0" name="codiceMessagioIO" nillable="true" type="tns:PUC_InfoMessaggioIO" />
+          <xs:element minOccurs="0" name="dataInvio" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="dataNotifica" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="dataUltimoTentativo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="numeroTentativi" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="numeroTentativiInvio" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="sorgenteIndirizzoDigitale" nillable="true" type="xs:string" />
+          <xs:element name="tipoOrigine" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_oDomicilioDigitale" nillable="true" type="tns:PUC_oDomicilioDigitale" />
+  <xs:complexType name="PUC_InfoConsegna">
+    <xs:sequence>
+      <xs:element name="codice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_InfoConsegna" nillable="true" type="tns:PUC_InfoConsegna" />
+  <xs:complexType name="PUC_InfoMessaggioIO">
+    <xs:sequence>
+      <xs:element name="codice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_InfoMessaggioIO" nillable="true" type="tns:PUC_InfoMessaggioIO" />
+  <xs:complexType name="PUC_oIndirizzoFisico">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_IndirizzoFisico">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="causaMancataConsegna" nillable="true" type="tns:PUC_InfoConsegna" />
+          <xs:element minOccurs="0" name="codiceDettaglioConsegna" nillable="true" type="tns:PUC_InfoConsegna" />
+          <xs:element minOccurs="0" name="codiceLetteraRaccomandata" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="livelloServizio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="motivazioneFallimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+          <xs:element name="tipoOrigine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoProdotto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_oIndirizzoFisico" nillable="true" type="tns:PUC_oIndirizzoFisico" />
+  <xs:complexType name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdRequest">
+    <xs:sequence>
+      <xs:element name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_ComunicazioneMessageID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdRequest" nillable="true" type="tns:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdRequest" />
+  <xs:complexType name="PUC_GetListaAttiByListaEventiPNRequest">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="listaEventiPN" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetListaAttiByListaEventiPNRequest" nillable="true" type="tns:PUC_GetListaAttiByListaEventiPNRequest" />
+  <xs:complexType name="PUC_GetListaAttiByListaEventiPNResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSIcona20CLL.PUCEntities" minOccurs="0" name="atti" nillable="true" type="q3:ArrayOfPUC_DettaglioAttoOpponibile" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetListaAttiByListaEventiPNResponse" nillable="true" type="tns:PUC_GetListaAttiByListaEventiPNResponse" />
+  <xs:complexType name="PUC_AttoOpponibile">
+    <xs:sequence>
+      <xs:element name="contentType" nillable="true" type="xs:string" />
+      <xs:element name="identificativo" nillable="true" type="xs:string" />
+      <xs:element name="nomefile" nillable="true" type="xs:string" />
+      <xs:element name="tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_AttoOpponibile" nillable="true" type="tns:PUC_AttoOpponibile" />
+  <xs:complexType name="PUC_GetDettaglioAttoPNRequest">
+    <xs:sequence>
+      <xs:element name="identificativo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetDettaglioAttoPNRequest" nillable="true" type="tns:PUC_GetDettaglioAttoPNRequest" />
+  <xs:complexType name="PUC_GetDettaglioAttoPNResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSIcona20CLL.PUCEntities" minOccurs="0" name="atto" nillable="true" type="q4:PUC_DettaglioAttoOpponibileExt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetDettaglioAttoPNResponse" nillable="true" type="tns:PUC_GetDettaglioAttoPNResponse" />
+  <xs:complexType name="PUC_GetDettaglioComunicazioniPNRequest">
+    <xs:sequence>
+      <xs:element name="listaComunicazioni" nillable="true" type="tns:ArrayOfPUC_ComunicazioneChiaveGestionale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetDettaglioComunicazioniPNRequest" nillable="true" type="tns:PUC_GetDettaglioComunicazioniPNRequest" />
+  <xs:complexType name="PUC_GetDettaglioComunicazioniPNResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="listaDettaglioComunicazioni" nillable="true" type="tns:ArrayOfPUC_DettaglioComunicazionePN" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetDettaglioComunicazioniPNResponse" nillable="true" type="tns:PUC_GetDettaglioComunicazioniPNResponse" />
+  <xs:complexType name="ArrayOfPUC_DettaglioComunicazionePN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_DettaglioComunicazionePN" nillable="true" type="tns:PUC_DettaglioComunicazionePN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_DettaglioComunicazionePN" nillable="true" type="tns:ArrayOfPUC_DettaglioComunicazionePN" />
+  <xs:complexType name="PUC_DettaglioComunicazionePN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IUN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="allegati" nillable="true" type="tns:ArrayOfPUC_Allegato" />
+      <xs:element minOccurs="0" name="dataInserimento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataInvio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataUltimaModifica" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dsErroreInvio" nillable="true" type="xs:string" />
+      <xs:element name="listaDestinatari" nillable="true" type="tns:ArrayOfPUC_oDestinatarioPN" />
+      <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string" />
+      <xs:element name="origine" nillable="true" type="tns:PUC_OrigineComunicazione" />
+      <xs:element minOccurs="0" name="riferimentoMessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="segnatura" nillable="true" type="xs:string" />
+      <xs:element name="stato" nillable="true" type="tns:PUC_oStatoResponse" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WSIcona20CLL.Enumeration.PUC" name="tipoCanale" type="q5:PUC_EnTipoCanaleComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_DettaglioComunicazionePN" nillable="true" type="tns:PUC_DettaglioComunicazionePN" />
+  <xs:complexType name="ArrayOfPUC_oDestinatarioPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_oDestinatarioPN" nillable="true" type="tns:PUC_oDestinatarioPN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_oDestinatarioPN" nillable="true" type="tns:ArrayOfPUC_oDestinatarioPN" />
+  <xs:complexType name="PUC_oDestinatarioPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="delegati" nillable="true" type="tns:ArrayOfPUC_Delegato" />
+      <xs:element minOccurs="0" name="domiciliDigitali" nillable="true" type="tns:ArrayOfPUC_oDomicilioDigitale" />
+      <xs:element minOccurs="0" name="indirizziFisici" nillable="true" type="tns:ArrayOfPUC_oIndirizzoFisico" />
+      <xs:element name="pagamento" nillable="true" type="tns:PUC_oPagamento" />
+      <xs:element name="stato" nillable="true" type="tns:PUC_oStatoResponse" />
+      <xs:element name="tipo" type="tns:PUC_EnTipoDestinatario" />
+      <xs:element name="tipoSoggetto" type="tns:PUC_EnTipoSoggetto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_oDestinatarioPN" nillable="true" type="tns:PUC_oDestinatarioPN" />
+  <xs:complexType name="ArrayOfPUC_oDomicilioDigitale">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_oDomicilioDigitale" nillable="true" type="tns:PUC_oDomicilioDigitale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_oDomicilioDigitale" nillable="true" type="tns:ArrayOfPUC_oDomicilioDigitale" />
+  <xs:complexType name="ArrayOfPUC_oIndirizzoFisico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_oIndirizzoFisico" nillable="true" type="tns:PUC_oIndirizzoFisico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_oIndirizzoFisico" nillable="true" type="tns:ArrayOfPUC_oIndirizzoFisico" />
+  <xs:complexType name="PUC_oPagamento">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_PagamentoBase">
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long" />
+          <xs:element minOccurs="0" name="documentiPagamenti" nillable="true" type="tns:ArrayOfPUC_oDocumentoPagamento" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_oPagamento" nillable="true" type="tns:PUC_oPagamento" />
+  <xs:complexType name="ArrayOfPUC_oDocumentoPagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_oDocumentoPagamento" nillable="true" type="tns:PUC_oDocumentoPagamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_oDocumentoPagamento" nillable="true" type="tns:ArrayOfPUC_oDocumentoPagamento" />
+  <xs:complexType name="PUC_oDocumentoPagamento">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_DocumentoPagamento">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_oDocumentoPagamento" nillable="true" type="tns:PUC_oDocumentoPagamento" />
+  <xs:complexType name="PUC_oStatoResponse">
+    <xs:sequence>
+      <xs:element name="codiceEventoTimeLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceStatoVariazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="denomiazioneStatoVariazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizioneEventoTimeLine" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_oStatoResponse" nillable="true" type="tns:PUC_oStatoResponse" />
+  <xs:complexType name="PUC_OrigineComunicazione">
+    <xs:sequence>
+      <xs:element name="cdApplicazione" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceSede4" nillable="true" type="xs:string" />
+      <xs:element name="denominazioneApplicazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzoEmailMittente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_OrigineComunicazione" nillable="true" type="tns:PUC_OrigineComunicazione" />
+  <xs:complexType name="PUC_GetAnagraficaEventiRequest">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WSIcona20CLL.Enumeration.PUC" name="tipoCanale" type="q6:PUC_EnTipoCanaleComunicazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetAnagraficaEventiRequest" nillable="true" type="tns:PUC_GetAnagraficaEventiRequest" />
+  <xs:complexType name="PUC_GetAnagraficaEventiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="anagraficaEventi" nillable="true" type="tns:ArrayOfPUC_AnagraficaEvento" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetAnagraficaEventiResponse" nillable="true" type="tns:PUC_GetAnagraficaEventiResponse" />
+  <xs:complexType name="ArrayOfPUC_AnagraficaEvento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_AnagraficaEvento" nillable="true" type="tns:PUC_AnagraficaEvento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_AnagraficaEvento" nillable="true" type="tns:ArrayOfPUC_AnagraficaEvento" />
+  <xs:complexType name="PUC_AnagraficaEvento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdTipoEvento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceEventoTimeLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceStatoVariazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizioneEventoTimeLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizioneStatoVariazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_AnagraficaEvento" nillable="true" type="tns:PUC_AnagraficaEvento" />
+  <xs:complexType name="PUC_GetAnagraficaStatiAggregatiByCodiceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codice" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GetAnagraficaStatiAggregatiByCodiceRequest" nillable="true" type="tns:PUC_GetAnagraficaStatiAggregatiByCodiceRequest" />
+  <xs:complexType name="PUC_GetAnagraficaStatiAggregatiResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="anagraficaStatiAggregati" nillable="true" type="tns:ArrayOfPUC_AnagraficaStatoAggregato" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GetAnagraficaStatiAggregatiResponse" nillable="true" type="tns:PUC_GetAnagraficaStatiAggregatiResponse" />
+  <xs:complexType name="ArrayOfPUC_AnagraficaStatoAggregato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_AnagraficaStatoAggregato" nillable="true" type="tns:PUC_AnagraficaStatoAggregato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_AnagraficaStatoAggregato" nillable="true" type="tns:ArrayOfPUC_AnagraficaStatoAggregato" />
+  <xs:complexType name="PUC_AnagraficaStatoAggregato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_AnagraficaStatoAggregato" nillable="true" type="tns:PUC_AnagraficaStatoAggregato" />
+  <xs:complexType name="PUC_GINPSetNotificaStatoRequest">
+    <xs:sequence>
+      <xs:element name="idEmpotenceToken" nillable="true" type="xs:string" />
+      <xs:element name="notificheStati" nillable="true" type="tns:ArrayOfPUC_NotificaStato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GINPSetNotificaStatoRequest" nillable="true" type="tns:PUC_GINPSetNotificaStatoRequest" />
+  <xs:complexType name="ArrayOfPUC_NotificaStato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_NotificaStato" nillable="true" type="tns:PUC_NotificaStato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_NotificaStato" nillable="true" type="tns:ArrayOfPUC_NotificaStato" />
+  <xs:complexType name="PUC_NotificaStato">
+    <xs:sequence>
+      <xs:element name="comunicazione" nillable="true" type="tns:PUC_ComunicazioneNotifica" />
+      <xs:element name="stati" nillable="true" type="tns:ArrayOfPUC_StatoNotifica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_NotificaStato" nillable="true" type="tns:PUC_NotificaStato" />
+  <xs:complexType name="PUC_ComunicazioneNotifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IUN" nillable="true" type="xs:string" />
+      <xs:element name="chiaveGestionale" nillable="true" type="xs:string" />
+      <xs:element name="segnatura" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_ComunicazioneNotifica" nillable="true" type="tns:PUC_ComunicazioneNotifica" />
+  <xs:complexType name="ArrayOfPUC_StatoNotifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_StatoNotifica" nillable="true" type="tns:PUC_StatoNotifica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_StatoNotifica" nillable="true" type="tns:ArrayOfPUC_StatoNotifica" />
+  <xs:complexType name="PUC_StatoNotifica">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Stato">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WSIcona20CLL.PUCEntities" minOccurs="0" name="datiNotificaDestinatario" nillable="true" type="q7:PUC_NotificaDestinatario" />
+          <xs:element minOccurs="0" name="messaggi" nillable="true" type="tns:ArrayOfPUC_MessaggioNotifica" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_StatoNotifica" nillable="true" type="tns:PUC_StatoNotifica" />
+  <xs:complexType name="PUC_Stato">
+    <xs:sequence>
+      <xs:element name="data" nillable="true" type="xs:string" />
+      <xs:element name="idStatoNotifica" nillable="true" type="xs:string" />
+      <xs:element name="stato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statoAggregato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_Stato" nillable="true" type="tns:PUC_Stato" />
+  <xs:complexType name="ArrayOfDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataItem" nillable="true" type="tns:DataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataItem" nillable="true" type="tns:ArrayOfDataItem" />
+  <xs:complexType name="DataItem">
+    <xs:sequence>
+      <xs:element name="key" nillable="true" type="xs:string" />
+      <xs:element name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataItem" nillable="true" type="tns:DataItem" />
+  <xs:complexType name="PUC_DomicilioDigitaleExt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_DomicilioDigitale">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="causaMancataConsegna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="codiceDettaglioConsegna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="codiceMessagioIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dataInvio" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="dataNotifica" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="dataUltimoTentativo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="numeroTentativi" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="numeroTentativiInvio" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="sorgenteIndirizzoDigitale" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_DomicilioDigitaleExt" nillable="true" type="tns:PUC_DomicilioDigitaleExt" />
+  <xs:complexType name="PUC_IndirizzoFisicoExt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_IndirizzoFisico">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="causaMancataConsegna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="codiceDettaglioConsegna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="codiceLetteraRaccomandata" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="livelloServizio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="motivazioneFallimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoProdotto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_IndirizzoFisicoExt" nillable="true" type="tns:PUC_IndirizzoFisicoExt" />
+  <xs:complexType name="ArrayOfPUC_MessaggioNotifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_MessaggioNotifica" nillable="true" type="tns:PUC_MessaggioNotifica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_MessaggioNotifica" nillable="true" type="tns:ArrayOfPUC_MessaggioNotifica" />
+  <xs:complexType name="PUC_MessaggioNotifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_MessaggioNotifica" nillable="true" type="tns:PUC_MessaggioNotifica" />
+  <xs:complexType name="PUC_GINPSetNotificaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_ResponsePN">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WSIcona20CLL.PUCEntities" minOccurs="0" name="esitiNotifica" nillable="true" type="q8:ArrayOfPUC_EsitoNotifica" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_GINPSetNotificaResponse" nillable="true" type="tns:PUC_GINPSetNotificaResponse" />
+  <xs:complexType name="PUC_ResponsePN">
+    <xs:sequence>
+      <xs:element name="cdEsito" type="tns:PUC_EnEsitoPN" />
+      <xs:element minOccurs="0" name="dsErorre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_ResponsePN" nillable="true" type="tns:PUC_ResponsePN" />
+  <xs:simpleType name="PUC_EnEsitoPN">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PUC_EnEsitoPN" nillable="true" type="tns:PUC_EnEsitoPN" />
+  <xs:complexType name="PUC_GINPSetNotificaAttoRequest">
+    <xs:sequence>
+      <xs:element name="idEmpotenceToken" nillable="true" type="xs:string" />
+      <xs:element name="notificheAtti" nillable="true" type="tns:ArrayOfPUC_NotificaAtto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_GINPSetNotificaAttoRequest" nillable="true" type="tns:PUC_GINPSetNotificaAttoRequest" />
+  <xs:complexType name="ArrayOfPUC_NotificaAtto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PUC_NotificaAtto" nillable="true" type="tns:PUC_NotificaAtto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPUC_NotificaAtto" nillable="true" type="tns:ArrayOfPUC_NotificaAtto" />
+  <xs:complexType name="PUC_NotificaAtto">
+    <xs:sequence>
+      <xs:element name="comunicazione" nillable="true" type="tns:PUC_ComunicazioneNotifica" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WSIcona20CLL.PUCEntities" name="statiAtti" nillable="true" type="q9:ArrayOfPUC_AttoNotfica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUC_NotificaAtto" nillable="true" type="tns:PUC_NotificaAtto" />
+  <xs:complexType name="PUC_AttoOpponibileExt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_AttoOpponibile">
+        <xs:sequence>
+          <xs:element name="base64" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_AttoOpponibileExt" nillable="true" type="tns:PUC_AttoOpponibileExt" />
+  <xs:complexType name="PUC_StatoAttoNotifica">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PUC_Stato">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cfDestinatario" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PUC_StatoAttoNotifica" nillable="true" type="tns:PUC_StatoAttoNotifica" />
+</xsd:schema>

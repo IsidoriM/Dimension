@@ -1,0 +1,7 @@
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ClassLibrary1\bin\Debug\ElaboraOperazioniMassive.Servizi.dll.config
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ClassLibrary1\bin\Debug\ElaboraOperazioniMassive.Servizi.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ClassLibrary1\bin\Debug\ElaboraOperazioniMassive.Servizi.pdb
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ClassLibrary1\obj\Debug\ElaboraOperazioniMassive.Servizi.csproj.CoreCompileInputs.cache
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ClassLibrary1\obj\Debug\ElaboraOperazioniMassive.Servizi.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ClassLibrary1\obj\Debug\ElaboraOperazioniMassive.Servizi.pdb
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ClassLibrary1\obj\Debug\ElaboraOperazioniMassive.Servizi.csprojAssemblyReference.cache

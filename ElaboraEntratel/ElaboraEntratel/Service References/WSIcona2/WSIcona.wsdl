@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://soa.inps.it/WS01317" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://soa.inps.it/WS01317" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="WSIcona.xsd1.xsd" namespace="http://soa.inps.it/WS01317" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWSIcona20_AmbitoDettaglioComunicazione_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:AmbitoDettaglioComunicazione" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_AmbitoDettaglioComunicazione_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:AmbitoDettaglioComunicazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_AmbitoEstrazioneAllegato_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:AmbitoEstrazioneAllegato" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_AmbitoEstrazioneAllegato_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:AmbitoEstrazioneAllegatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_AmbitoEstrazioneRicevutaPEC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:AmbitoEstrazioneRicevutaPEC" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_AmbitoEstrazioneRicevutaPEC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:AmbitoEstrazioneRicevutaPECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_CheckContatti_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:CheckContatti" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_CheckContatti_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:CheckContattiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_CheckIndirizzoPEC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:CheckIndirizzoPEC" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_CheckIndirizzoPEC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:CheckIndirizzoPECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_CheckListaIndirizziPEC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:CheckListaIndirizziPEC" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_CheckListaIndirizziPEC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:CheckListaIndirizziPECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetAllegati_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetAllegati" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetAllegati_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetAllegatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetAllegatiGlobaleArchivi_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetAllegatiGlobaleArchivi" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetAllegatiGlobaleArchivi_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetAllegatiGlobaleArchiviResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetContatti_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetContatti" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetContatti_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetContattiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetDettaglio_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetDettaglio" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetDettaglio_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetDettaglioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetDettaglioExt_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetDettaglioExt" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetDettaglioExt_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetDettaglioExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetDettaglioGlobalearchivi_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetDettaglioGlobalearchivi" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetDettaglioGlobalearchivi_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetDettaglioGlobalearchiviResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetLista_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetLista" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetLista_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetListaAnniArchiviati_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetListaAnniArchiviati" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetListaAnniArchiviati_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetListaAnniArchiviatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetListaExt_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetListaExt" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetListaExt_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetListaExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetListaGlobaleArchivi_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetListaGlobaleArchivi" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetListaGlobaleArchivi_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetListaGlobaleArchiviResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetRicevutePec_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetRicevutePec" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetRicevutePec_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetRicevutePecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetRicevutePecDestinatarioByKeyGest_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetRicevutePecDestinatarioByKeyGest" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetRicevutePecDestinatarioByKeyGest_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetRicevutePecDestinatarioByKeyGestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetRicevutePecDestinatarioByMsgID_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetRicevutePecDestinatarioByMsgID" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_GetRicevutePecDestinatarioByMsgID_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:GetRicevutePecDestinatarioByMsgIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_InvioEmailComunicazione_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:InvioEmailComunicazione" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_InvioEmailComunicazione_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:InvioEmailComunicazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_InvioEmailExt_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:InvioEmailExt" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_InvioEmailExt_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:InvioEmailExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckComunicazioniPECByChiaveGestionale_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckComunicazioniPECByChiaveGestionale" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckComunicazioniPECByChiaveGestionale_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckComunicazioniPECByChiaveGestionaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckComunicazioniPECByMessageID_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckComunicazioniPECByMessageID" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckComunicazioniPECByMessageID_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckComunicazioniPECByMessageIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckRicevutePECByChiaveGestionale_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckRicevutePECByChiaveGestionale" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckRicevutePECByChiaveGestionale_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckRicevutePECByChiaveGestionaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckRicevutePECByMessasgeID_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckRicevutePECByMessasgeID" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_CheckRicevutePECByMessasgeID_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_CheckRicevutePECByMessasgeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetAnagraficaEventi_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetAnagraficaEventi" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetAnagraficaEventi_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetAnagraficaEventiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetAnagraficaStatiAggregatiByCodice_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetAnagraficaStatiAggregatiByCodice" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetAnagraficaStatiAggregatiByCodice_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetAnagraficaStatiAggregatiByCodiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioAttoPN_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioAttoPN" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioAttoPN_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioAttoPNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioByChiaveGestionale_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioByChiaveGestionale" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioByChiaveGestionale_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioByChiaveGestionaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioByMessageID_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioByMessageID" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioByMessageID_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioByMessageIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioComunicazioniPN_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioComunicazioniPN" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetDettaglioComunicazioniPN_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetDettaglioComunicazioniPNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetLista_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetLista" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetLista_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetListaAttiByListaEventiPN_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetListaAttiByListaEventiPN" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetListaAttiByListaEventiPN_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetListaAttiByListaEventiPNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetRicevutePECByChiaveGestionale_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetRicevutePECByChiaveGestionale" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetRicevutePECByChiaveGestionale_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetRicevutePECByChiaveGestionaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetRicevutePECByMessageID_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetRicevutePECByMessageID" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GetRicevutePECByMessageID_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GetRicevutePECByMessageIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GINPSetNotificaAtto_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GINPSetNotificaAtto" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GINPSetNotificaAtto_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GINPSetNotificaAttoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GINPSetNotificaStato_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GINPSetNotificaStato" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_GINPSetNotificaStato_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_GINPSetNotificaStatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_InvioComunicazione_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_InvioComunicazione" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_InvioComunicazione_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_InvioComunicazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_InvioComunicazioneByPN_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_InvioComunicazioneByPN" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_PUC_InvioComunicazioneByPN_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:PUC_InvioComunicazioneByPNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_RichiediVerificaPEC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:RichiediVerificaPEC" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_RichiediVerificaPEC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:RichiediVerificaPECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_VerificaStatoPEC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:VerificaStatoPEC" />
+  </wsdl:message>
+  <wsdl:message name="IWSIcona20_VerificaStatoPEC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01317" name="parameters" element="xsns:VerificaStatoPECResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWSIcona20">
+    <wsdl:operation name="AmbitoDettaglioComunicazione">
+      <wsdl:input name="AmbitoDettaglioComunicazioneRequest" message="ns0:IWSIcona20_AmbitoDettaglioComunicazione_InputMessage" />
+      <wsdl:output name="AmbitoDettaglioComunicazioneResponse" message="ns0:IWSIcona20_AmbitoDettaglioComunicazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AmbitoEstrazioneAllegato">
+      <wsdl:input name="AmbitoEstrazioneAllegatoRequest" message="ns0:IWSIcona20_AmbitoEstrazioneAllegato_InputMessage" />
+      <wsdl:output name="AmbitoEstrazioneAllegatoResponse" message="ns0:IWSIcona20_AmbitoEstrazioneAllegato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AmbitoEstrazioneRicevutaPEC">
+      <wsdl:input name="AmbitoEstrazioneRicevutaPECRequest" message="ns0:IWSIcona20_AmbitoEstrazioneRicevutaPEC_InputMessage" />
+      <wsdl:output name="AmbitoEstrazioneRicevutaPECResponse" message="ns0:IWSIcona20_AmbitoEstrazioneRicevutaPEC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckContatti">
+      <wsdl:input name="CheckContattiRequest" message="ns0:IWSIcona20_CheckContatti_InputMessage" />
+      <wsdl:output name="CheckContattiResponse" message="ns0:IWSIcona20_CheckContatti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndirizzoPEC">
+      <wsdl:input name="CheckIndirizzoPECRequest" message="ns0:IWSIcona20_CheckIndirizzoPEC_InputMessage" />
+      <wsdl:output name="CheckIndirizzoPECResponse" message="ns0:IWSIcona20_CheckIndirizzoPEC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckListaIndirizziPEC">
+      <wsdl:input name="CheckListaIndirizziPECRequest" message="ns0:IWSIcona20_CheckListaIndirizziPEC_InputMessage" />
+      <wsdl:output name="CheckListaIndirizziPECResponse" message="ns0:IWSIcona20_CheckListaIndirizziPEC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllegati">
+      <wsdl:input name="GetAllegatiRequest" message="ns0:IWSIcona20_GetAllegati_InputMessage" />
+      <wsdl:output name="GetAllegatiResponse" message="ns0:IWSIcona20_GetAllegati_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllegatiGlobaleArchivi">
+      <wsdl:input name="GetAllegatiGlobaleArchiviRequest" message="ns0:IWSIcona20_GetAllegatiGlobaleArchivi_InputMessage" />
+      <wsdl:output name="GetAllegatiGlobaleArchiviResponse" message="ns0:IWSIcona20_GetAllegatiGlobaleArchivi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContatti">
+      <wsdl:input name="GetContattiRequest" message="ns0:IWSIcona20_GetContatti_InputMessage" />
+      <wsdl:output name="GetContattiResponse" message="ns0:IWSIcona20_GetContatti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglio">
+      <wsdl:input name="GetDettaglioRequest" message="ns0:IWSIcona20_GetDettaglio_InputMessage" />
+      <wsdl:output name="GetDettaglioResponse" message="ns0:IWSIcona20_GetDettaglio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioExt">
+      <wsdl:input name="GetDettaglioExtRequest" message="ns0:IWSIcona20_GetDettaglioExt_InputMessage" />
+      <wsdl:output name="GetDettaglioExtResponse" message="ns0:IWSIcona20_GetDettaglioExt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioGlobalearchivi">
+      <wsdl:input name="GetDettaglioGlobalearchiviRequest" message="ns0:IWSIcona20_GetDettaglioGlobalearchivi_InputMessage" />
+      <wsdl:output name="GetDettaglioGlobalearchiviResponse" message="ns0:IWSIcona20_GetDettaglioGlobalearchivi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLista">
+      <wsdl:input name="GetListaRequest" message="ns0:IWSIcona20_GetLista_InputMessage" />
+      <wsdl:output name="GetListaResponse" message="ns0:IWSIcona20_GetLista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaAnniArchiviati">
+      <wsdl:input name="GetListaAnniArchiviatiRequest" message="ns0:IWSIcona20_GetListaAnniArchiviati_InputMessage" />
+      <wsdl:output name="GetListaAnniArchiviatiResponse" message="ns0:IWSIcona20_GetListaAnniArchiviati_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaExt">
+      <wsdl:input name="GetListaExtRequest" message="ns0:IWSIcona20_GetListaExt_InputMessage" />
+      <wsdl:output name="GetListaExtResponse" message="ns0:IWSIcona20_GetListaExt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaGlobaleArchivi">
+      <wsdl:input name="GetListaGlobaleArchiviRequest" message="ns0:IWSIcona20_GetListaGlobaleArchivi_InputMessage" />
+      <wsdl:output name="GetListaGlobaleArchiviResponse" message="ns0:IWSIcona20_GetListaGlobaleArchivi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRicevutePec">
+      <wsdl:input name="GetRicevutePecRequest" message="ns0:IWSIcona20_GetRicevutePec_InputMessage" />
+      <wsdl:output name="GetRicevutePecResponse" message="ns0:IWSIcona20_GetRicevutePec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRicevutePecDestinatarioByKeyGest">
+      <wsdl:input name="GetRicevutePecDestinatarioByKeyGestRequest" message="ns0:IWSIcona20_GetRicevutePecDestinatarioByKeyGest_InputMessage" />
+      <wsdl:output name="GetRicevutePecDestinatarioByKeyGestResponse" message="ns0:IWSIcona20_GetRicevutePecDestinatarioByKeyGest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRicevutePecDestinatarioByMsgID">
+      <wsdl:input name="GetRicevutePecDestinatarioByMsgIDRequest" message="ns0:IWSIcona20_GetRicevutePecDestinatarioByMsgID_InputMessage" />
+      <wsdl:output name="GetRicevutePecDestinatarioByMsgIDResponse" message="ns0:IWSIcona20_GetRicevutePecDestinatarioByMsgID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InvioEmailComunicazione">
+      <wsdl:input name="InvioEmailComunicazioneRequest" message="ns0:IWSIcona20_InvioEmailComunicazione_InputMessage" />
+      <wsdl:output name="InvioEmailComunicazioneResponse" message="ns0:IWSIcona20_InvioEmailComunicazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InvioEmailExt">
+      <wsdl:input name="InvioEmailExtRequest" message="ns0:IWSIcona20_InvioEmailExt_InputMessage" />
+      <wsdl:output name="InvioEmailExtResponse" message="ns0:IWSIcona20_InvioEmailExt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckComunicazioniPECByChiaveGestionale">
+      <wsdl:input name="PUC_CheckComunicazioniPECByChiaveGestionaleRequest" message="ns0:IWSIcona20_PUC_CheckComunicazioniPECByChiaveGestionale_InputMessage" />
+      <wsdl:output name="PUC_CheckComunicazioniPECByChiaveGestionaleResponse" message="ns0:IWSIcona20_PUC_CheckComunicazioniPECByChiaveGestionale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckComunicazioniPECByMessageID">
+      <wsdl:input name="PUC_CheckComunicazioniPECByMessageIDRequest" message="ns0:IWSIcona20_PUC_CheckComunicazioniPECByMessageID_InputMessage" />
+      <wsdl:output name="PUC_CheckComunicazioniPECByMessageIDResponse" message="ns0:IWSIcona20_PUC_CheckComunicazioniPECByMessageID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckRicevutePECByChiaveGestionale">
+      <wsdl:input name="PUC_CheckRicevutePECByChiaveGestionaleRequest" message="ns0:IWSIcona20_PUC_CheckRicevutePECByChiaveGestionale_InputMessage" />
+      <wsdl:output name="PUC_CheckRicevutePECByChiaveGestionaleResponse" message="ns0:IWSIcona20_PUC_CheckRicevutePECByChiaveGestionale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckRicevutePECByMessasgeID">
+      <wsdl:input name="PUC_CheckRicevutePECByMessasgeIDRequest" message="ns0:IWSIcona20_PUC_CheckRicevutePECByMessasgeID_InputMessage" />
+      <wsdl:output name="PUC_CheckRicevutePECByMessasgeIDResponse" message="ns0:IWSIcona20_PUC_CheckRicevutePECByMessasgeID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale">
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleRequest" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale_InputMessage" />
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleResponse" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID">
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDRequest" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID_InputMessage" />
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDResponse" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali">
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliRequest" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali_InputMessage" />
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliResponse" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId">
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdRequest" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId_InputMessage" />
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdResponse" message="ns0:IWSIcona20_PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetAnagraficaEventi">
+      <wsdl:input name="PUC_GetAnagraficaEventiRequest" message="ns0:IWSIcona20_PUC_GetAnagraficaEventi_InputMessage" />
+      <wsdl:output name="PUC_GetAnagraficaEventiResponse" message="ns0:IWSIcona20_PUC_GetAnagraficaEventi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetAnagraficaStatiAggregatiByCodice">
+      <wsdl:input name="PUC_GetAnagraficaStatiAggregatiByCodiceRequest" message="ns0:IWSIcona20_PUC_GetAnagraficaStatiAggregatiByCodice_InputMessage" />
+      <wsdl:output name="PUC_GetAnagraficaStatiAggregatiByCodiceResponse" message="ns0:IWSIcona20_PUC_GetAnagraficaStatiAggregatiByCodice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioAttoPN">
+      <wsdl:input name="PUC_GetDettaglioAttoPNRequest" message="ns0:IWSIcona20_PUC_GetDettaglioAttoPN_InputMessage" />
+      <wsdl:output name="PUC_GetDettaglioAttoPNResponse" message="ns0:IWSIcona20_PUC_GetDettaglioAttoPN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioByChiaveGestionale">
+      <wsdl:input name="PUC_GetDettaglioByChiaveGestionaleRequest" message="ns0:IWSIcona20_PUC_GetDettaglioByChiaveGestionale_InputMessage" />
+      <wsdl:output name="PUC_GetDettaglioByChiaveGestionaleResponse" message="ns0:IWSIcona20_PUC_GetDettaglioByChiaveGestionale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioByMessageID">
+      <wsdl:input name="PUC_GetDettaglioByMessageIDRequest" message="ns0:IWSIcona20_PUC_GetDettaglioByMessageID_InputMessage" />
+      <wsdl:output name="PUC_GetDettaglioByMessageIDResponse" message="ns0:IWSIcona20_PUC_GetDettaglioByMessageID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioComunicazioniPN">
+      <wsdl:input name="PUC_GetDettaglioComunicazioniPNRequest" message="ns0:IWSIcona20_PUC_GetDettaglioComunicazioniPN_InputMessage" />
+      <wsdl:output name="PUC_GetDettaglioComunicazioniPNResponse" message="ns0:IWSIcona20_PUC_GetDettaglioComunicazioniPN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetLista">
+      <wsdl:input name="PUC_GetListaRequest" message="ns0:IWSIcona20_PUC_GetLista_InputMessage" />
+      <wsdl:output name="PUC_GetListaResponse" message="ns0:IWSIcona20_PUC_GetLista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetListaAttiByListaEventiPN">
+      <wsdl:input name="PUC_GetListaAttiByListaEventiPNRequest" message="ns0:IWSIcona20_PUC_GetListaAttiByListaEventiPN_InputMessage" />
+      <wsdl:output name="PUC_GetListaAttiByListaEventiPNResponse" message="ns0:IWSIcona20_PUC_GetListaAttiByListaEventiPN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetRicevutePECByChiaveGestionale">
+      <wsdl:input name="PUC_GetRicevutePECByChiaveGestionaleRequest" message="ns0:IWSIcona20_PUC_GetRicevutePECByChiaveGestionale_InputMessage" />
+      <wsdl:output name="PUC_GetRicevutePECByChiaveGestionaleResponse" message="ns0:IWSIcona20_PUC_GetRicevutePECByChiaveGestionale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetRicevutePECByMessageID">
+      <wsdl:input name="PUC_GetRicevutePECByMessageIDRequest" message="ns0:IWSIcona20_PUC_GetRicevutePECByMessageID_InputMessage" />
+      <wsdl:output name="PUC_GetRicevutePECByMessageIDResponse" message="ns0:IWSIcona20_PUC_GetRicevutePECByMessageID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GINPSetNotificaAtto">
+      <wsdl:input name="PUC_GINPSetNotificaAttoRequest" message="ns0:IWSIcona20_PUC_GINPSetNotificaAtto_InputMessage" />
+      <wsdl:output name="PUC_GINPSetNotificaAttoResponse" message="ns0:IWSIcona20_PUC_GINPSetNotificaAtto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GINPSetNotificaStato">
+      <wsdl:input name="PUC_GINPSetNotificaStatoRequest" message="ns0:IWSIcona20_PUC_GINPSetNotificaStato_InputMessage" />
+      <wsdl:output name="PUC_GINPSetNotificaStatoResponse" message="ns0:IWSIcona20_PUC_GINPSetNotificaStato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_InvioComunicazione">
+      <wsdl:input name="PUC_InvioComunicazioneRequest" message="ns0:IWSIcona20_PUC_InvioComunicazione_InputMessage" />
+      <wsdl:output name="PUC_InvioComunicazioneResponse" message="ns0:IWSIcona20_PUC_InvioComunicazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PUC_InvioComunicazioneByPN">
+      <wsdl:input name="PUC_InvioComunicazioneByPNRequest" message="ns0:IWSIcona20_PUC_InvioComunicazioneByPN_InputMessage" />
+      <wsdl:output name="PUC_InvioComunicazioneByPNResponse" message="ns0:IWSIcona20_PUC_InvioComunicazioneByPN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiediVerificaPEC">
+      <wsdl:input name="RichiediVerificaPECRequest" message="ns0:IWSIcona20_RichiediVerificaPEC_InputMessage" />
+      <wsdl:output name="RichiediVerificaPECResponse" message="ns0:IWSIcona20_RichiediVerificaPEC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaStatoPEC">
+      <wsdl:input name="VerificaStatoPECRequest" message="ns0:IWSIcona20_VerificaStatoPEC_InputMessage" />
+      <wsdl:output name="VerificaStatoPECResponse" message="ns0:IWSIcona20_VerificaStatoPEC_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BASICHTTP_Binding" type="ns0:IWSIcona20">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AmbitoDettaglioComunicazione">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/AmbitoDettaglioComunicazione" style="document" />
+      <wsdl:input name="AmbitoDettaglioComunicazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AmbitoDettaglioComunicazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmbitoEstrazioneAllegato">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/AmbitoEstrazioneAllegato" style="document" />
+      <wsdl:input name="AmbitoEstrazioneAllegatoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AmbitoEstrazioneAllegatoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmbitoEstrazioneRicevutaPEC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/AmbitoEstrazioneRicevutaPEC" style="document" />
+      <wsdl:input name="AmbitoEstrazioneRicevutaPECRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AmbitoEstrazioneRicevutaPECResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckContatti">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/CheckContatti" style="document" />
+      <wsdl:input name="CheckContattiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CheckContattiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndirizzoPEC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/CheckIndirizzoPEC" style="document" />
+      <wsdl:input name="CheckIndirizzoPECRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CheckIndirizzoPECResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckListaIndirizziPEC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/CheckListaIndirizziPEC" style="document" />
+      <wsdl:input name="CheckListaIndirizziPECRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CheckListaIndirizziPECResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllegati">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetAllegati" style="document" />
+      <wsdl:input name="GetAllegatiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAllegatiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllegatiGlobaleArchivi">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetAllegatiGlobaleArchivi" style="document" />
+      <wsdl:input name="GetAllegatiGlobaleArchiviRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAllegatiGlobaleArchiviResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContatti">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetContatti" style="document" />
+      <wsdl:input name="GetContattiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetContattiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglio">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetDettaglio" style="document" />
+      <wsdl:input name="GetDettaglioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDettaglioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioExt">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetDettaglioExt" style="document" />
+      <wsdl:input name="GetDettaglioExtRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDettaglioExtResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioGlobalearchivi">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetDettaglioGlobalearchivi" style="document" />
+      <wsdl:input name="GetDettaglioGlobalearchiviRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDettaglioGlobalearchiviResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLista">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetLista" style="document" />
+      <wsdl:input name="GetListaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetListaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaAnniArchiviati">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetListaAnniArchiviati" style="document" />
+      <wsdl:input name="GetListaAnniArchiviatiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetListaAnniArchiviatiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaExt">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetListaExt" style="document" />
+      <wsdl:input name="GetListaExtRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetListaExtResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaGlobaleArchivi">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetListaGlobaleArchivi" style="document" />
+      <wsdl:input name="GetListaGlobaleArchiviRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetListaGlobaleArchiviResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRicevutePec">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetRicevutePec" style="document" />
+      <wsdl:input name="GetRicevutePecRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRicevutePecResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRicevutePecDestinatarioByKeyGest">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetRicevutePecDestinatarioByKeyGest" style="document" />
+      <wsdl:input name="GetRicevutePecDestinatarioByKeyGestRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRicevutePecDestinatarioByKeyGestResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRicevutePecDestinatarioByMsgID">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/GetRicevutePecDestinatarioByMsgID" style="document" />
+      <wsdl:input name="GetRicevutePecDestinatarioByMsgIDRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRicevutePecDestinatarioByMsgIDResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvioEmailComunicazione">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/InvioEmailComunicazione" style="document" />
+      <wsdl:input name="InvioEmailComunicazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InvioEmailComunicazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvioEmailExt">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/InvioEmailExt" style="document" />
+      <wsdl:input name="InvioEmailExtRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InvioEmailExtResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckComunicazioniPECByChiaveGestionale">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_CheckComunicazioniPECByChiaveGestionale" style="document" />
+      <wsdl:input name="PUC_CheckComunicazioniPECByChiaveGestionaleRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_CheckComunicazioniPECByChiaveGestionaleResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckComunicazioniPECByMessageID">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_CheckComunicazioniPECByMessageID" style="document" />
+      <wsdl:input name="PUC_CheckComunicazioniPECByMessageIDRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_CheckComunicazioniPECByMessageIDResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckRicevutePECByChiaveGestionale">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_CheckRicevutePECByChiaveGestionale" style="document" />
+      <wsdl:input name="PUC_CheckRicevutePECByChiaveGestionaleRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_CheckRicevutePECByChiaveGestionaleResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_CheckRicevutePECByMessasgeID">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_CheckRicevutePECByMessasgeID" style="document" />
+      <wsdl:input name="PUC_CheckRicevutePECByMessasgeIDRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_CheckRicevutePECByMessasgeIDResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale" style="document" />
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID" style="document" />
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali" style="document" />
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId" style="document" />
+      <wsdl:input name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetAnagraficaEventi">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetAnagraficaEventi" style="document" />
+      <wsdl:input name="PUC_GetAnagraficaEventiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetAnagraficaEventiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetAnagraficaStatiAggregatiByCodice">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetAnagraficaStatiAggregatiByCodice" style="document" />
+      <wsdl:input name="PUC_GetAnagraficaStatiAggregatiByCodiceRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetAnagraficaStatiAggregatiByCodiceResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioAttoPN">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetDettaglioAttoPN" style="document" />
+      <wsdl:input name="PUC_GetDettaglioAttoPNRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetDettaglioAttoPNResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioByChiaveGestionale">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetDettaglioByChiaveGestionale" style="document" />
+      <wsdl:input name="PUC_GetDettaglioByChiaveGestionaleRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetDettaglioByChiaveGestionaleResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioByMessageID">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetDettaglioByMessageID" style="document" />
+      <wsdl:input name="PUC_GetDettaglioByMessageIDRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetDettaglioByMessageIDResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetDettaglioComunicazioniPN">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetDettaglioComunicazioniPN" style="document" />
+      <wsdl:input name="PUC_GetDettaglioComunicazioniPNRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetDettaglioComunicazioniPNResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetLista">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetLista" style="document" />
+      <wsdl:input name="PUC_GetListaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetListaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetListaAttiByListaEventiPN">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetListaAttiByListaEventiPN" style="document" />
+      <wsdl:input name="PUC_GetListaAttiByListaEventiPNRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetListaAttiByListaEventiPNResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetRicevutePECByChiaveGestionale">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetRicevutePECByChiaveGestionale" style="document" />
+      <wsdl:input name="PUC_GetRicevutePECByChiaveGestionaleRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetRicevutePECByChiaveGestionaleResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GetRicevutePECByMessageID">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GetRicevutePECByMessageID" style="document" />
+      <wsdl:input name="PUC_GetRicevutePECByMessageIDRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GetRicevutePECByMessageIDResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GINPSetNotificaAtto">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GINPSetNotificaAtto" style="document" />
+      <wsdl:input name="PUC_GINPSetNotificaAttoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GINPSetNotificaAttoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_GINPSetNotificaStato">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_GINPSetNotificaStato" style="document" />
+      <wsdl:input name="PUC_GINPSetNotificaStatoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_GINPSetNotificaStatoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_InvioComunicazione">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_InvioComunicazione" style="document" />
+      <wsdl:input name="PUC_InvioComunicazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_InvioComunicazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PUC_InvioComunicazioneByPN">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/PUC_InvioComunicazioneByPN" style="document" />
+      <wsdl:input name="PUC_InvioComunicazioneByPNRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PUC_InvioComunicazioneByPNResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiediVerificaPEC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/RichiediVerificaPEC" style="document" />
+      <wsdl:input name="RichiediVerificaPECRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RichiediVerificaPECResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaStatoPEC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01317/IWSIcona20/VerificaStatoPEC" style="document" />
+      <wsdl:input name="VerificaStatoPECRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VerificaStatoPECResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSIcona20">
+    <wsdl:port name="BASICHTTP_Binding" binding="ns0:BASICHTTP_Binding">
+      <soap11:address location="http://192.168.40.154:80/Ws.Net/WSIcona" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,8 @@
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\bin\Debug\ElaboraOperazioniMassive.Entities.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\bin\Debug\ElaboraOperazioniMassive.Entities.pdb
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\bin\Debug\Microsoft.CSharp.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\obj\Debug\ElaboraOperazioniMassive.Entities.csproj.CoreCompileInputs.cache
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\obj\Debug\ElaboraOperazioniMassive.Entities.csproj.CopyComplete
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\obj\Debug\ElaboraOperazioniMassive.Entities.dll
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\obj\Debug\ElaboraOperazioniMassive.Entities.pdb
+C:\Progetti\BatchIcona\IT604ELABORAOPERAZIONIMASSIVE\ElaboraOperazioniMassive.Entities\obj\Debug\ElaboraOperazioniMassive.Entities.csprojAssemblyReference.cache
