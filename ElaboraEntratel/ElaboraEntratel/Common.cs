@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ElaboraEntratel
+{
+    public abstract class Common
+    {
+        public string URLWS { get; set; }
+
+        public int CodiceEsito { get; set; }
+
+        public string DescrizioneEsito { get; set; }
+    }
+}

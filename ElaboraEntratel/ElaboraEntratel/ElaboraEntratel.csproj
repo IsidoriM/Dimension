@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8395EC8-F870-446E-B21A-E7CB7FEA2C05}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElaboraEntratel</RootNamespace>
+    <AssemblyName>ElaboraEntratel</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>dll_esterne\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>dll_esterne\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="tar-cs">
+      <HintPath>dll_esterne\tar-cs.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Certificato.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="GestoreMAIL.cs" />
+    <Compile Include="Messaggi.cs" />
+    <Compile Include="ClientIcona.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WSIcona2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CHGCOLL_ElaboraEntratel.exe.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHGESERCIZIO_ElaboraEntratel.exe.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHGTEST_ElaboraEntratel.exe.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.AmbitoAllegatoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.AmbitoDettaglioComunicazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.AmbitoRicevutaPECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.CheckContattiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.CheckIndirizzoPECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.CheckListaIndirizziPECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetAllegatiGlobaleArchiviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetAllegatiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetContattiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetDettaglioExtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetDettaglioGlobaleArchiviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetDettaglioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetListaAnniArchiviatiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetListaExtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetListaGlobaleArchiviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetListaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetRicevutePECDestinatarioByKeyGestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetRicevutePECDestinatarioByMsgIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.GetRicevutePECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.InvioEmailComunicazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.InvioEmailExtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_CheckComunicazioniPECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_CheckRicevutePECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_EstrazioneStoricoVariazioneEventoComunicazionePNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_EstrazioneStoricoVariazioneEventoComunicazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetAnagraficaEventiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetAnagraficaStatiAggregatiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetDettaglioAttoPNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetDettaglioComunicazioniPNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetDettaglioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetListaAttiByListaEventiPNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetListaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GetRicevutePECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_GINPSetNotificaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_InvioComunicazioneByPNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.PUC_InvioComunicazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.RichiediVerificaPECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\ElaboraEntratel.WSIcona2.VerificaStatoPECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSIcona2\WSIcona.wsdl" />
+    <None Include="Service References\WSIcona2\WSIcona.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSIcona2\WSIcona1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSIcona2\WSIcona2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSIcona2\WSIcona3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSIcona2\WSIcona4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSIcona2\WSIcona5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll_esterne\BouncyCastle.Crypto.dll" />
+    <Content Include="dll_esterne\log4net.dll" />
+    <Content Include="dll_esterne\tar-cs.dll" />
+    <None Include="Service References\WSIcona2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSIcona2\configuration.svcinfo" />
+    <None Include="Service References\WSIcona2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSIcona2\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
