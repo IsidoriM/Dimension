@@ -1,0 +1,19 @@
+items:
+- name: Guida all'integrazione
+  href: intro.md
+- name: .Net Core 8.0
+  items:
+  - name: Web App
+    href: netcore/webapp.md
+  - name: Web Api
+    href: netcore/webapi.md
+  - name: Configurazione del servizio
+    href: netcore/configuration.md
+  - name: Come richiamare le API
+    href: netcore/api.md
+  - name: Applicazioni SPA
+    href: netcore/angular.md
+  - name: Uso della libreria Fake
+    href: netcore/fake.md
+  - name: Come realizzare i test di unità
+    href: netcore/unittest.md

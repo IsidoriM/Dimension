@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AssemblyName>$(MSBuildProjectName.Replace(".Sql", ""))</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Microsoft.Extensions.DependencyInjection" />
+		<InternalsVisibleTo Include="Passi.Test.Unit" />
+		<InternalsVisibleTo Include="Passi.Authentication.Cookie" />
+		<InternalsVisibleTo Include="Integration.Passi.Sql" />
+		<InternalsVisibleTo Include="Integration.Passi.Authentication.Cookie" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Passi.Core\Passi.Core.csproj" />
+	</ItemGroup>
+
+</Project>

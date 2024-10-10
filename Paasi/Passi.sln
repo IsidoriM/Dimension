@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{5FE2A3D3-A3A8-407F-A8A7-B630741BBC93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Core", "Passi.Core\Passi.Core.csproj", "{79573140-4ED9-4C48-B727-2019900C64B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Test.CookieAuthenticationWebApp", "Test\Passi.Test.CookieAuthenticationWebApp\Passi.Test.CookieAuthenticationWebApp.csproj", "{1A465579-FB53-49EC-9003-ACCBDC7B543C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{BD2BC53E-C56E-4797-A249-23C2931156B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Test.Unit", "Test\Unit\Passi.Test.Unit\Passi.Test.Unit.csproj", "{9BF7487E-CCCF-4B65-BEA9-B1FCAAD3681D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Core.Store.Sql", "Passi.Core.Sql\Passi.Core.Store.Sql.csproj", "{937AD845-ACFB-400E-B583-B827A2C19D51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Core.Services", "Passi.Core.Services\Passi.Core.Services.csproj", "{A7957381-5FEF-4C3F-8A98-C29731169F9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Authentication.Cookie", "Passi.Authentication.Cookie\Passi.Authentication.Cookie.csproj", "{D5E1BE86-32E6-4AED-8667-E01B1451B8C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Authentication.Fake", "Passi.Authentication.Fake\Passi.Authentication.Fake.csproj", "{4F054D9F-D3B1-41BC-9BFD-C42866164FD7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Core.Store.Fake", "Passi.Core.Data.Fake\Passi.Core.Store.Fake.csproj", "{EA1121CB-6EAD-40A2-A796-8E9104FEF176}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Passi.Test.CookieAuthentication.WebApi", "Test\Passi.Test.CookieAuthentication.WebApi\Passi.Test.CookieAuthentication.WebApi.csproj", "{109DAA87-393A-44DE-8738-4DFD219596B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79573140-4ED9-4C48-B727-2019900C64B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79573140-4ED9-4C48-B727-2019900C64B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79573140-4ED9-4C48-B727-2019900C64B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79573140-4ED9-4C48-B727-2019900C64B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A465579-FB53-49EC-9003-ACCBDC7B543C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A465579-FB53-49EC-9003-ACCBDC7B543C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A465579-FB53-49EC-9003-ACCBDC7B543C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A465579-FB53-49EC-9003-ACCBDC7B543C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF7487E-CCCF-4B65-BEA9-B1FCAAD3681D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF7487E-CCCF-4B65-BEA9-B1FCAAD3681D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF7487E-CCCF-4B65-BEA9-B1FCAAD3681D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF7487E-CCCF-4B65-BEA9-B1FCAAD3681D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937AD845-ACFB-400E-B583-B827A2C19D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937AD845-ACFB-400E-B583-B827A2C19D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937AD845-ACFB-400E-B583-B827A2C19D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937AD845-ACFB-400E-B583-B827A2C19D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7957381-5FEF-4C3F-8A98-C29731169F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7957381-5FEF-4C3F-8A98-C29731169F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7957381-5FEF-4C3F-8A98-C29731169F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7957381-5FEF-4C3F-8A98-C29731169F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E1BE86-32E6-4AED-8667-E01B1451B8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E1BE86-32E6-4AED-8667-E01B1451B8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E1BE86-32E6-4AED-8667-E01B1451B8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E1BE86-32E6-4AED-8667-E01B1451B8C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F054D9F-D3B1-41BC-9BFD-C42866164FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F054D9F-D3B1-41BC-9BFD-C42866164FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F054D9F-D3B1-41BC-9BFD-C42866164FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F054D9F-D3B1-41BC-9BFD-C42866164FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA1121CB-6EAD-40A2-A796-8E9104FEF176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1121CB-6EAD-40A2-A796-8E9104FEF176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1121CB-6EAD-40A2-A796-8E9104FEF176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1121CB-6EAD-40A2-A796-8E9104FEF176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{109DAA87-393A-44DE-8738-4DFD219596B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{109DAA87-393A-44DE-8738-4DFD219596B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{109DAA87-393A-44DE-8738-4DFD219596B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{109DAA87-393A-44DE-8738-4DFD219596B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A465579-FB53-49EC-9003-ACCBDC7B543C} = {5FE2A3D3-A3A8-407F-A8A7-B630741BBC93}
+		{BD2BC53E-C56E-4797-A249-23C2931156B7} = {5FE2A3D3-A3A8-407F-A8A7-B630741BBC93}
+		{9BF7487E-CCCF-4B65-BEA9-B1FCAAD3681D} = {BD2BC53E-C56E-4797-A249-23C2931156B7}
+		{109DAA87-393A-44DE-8738-4DFD219596B7} = {5FE2A3D3-A3A8-407F-A8A7-B630741BBC93}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C2AF1F0-E015-47AE-94C6-405856700CC8}
+	EndGlobalSection
+EndGlobal

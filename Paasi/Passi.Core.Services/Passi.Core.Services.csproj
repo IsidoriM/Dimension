@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+		<PackageReference Include="Scrutor" Version="4.2.2" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Passi.Test.Unit" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Microsoft.Extensions.DependencyInjection" />
+		<InternalsVisibleTo Include="Passi.Test.Unit" />
+		<InternalsVisibleTo Include="Passi.Authentication" />
+		<InternalsVisibleTo Include="Integration.Passi.Sql" />
+		<InternalsVisibleTo Include="Integration.Passi.Authentication.Cookie" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+		<InternalsVisibleTo Include="Passi.Core.Domain.Entities" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Passi.Core\Passi.Core.csproj" />
+	</ItemGroup>
+
+
+</Project>

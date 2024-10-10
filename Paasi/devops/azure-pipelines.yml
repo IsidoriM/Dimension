@@ -1,0 +1,32 @@
+name: $(Date:yyyyMMdd)$(rev:.r)
+
+variables:
+- group: LB00225_common_vars_TEST
+
+trigger:
+ batch: true
+ branches:
+   include:
+     - develop
+ paths:
+   exclude:
+     - devops/*
+
+resources:
+  repositories:
+  - repository: CommonTemplates
+    type: git
+    endpoint: common-template-service-connection
+    name: GestioneCicloDiVitaSw/CommonTemplatesYaml
+    ref: 'refs/heads/develop'
+
+stages: 
+- template: build-stages/library/dotnet-build-stages.yaml@CommonTemplates
+  parameters:
+    commonVariableGroup: LB00225_common_vars_TEST
+    enableDebug: true
+    linuxPoolName: linuxpoolcontainersvil
+    nugetConfigFile: Passi.Authentication.Fake/nuget.config
+    dotnetPackbuildProperties: 'GeneratePackageOnBuild=false'
+    enableNoBuild: false
+    withDotnetPush: true

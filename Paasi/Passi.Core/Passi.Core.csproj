@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Version>1.0.0</Version>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Passi.Authentication" />
+		<InternalsVisibleTo Include="Passi.Core.Services" />
+		<InternalsVisibleTo Include="Passi.Core.Store" />
+		<InternalsVisibleTo Include="Passi.Test.Unit" />
+		<InternalsVisibleTo Include="Passi.Test.Unit.Fixtures" />
+		<InternalsVisibleTo Include="Integration.Passi.Sql" />
+		<InternalsVisibleTo Include="Integration.Passi.Authentication.Cookie" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+	</ItemGroup>
+</Project>

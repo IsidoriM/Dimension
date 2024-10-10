@@ -1,0 +1,277 @@
+﻿@inject Microsoft.Extensions.Configuration.IConfiguration config
+@using Passi.Test.CookieAuthenticationWebApp.Models
+
+@model IndexModel
+
+@{
+    string querystringPath = $"serviceId={Model.ServiceId}";
+    if (Model.SrcPortal != null)
+    {
+        querystringPath = $"{querystringPath}&srcPortal={Model.SrcPortal}";
+    }
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+
+            <div class="card col-md-6">
+                <form method="get" asp-controller="Home" asp-action="Service">
+                    <div class="card-body">
+                        <h5 class="card-title" for="serviceId">Configurations</h5>
+                        <p class="card-text">
+                            Modifica l'id sel servizio o il source portal ed effettua una nuova autenticazione per il servizio specificato.
+                        </p>
+                        <div class="form-group">
+                            <label for="serviceId">Id servizio</label>
+                            <input type="number" min="-2" name="serviceId" id="serviceId" placeholder="Id servizio" class="form-control" value="@Model.ServiceId" />
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceId">Source Portal</label>
+                            <input type="number" min="1" name="srcPortal" id="srcPortal" placeholder="srcPortal" class="form-control" value="@Model.SrcPortal" />
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Cambia e autentica</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/claimsPrincipal?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">ClaimsPrincipal</h5>
+                        <p class="card-text">
+                            Recupera i dati di sessione dell'utente loggato
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">MeAsync</h5>
+                        <p class="card-text">
+                            Recupera i dati anagrafici dell'utente loggato
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/profiles?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">ProfilesAsync</h5>
+                        <p class="card-text">
+                            Ottiene la lista dei profili dell'utente loggato
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/isAuthorized?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">IsAuthorizedAsync</h5>
+                        <p class="card-text">
+                            Verifica se l'utente loggato è abilitato o meno all'utilizzo del servizio specificato, eventualmente filtrando per ente
+                        </p>
+                        <div class="form-group">
+                            <label for="serviceId">Id servizio</label>
+                            <input class="form-control" type="number" id="serviceId" name="serviceId" placeholder="Id servizio" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/services?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">AuthorizedServicesAsync</h5>
+                        <p class="card-text">
+                            Ottiene la lista dei servizi disponibili all'utente loggato per uno specifico ente
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/card?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">CardAsync</h5>
+                        <p class="card-text">
+                            Recupera le card dei contatti dell'utente loggato.
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/card?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">CardAsync</h5>
+                        <p class="card-text">
+                            Recupera le card dei contatti di un utente. (offuscata)
+                        </p>
+                        <div class="form-group">
+                            <label for="fiscalCode">Codice fiscale</label>
+                            <input class="form-control" type="text" id="fiscalCode" name="fiscalCode" placeholder="Codice Fiscale" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/delegation?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">HasDelegationAsync</h5>
+                        <p class="card-text">
+                            Verifica se l'utente specificato è un delegato per l'utente loggato
+                        </p>
+                        <div class="form-group">
+                            <label for="fiscalCode">Codice fiscale</label>
+                            <input class="form-control" type="text" id="fiscalCode" name="fiscalCode" placeholder="Codice Fiscale" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="get" asp-controller="Home" asp-action="SwitchProfile">
+                    <div class="card-body">
+                        <h5 class="card-title">Switch del Profilo</h5>
+                        <p class="card-text">
+                            Prova ad invocare lo switch del profilo se l'utente ha più profili associati.
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" id="serviceId" name="serviceId" value="@ViewBag.ServiceId" />
+                        <button type="submit" class="btn btn-primary">Switch Profile</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/token?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">SessionTokenAsync</h5>
+                        <p class="card-text">
+                            Recupera un token di sessione che può essere utilizzato per effettuare delle chiamate verso web Api che utilizzano PASSI
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title">Link vari</h5>
+                    <p class="card-text">
+                        Recupera i link del servizio di autenticazione
+                    </p>
+                    <form method="post"
+                          action="@config.BasePath()/me/links">
+                        <button type="submit" class="btn btn-primary">Ottieni</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/writelog?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">CLog</h5>
+                        <p class="card-text">
+                            Scrive un log fornendo un id evento e il testo da salvare. Inserisci il testo come coppie chiave valore separate da ; (esempio: chiave1=valore1;chiave2=valore2)
+                        </p>
+                        <div class="form-group">
+                            <label for="eventId">Id evento</label>
+                            <input class="form-control" id="eventId" name="eventId" value="" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="paramz">Parametri</label>
+                            <input class="form-control" id="paramz" name="paramz" value="" placeholder="chiave1=valore1;chiave2=valore2" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Salva</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <form method="post"
+                      action="@config.BasePath()/me/cittadino?@querystringPath">
+                    <div class="card-body">
+                        <h5 class="card-title">Verifica ruolo cittadino</h5>
+                        <p class="card-text">
+                            Verifica se il ruolo dell'utente loggato è cittadino (3)'
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">Verifica</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title">Logout</h5>
+                    <p class="card-text">
+                        Effettua il logout
+                    </p>
+                    <a href="@config.BasePath()/me/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+        <div class="card">
+            <div class="card-header">
+                Risultato
+            </div>
+            <div class="card-body">
+                <div id="panel">@Html.Raw(Model.Response)</div>
+            </div>
+        </div>
+    </div>
+</div>

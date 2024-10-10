@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageId>Passi.Authentication</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Inps</Authors>
+		<Company>Inps</Company>
+		<Product>Passi</Product>
+		<Description>Libreria COOKIE per la gestione dell'autenticazione degli utenti Inps</Description>
+		<PackageOutputPath>..\OfflinePackages\Cookie</PackageOutputPath>
+		<AssemblyName>$(MSBuildProjectName.Replace(".Cookie", ""))</AssemblyName>
+    <IsPackable>true</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageReference Include="AutoBogus" Version="2.13.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="Scrutor" Version="4.2.2" />
+		<PackageReference Include="Teronis.MSBuild.Packaging.ProjectBuildInPackage" Version="1.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Passi.Test.Unit" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Passi.Core.Services\Passi.Core.Services.csproj" PrivateAssets="all" />
+	  <ProjectReference Include="..\Passi.Core.Sql\Passi.Core.Store.Sql.csproj" PrivateAssets="all" />
+	  <ProjectReference Include="..\Passi.Core\Passi.Core.csproj" PrivateAssets="all" />
+	</ItemGroup>
+	
+
+</Project>

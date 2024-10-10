@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>e0dbb51a-4ea5-482d-90d6-7fdabcb20466</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Integration.Test.Cookie.Tests" />
+		<InternalsVisibleTo Include="Passi.Test.Unit" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Passi.Authentication.Cookie\Passi.Authentication.Cookie.csproj" />
+		<ProjectReference Include="..\..\Passi.Core.Services\Passi.Core.Services.csproj" />
+		<ProjectReference Include="..\..\Passi.Core.Sql\Passi.Core.Store.Sql.csproj" />
+		<ProjectReference Include="..\..\Passi.Core\Passi.Core.csproj" />
+	</ItemGroup>
+
+</Project>
