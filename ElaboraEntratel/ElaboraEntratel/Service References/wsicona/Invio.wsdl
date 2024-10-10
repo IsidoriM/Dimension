@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InvioEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:InvioMail_INPUT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InvioMail_INPUT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="keygest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mittente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codiceApplicazione" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="allegatiPresenti" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="checkEsitoInvio" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PEC" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="destinatari" type="tns:ArrayOfDestinatari" />
+          <s:element minOccurs="0" maxOccurs="1" name="allegati" type="tns:ArrayOfAllegati" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDestinatari">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Destinatari" nillable="true" type="tns:Destinatari" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Destinatari">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="tipo" type="tns:tipoDestinatari" />
+          <s:element minOccurs="0" maxOccurs="1" name="destinatario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="tipoDestinatari">
+        <s:restriction base="s:string">
+          <s:enumeration value="to" />
+          <s:enumeration value="cc" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfAllegati">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Allegati" nillable="true" type="tns:Allegati" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Allegati">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="allegato" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InvioEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InvioEmailResult" type="tns:InvioMail_OUTPUT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InvioMail_OUTPUT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CD_RC" type="tns:ResultType" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="protocollo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dataInserimento" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ResultType">
+        <s:restriction base="s:string">
+          <s:enumeration value="IM" />
+          <s:enumeration value="ER" />
+          <s:enumeration value="PK" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="LoginHeader" type="tns:LoginHeader" />
+      <s:complexType name="LoginHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="InvioEmail_01">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="tns:InvioMail_INPUT_01" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InvioMail_INPUT_01">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="keygest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mittente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codiceApplicazione" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="allegatiPresenti" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="checkEsitoInvio" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PEC" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="destinatari" type="tns:ArrayOfDestinatari_01" />
+          <s:element minOccurs="0" maxOccurs="1" name="allegati" type="tns:ArrayOfAllegati" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDestinatari_01">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Destinatari_01" nillable="true" type="tns:Destinatari_01" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Destinatari_01">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="tipo" type="tns:tipoDestinatari_01" />
+          <s:element minOccurs="0" maxOccurs="1" name="destinatario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="tipoDestinatari_01">
+        <s:restriction base="s:string">
+          <s:enumeration value="to" />
+          <s:enumeration value="cc" />
+          <s:enumeration value="bcc" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="InvioEmail_01Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InvioEmail_01Result" type="tns:InvioMail_OUTPUT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InvioEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:InvioEmail" />
+  </wsdl:message>
+  <wsdl:message name="InvioEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:InvioEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvioEmailLoginHeader">
+    <wsdl:part name="LoginHeader" element="tns:LoginHeader" />
+  </wsdl:message>
+  <wsdl:message name="InvioEmail_01SoapIn">
+    <wsdl:part name="parameters" element="tns:InvioEmail_01" />
+  </wsdl:message>
+  <wsdl:message name="InvioEmail_01SoapOut">
+    <wsdl:part name="parameters" element="tns:InvioEmail_01Response" />
+  </wsdl:message>
+  <wsdl:message name="InvioEmail_01LoginHeader">
+    <wsdl:part name="LoginHeader" element="tns:LoginHeader" />
+  </wsdl:message>
+  <wsdl:portType name="InvioSoap">
+    <wsdl:operation name="InvioEmail">
+      <wsdl:input message="tns:InvioEmailSoapIn" />
+      <wsdl:output message="tns:InvioEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvioEmail_01">
+      <wsdl:input message="tns:InvioEmail_01SoapIn" />
+      <wsdl:output message="tns:InvioEmail_01SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvioSoap" type="tns:InvioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InvioEmail">
+      <soap:operation soapAction="http://tempuri.org/InvioEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InvioEmailLoginHeader" part="LoginHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvioEmail_01">
+      <soap:operation soapAction="http://tempuri.org/InvioEmail_01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InvioEmail_01LoginHeader" part="LoginHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InvioSoap12" type="tns:InvioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InvioEmail">
+      <soap12:operation soapAction="http://tempuri.org/InvioEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InvioEmailLoginHeader" part="LoginHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvioEmail_01">
+      <soap12:operation soapAction="http://tempuri.org/InvioEmail_01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InvioEmail_01LoginHeader" part="LoginHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Invio">
+    <wsdl:port name="InvioSoap" binding="tns:InvioSoap">
+      <soap:address location="http://intranet.ser-collaudo.inps/Ws.Net/WsIcona/Invio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InvioSoap12" binding="tns:InvioSoap12">
+      <soap12:address location="http://intranet.ser-collaudo.inps/Ws.Net/WsIcona/Invio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
