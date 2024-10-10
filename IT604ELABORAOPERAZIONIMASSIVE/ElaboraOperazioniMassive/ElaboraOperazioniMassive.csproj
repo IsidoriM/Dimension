@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39871582-3071-47FB-BB3D-0CED22B86A2F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElaboraOperazioniMassive</RootNamespace>
+    <AssemblyName>ElaboraOperazioniMassive</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>\ElaboraOperazioniMassive\</SccProjectName>
+    <SccLocalPath>ElaboraOperazioniMassive\</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>Serena Source Control Provider:{04ED75C7-FE70-4589-A196-51A6FA0D4D7E}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CredenzialiServizi.cs" />
+    <Compile Include="Mail.cs" />
+    <Compile Include="ElaboraOM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHGCOLL_ElaboraOperazioniMassive.exe.config" />
+    <None Include="CHGESERCIZIO_ElaboraOperazioniMassive.exe.config" />
+    <None Include="CHGTEST_ElaboraOperazioniMassive.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ElaboraOperazioniMassive.Servizi.csproj">
+      <Project>{1703B690-30FA-4E0F-9103-7FAE44C68985}</Project>
+      <Name>ElaboraOperazioniMassive.Servizi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElaboraOperazioniMassive.DAL\ElaboraOperazioniMassive.DAL.csproj">
+      <Project>{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}</Project>
+      <Name>ElaboraOperazioniMassive.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElaboraOperazioniMassive.Operazioni\ElaboraOperazioniMassive.Operazioni.csproj">
+      <Project>{13C6DD0C-D641-45C0-8D4D-63560736CE6C}</Project>
+      <Name>ElaboraOperazioniMassive.Operazioni</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll_esterne\Microsoft.CSharp.dll" />
+    <Content Include="dll_esterne\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="dll_esterne\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="dll_esterne\Microsoft.Practices.Unity.dll" />
+    <Content Include="dll_esterne\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="dll_esterne\Microsoft.VisualStudio.TeamSystem.Data.UnitTesting.dll" />
+    <Content Include="dll_esterne\Oracle.DataAccess.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

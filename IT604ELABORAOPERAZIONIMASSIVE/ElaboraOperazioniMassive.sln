@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElaboraOperazioniMassive", "ElaboraOperazioniMassive\ElaboraOperazioniMassive.csproj", "{39871582-3071-47FB-BB3D-0CED22B86A2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElaboraOperazioniMassive.DAL", "ElaboraOperazioniMassive.DAL\ElaboraOperazioniMassive.DAL.csproj", "{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElaboraOperazioniMassive.Operazioni", "ElaboraOperazioniMassive.Operazioni\ElaboraOperazioniMassive.Operazioni.csproj", "{13C6DD0C-D641-45C0-8D4D-63560736CE6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElaboraOperazioniMassive.Entities", "ElaboraOperazioniMassive.Entities\ElaboraOperazioniMassive.Entities.csproj", "{EDB5E115-DD3F-4494-90AE-8178F05425BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElaboraOperazioniMassive.Servizi", "ClassLibrary1\ElaboraOperazioniMassive.Servizi.csproj", "{1703B690-30FA-4E0F-9103-7FAE44C68985}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Debug|Any CPU.Build.0 = Debug|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Debug|x86.ActiveCfg = Debug|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Debug|x86.Build.0 = Debug|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Release|Any CPU.ActiveCfg = Release|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Release|x86.ActiveCfg = Release|x86
+		{39871582-3071-47FB-BB3D-0CED22B86A2F}.Release|x86.Build.0 = Release|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Debug|Any CPU.Build.0 = Debug|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Debug|x86.ActiveCfg = Debug|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Debug|x86.Build.0 = Debug|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Release|Any CPU.ActiveCfg = Release|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Release|x86.ActiveCfg = Release|x86
+		{3F72B3DA-EA89-49A0-953E-7410A4E2C34B}.Release|x86.Build.0 = Release|x86
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{13C6DD0C-D641-45C0-8D4D-63560736CE6C}.Release|x86.ActiveCfg = Release|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EDB5E115-DD3F-4494-90AE-8178F05425BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1703B690-30FA-4E0F-9103-7FAE44C68985}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SerenaSourceControl) = preSolution
+		CMNumberOfProjects = 6
+		CMProjectRoot0 = \
+		CMLocalPath0 = .\
+		CMRelativePathToRoot0 = .\
+		CMLocalPath1 = ElaboraOperazioniMassive\
+		CMUniqueName1 = ElaboraOperazioniMassive.csproj
+		CMProjectName1 = ElaboraOperazioniMassive
+		CMRelativePathToRoot1 = ElaboraOperazioniMassive\
+		CMProjectRoot1 = \
+		CMLocalPath2 = ElaboraOperazioniMassive.Operazioni\
+		CMUniqueName2 = ElaboraOperazioniMassive.Operazioni.csproj
+		CMProjectName2 = ElaboraOperazioniMassive.Operazioni
+		CMRelativePathToRoot2 = ElaboraOperazioniMassive.Operazioni\
+		CMProjectRoot2 = \
+		CMLocalPath3 = ElaboraOperazioniMassive.DAL\
+		CMUniqueName3 = ElaboraOperazioniMassive.DAL.csproj
+		CMProjectName3 = ElaboraOperazioniMassive.DAL
+		CMRelativePathToRoot3 = ElaboraOperazioniMassive.DAL\
+		CMProjectRoot3 = \
+		CMLocalPath4 = ClassLibrary1\
+		CMUniqueName4 = ElaboraOperazioniMassive.Servizi.csproj
+		CMProjectName4 = ElaboraOperazioniMassive.Servizi
+		CMRelativePathToRoot4 = ClassLibrary1\
+		CMProjectRoot4 = \
+		CMLocalPath5 = ElaboraOperazioniMassive.Entities\
+		CMUniqueName5 = ElaboraOperazioniMassive.Entities.csproj
+		CMProjectName5 = ElaboraOperazioniMassive.Entities
+		CMRelativePathToRoot5 = ElaboraOperazioniMassive.Entities\
+		CMProjectRoot5 = \
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://soa.inps.it/WS01317" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/WS01317">
+  <xs:import schemaLocation="WSIcona.xsd3.xsd" namespace="http://soa.inps.it/WS01317/data" />
+  <xs:element name="GetAllegati">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q1:GetAllegatiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllegatiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetAllegatiResult" nillable="true" type="q2:GetAllegatiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllegatiGlobaleArchivi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q3:GetAllegatiGlobaleArchiviRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllegatiGlobaleArchiviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetAllegatiGlobaleArchiviResult" nillable="true" type="q4:GetAllegatiGlobaleArchiviResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q5:GetListaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetListaResult" nillable="true" type="q6:GetListaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaExt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q7:GetListaExtRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaExtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetListaExtResult" nillable="true" type="q8:GetListaExtResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDettaglioGlobalearchivi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q9:GetDettaglioGlobaleArchiviRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDettaglioGlobalearchiviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetDettaglioGlobalearchiviResult" nillable="true" type="q10:GetDettaglioGlobaleArchiviResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaGlobaleArchivi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q11:GetListaGlobaleArchiviRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaGlobaleArchiviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetListaGlobaleArchiviResult" nillable="true" type="q12:GetListaGlobaleArchiviResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDettaglio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q13:GetDettaglioRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDettaglioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetDettaglioResult" nillable="true" type="q14:GetDettaglioResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDettaglioExt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q15:GetDettaglioExtRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDettaglioExtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetDettaglioExtResult" nillable="true" type="q16:GetDettaglioExtResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaAnniArchiviati">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaAnniArchiviatiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetListaAnniArchiviatiResult" nillable="true" type="q17:GetListaAnniArchiviatiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRicevutePec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q18:GetRicevutePECRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRicevutePecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetRicevutePecResult" nillable="true" type="q19:GetRicevutePECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContatti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q20:GetContattiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContattiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetContattiResult" nillable="true" type="q21:GetContattiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRicevutePecDestinatarioByKeyGest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q22:GetRicevutePECDestinatarioByKeyGestRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRicevutePecDestinatarioByKeyGestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetRicevutePecDestinatarioByKeyGestResult" nillable="true" type="q23:GetRicevutePECDestinatarioByKeyGestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRicevutePecDestinatarioByMsgID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q24:GetRicevutePECDestinatarioByMsgIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRicevutePecDestinatarioByMsgIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://soa.inps.it/WS01317/data" minOccurs="0" name="GetRicevutePecDestinatarioByMsgIDResult" nillable="true" type="q25:GetRicevutePECDestinatarioByMsgIDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckContatti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q26:CheckContattiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckContattiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://soa.inps.it/WS01317/data" minOccurs="0" name="CheckContattiResult" nillable="true" type="q27:CheckContattiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvioEmailExt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q28:InvioEmailExtRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvioEmailExtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://soa.inps.it/WS01317/data" minOccurs="0" name="InvioEmailExtResult" nillable="true" type="q29:InvioEmailExtResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvioEmailComunicazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q30:InvioEmailComunicazioneRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvioEmailComunicazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://soa.inps.it/WS01317/data" minOccurs="0" name="InvioEmailComunicazioneResult" nillable="true" type="q31:InvioEmailComunicazioneResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIndirizzoPEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q32:CheckIndirizzoPECRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIndirizzoPECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://soa.inps.it/WS01317/data" minOccurs="0" name="CheckIndirizzoPECResult" nillable="true" type="q33:CheckIndirizzoPECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckListaIndirizziPEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q34:CheckListaIndirizziPECRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckListaIndirizziPECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://soa.inps.it/WS01317/data" minOccurs="0" name="CheckListaIndirizziPECResult" nillable="true" type="q35:CheckListaIndirizziPECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaStatoPEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q36:VerificaStatoPECRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaStatoPECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://soa.inps.it/WS01317/data" minOccurs="0" name="VerificaStatoPECResult" nillable="true" type="q37:VerificaStatoPECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RichiediVerificaPEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q38:RichiediVerificaPECRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RichiediVerificaPECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://soa.inps.it/WS01317/data" minOccurs="0" name="RichiediVerificaPECResult" nillable="true" type="q39:RichiediVerificaPECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_InvioComunicazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q40:PUC_InvioComunicazioneRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_InvioComunicazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_InvioComunicazioneResult" nillable="true" type="q41:PUC_InvioComunicazioneResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_InvioComunicazioneByPN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q42:PUC_InvioComunicazioneByPNRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_InvioComunicazioneByPNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_InvioComunicazioneByPNResult" nillable="true" type="q43:PUC_InvioComunicazioneByPNResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetLista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q44:PUC_GetListaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetListaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetListaResult" nillable="true" type="q45:PUC_GetListaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetRicevutePECByChiaveGestionale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q46:PUC_GetRicevutePECByChiaveGestionaleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetRicevutePECByChiaveGestionaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetRicevutePECByChiaveGestionaleResult" nillable="true" type="q47:PUC_GetRicevutePECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetRicevutePECByMessageID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q48:PUC_GetRicevutePECByMessageIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetRicevutePECByMessageIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetRicevutePECByMessageIDResult" nillable="true" type="q49:PUC_GetRicevutePECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioByChiaveGestionale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q50:PUC_GetDettaglioByChiaveGestionaleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioByChiaveGestionaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetDettaglioByChiaveGestionaleResult" nillable="true" type="q51:PUC_GetDettaglioResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioByMessageID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q52:PUC_GetDettaglioByMessageIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioByMessageIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetDettaglioByMessageIDResult" nillable="true" type="q53:PUC_GetDettaglioResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckRicevutePECByChiaveGestionale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q54:PUC_CheckRicevutePECByChiaveGestionaleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckRicevutePECByChiaveGestionaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_CheckRicevutePECByChiaveGestionaleResult" nillable="true" type="q55:PUC_CheckRicevutePECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckRicevutePECByMessasgeID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q56:PUC_CheckRicevutePECByMessageIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckRicevutePECByMessasgeIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_CheckRicevutePECByMessasgeIDResult" nillable="true" type="q57:PUC_CheckRicevutePECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q58:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByChiaveGestionaleResult" nillable="true" type="q59:PUC_EstrazioneStoricoVariazioneEventoComunicazioneResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q60:PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_EstrazioneStoricoVariazioneEventoComunicazioneByMessageIDResult" nillable="true" type="q61:PUC_EstrazioneStoricoVariazioneEventoComunicazioneResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckComunicazioniPECByChiaveGestionale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q62:PUC_CheckComunicazioniPECByChiaveGestionaleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckComunicazioniPECByChiaveGestionaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_CheckComunicazioniPECByChiaveGestionaleResult" nillable="true" type="q63:PUC_CheckComunicazioniPECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckComunicazioniPECByMessageID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q64:PUC_CheckComunicazioniPECByMessageIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_CheckComunicazioniPECByMessageIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_CheckComunicazioniPECByMessageIDResult" nillable="true" type="q65:PUC_CheckComunicazioniPECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmbitoDettaglioComunicazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q66:AmbitoDettaglioComunicazioneRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmbitoDettaglioComunicazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://soa.inps.it/WS01317/data" minOccurs="0" name="AmbitoDettaglioComunicazioneResult" nillable="true" type="q67:AmbitoDettaglioComunicazioneResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmbitoEstrazioneRicevutaPEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q68:AmbitoRicevutaPECRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmbitoEstrazioneRicevutaPECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://soa.inps.it/WS01317/data" minOccurs="0" name="AmbitoEstrazioneRicevutaPECResult" nillable="true" type="q69:AmbitoRicevutaPECResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmbitoEstrazioneAllegato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q70:AmbitoAllegatoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmbitoEstrazioneAllegatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://soa.inps.it/WS01317/data" minOccurs="0" name="AmbitoEstrazioneAllegatoResult" nillable="true" type="q71:AmbitoAllegatoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionali">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q72:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaChiaviGestionaliResult" nillable="true" type="q73:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q74:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_EstrazioneStoricoVariazioneEventoComunicazionePNByListaMessageIdResult" nillable="true" type="q75:PUC_EstrazioneStoricoVariazioneEventoComunicazionePNResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetListaAttiByListaEventiPN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q76:PUC_GetListaAttiByListaEventiPNRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetListaAttiByListaEventiPNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetListaAttiByListaEventiPNResult" nillable="true" type="q77:PUC_GetListaAttiByListaEventiPNResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioAttoPN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q78:PUC_GetDettaglioAttoPNRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioAttoPNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetDettaglioAttoPNResult" nillable="true" type="q79:PUC_GetDettaglioAttoPNResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioComunicazioniPN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q80:PUC_GetDettaglioComunicazioniPNRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetDettaglioComunicazioniPNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetDettaglioComunicazioniPNResult" nillable="true" type="q81:PUC_GetDettaglioComunicazioniPNResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetAnagraficaEventi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q82:PUC_GetAnagraficaEventiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetAnagraficaEventiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetAnagraficaEventiResult" nillable="true" type="q83:PUC_GetAnagraficaEventiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetAnagraficaStatiAggregatiByCodice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q84:PUC_GetAnagraficaStatiAggregatiByCodiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GetAnagraficaStatiAggregatiByCodiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GetAnagraficaStatiAggregatiByCodiceResult" nillable="true" type="q85:PUC_GetAnagraficaStatiAggregatiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GINPSetNotificaStato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q86:PUC_GINPSetNotificaStatoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GINPSetNotificaStatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GINPSetNotificaStatoResult" nillable="true" type="q87:PUC_GINPSetNotificaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GINPSetNotificaAtto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://soa.inps.it/WS01317/data" minOccurs="0" name="request" nillable="true" type="q88:PUC_GINPSetNotificaAttoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PUC_GINPSetNotificaAttoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://soa.inps.it/WS01317/data" minOccurs="0" name="PUC_GINPSetNotificaAttoResult" nillable="true" type="q89:PUC_GINPSetNotificaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xsd:schema>
