@@ -1,0 +1,43 @@
+﻿ @model List<PINProvUtilita.Models.Lista_Delegati>
+
+<table id="elencoCertificati" class="table2 table2-striped table2-bordered">
+    <thead>
+    <tr>
+        <th>
+            Partita Iva
+        </th>
+
+        <th>
+            Tipologia
+        </th>
+
+        <th>
+            Common Name
+        </th>
+
+        <th>
+            Emissione
+        </th>
+
+        <th>
+            Scadenza
+        </th>
+ 
+    </tr>
+</thead>
+<tbody>
+  
+    @foreach (var Delegato in Model.ToList())
+    {
+            <tr>
+            <td>  @Html.DisplayFor(model => Delegato.CodiceFiscale)</td>
+            <td>  @Html.DisplayFor(model => Delegato.Tipo)</td>
+            <td>  @Html.DisplayFor(model => Delegato.Commonname)</td>
+            <td>  @Html.Label(Delegato.Dataemissione.Substring(0,10))</td>
+            <td>  @Html.Label(Delegato.Datascadenza.Substring(0,10))</td>
+                            
+            </tr>
+    }    
+</tbody>
+
+</table>

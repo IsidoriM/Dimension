@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "_PartialUtente";
+    var cf = ViewBag.Codutente;
+    var utente = ViewBag.utente;
+    var infoprivacy = "No";
+    var riga = ViewBag.riga;
+}
+
+<style>
+    P1 {
+        position: absolute;
+        right: 150px;
+        top: 200px;
+    }
+    P2 {
+        position: absolute;
+        left: 250px;
+        top: 220px;
+    }
+    .testopiccolo {
+        font-family: Helvetica,Arial,sans-serif;
+        line-height: 2.3em;
+        margin: 0 auto;
+        font-size: 12px;
+        color: #666;
+    }
+    .sfondo {
+        font-weight: bold;
+    }
+    .testomedio {
+        position: absolute;
+        left: 250px;
+        font-family: Helvetica,Arial,sans-serif;
+        font-size: 12px;
+        color: #666;
+    }
+    .testoCF {
+      
+        font-family: Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .centrato {
+        position: relative;
+        left: 200px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+    .centratocont {
+        position: relative;
+        left: -5px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+    .centratobottom {
+        position: relative;
+        bottom:auto
+    }
+   
+</style>
+
+<div>
+    <P1><font class="sfondo testoCF" color="black">Codice Fiscale: @cf </font></P1>
+</div>
+<div>
+    
+
+   
+</div>
+<div>
+        <table class="table table">
+        
+            <caption font color="black">
+                @if (utente.InfoPrivacy != null && utente.InfoPrivacy.Length > 0 && riga > 0)
+                {
+                    <font class="sfondo centratocont" color="black">Contatti Attuali</font><font class="sfondo centrato" color="black"> InfoPrivacy: @utente.InfoPrivacy.Substring(0, 10)  </font>
+
+                }
+
+                @if (utente.InfoPrivacy != null && utente.InfoPrivacy.Length == 0 && riga > 0)
+                {
+                    <font class="sfondo centratocont" color="black">Contatti Attuali</font><font class="sfondo centrato"  color="black"> InfoPrivacy: @infoprivacy   </font>
+
+
+                }
+
+                @if (riga == 0)
+                {
+                    <font class="sfondo testomedio" color="black">Non sono presenti contatti</font>
+                }
+            </caption>
+            <thead>
+
+
+
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+</div>

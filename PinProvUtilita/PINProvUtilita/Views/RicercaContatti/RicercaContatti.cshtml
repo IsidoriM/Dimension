@@ -1,0 +1,149 @@
+﻿@model PINProvUtilita.Models.RicercaContatti
+
+@{
+    var selezioneBottone = (String)Session["radioButton"];
+    Session["tabAttivo"] = "Ricerca_Contatti";
+
+    var listItems = new List<System.Web.UI.WebControls.ListItem> {
+        new System.Web.UI.WebControls.ListItem { Text = "Si", Value = "SI" },
+        new System.Web.UI.WebControls.ListItem { Text = "No", Value = "NO" },
+        new System.Web.UI.WebControls.ListItem { Text = "Tutti", Value = "TUTTI" }
+    };
+}
+
+<div class="center">
+    <div class="divSpacer"></div>
+    <fieldset class="field_set_insert_contatti">
+        @using (Html.BeginForm("RicercaContatti", "RicercaContatti", Model, FormMethod.Post))
+        {
+            <div class="myLabel">
+                <table style="height: 80px;">
+                    <tr class="disttr">
+                        <td>
+                            @Html.RadioButtonFor(model => model.SelectContatto, "EMAIL", new { @checked = "checked", @onclick = "AttivaMail()" })
+                        </td>
+                        <td width="150">
+                            @Html.LabelFor(model => model.Email, new { @class = "label_Option_Button" })
+                        </td>
+                        <td>
+                            @if (selezioneBottone.Equals("EMAIL"))
+                            {
+                                @Html.TextBoxFor(model => model.Email, new { @class = "wideContatti", @maxlength = "100", id = "email" });
+                            }
+                            else
+                            {
+                                @Html.TextBoxFor(model => model.Email, new { disabled = true, @class = "wideContatti", @maxlength = "100", id = "email" });
+                            }
+                        </td>
+                    </tr>
+                    <tr class="disttr">
+                        <td>
+                            @Html.RadioButtonFor(model => model.SelectContatto, "PEC", new { @onclick = "AttivaPec()" })
+                        </td>
+                        <td width="150">
+                            @Html.LabelFor(model => model.Pec, new { @class = "label_Option_Button" })
+                        </td>
+                        <td>
+                            @if (selezioneBottone.Equals("PEC"))
+                            {
+                                @Html.TextBoxFor(model => model.Pec, new { @class = "wideContatti", @maxlength = "100", id = "pec" });
+                            }
+                            else
+                            {
+                                @Html.TextBoxFor(model => model.Pec, new { disabled = true, @class = "wideContatti", @maxlength = "100", id = "pec" });
+                            }
+                        </td>
+                    </tr>
+                    <tr class="disttr">
+                        <td colspan="3">
+                            <br /><label style="color:black;font-size:12px;">Inserire il numero senza prefisso internazionale per cercare i cellulari italiani e con prefisso internazionale per i cellulari stranieri</label>
+                        </td>
+                    </tr>
+                    <tr class="disttr">
+                        <td>
+                            @Html.RadioButtonFor(model => model.SelectContatto, "CELLULARE", new { @onclick = "AttivaCellulare()" })
+                        </td>
+                        <td width="150">
+                            @Html.LabelFor(model => model.Cellulare, new { @class = "label_Option_Button" })
+                        </td>
+                        <td>
+                            @if (selezioneBottone.Equals("CELLULARE"))
+                            {
+                                @Html.TextBoxFor(model => model.Cellulare, new { @class = "wideContatti", @maxlength = "20", id = "cellulare" });
+                            }
+                            else
+                            {
+                                @Html.TextBoxFor(model => model.Cellulare, new { disabled = true, @class = "wideContatti", @maxlength = "20", id = "cellulare" });
+                            }
+                        </td>
+                    </tr>
+                    <tr class="disttr">
+                        <td></td>
+                        <td>
+                            @Html.LabelFor(model => model.Certificato, new { @class = "labelModRicerca" })
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(model => model.Certificato,
+                                new SelectList(new List<SelectListItem>
+                            {
+                                new SelectListItem { Text = "Si", Value = "SI" },
+                                new SelectListItem { Text = "No", Value = "NO" },
+                                new SelectListItem { Text = "Tutti", Value = "TUTTI" }
+                            },
+                                    "Value", // property to be set as Value of dropdown item
+                                    "Text",  // property to be used as text of dropdown item
+                                    "TUTTI"), // value that should be set selected of dropdown
+                                new { @class = "wideTipoRicerca" })
+                        </td>
+                    </tr>
+                    <tr class="ricerca">
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div style="margin-top:5px; margin-left:35%; margin-right:25%;">
+                                <div style="float: left; padding: 0; margin: 0; vertical-align: top;">
+                                    <input class="BtnGrafica" type="submit" value="Ricerca" />
+                                </div>
+                                <div style="float: left; padding: 0; margin: 0; vertical-align: top;">
+                                    <img src="@Url.Content("~/Images/arrow-right.gif")" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        }
+    </fieldset>
+</div>
+@if (ViewData["listContatti"] != null)
+{
+    <br />
+    <div class="centerFuori">
+        <fieldset class="field_set_contatti">
+            @{
+                List<PINProvUtilita.Models.ListaContatti> listContatti = new List<PINProvUtilita.Models.ListaContatti>();
+                listContatti = (List<PINProvUtilita.Models.ListaContatti>)(ViewData["listContatti"]);
+            }
+            @if (listContatti.Count > 0)
+            {
+                String totali = (String)ViewData["totali"];
+                <span class="totaleContatti">
+                    <b>
+                        @Html.Label(totali)
+                    </b>
+                </span>
+                @Html.Partial("listaContatti", listContatti)
+                <br />
+                <br />
+            }
+            else
+            {
+                <div class="myLabel">
+                    @Html.Label("NON SONO PRESENTI CONTATTI")
+                </div>
+                <br />
+                <br />
+            }
+        </fieldset>
+    </div>
+}

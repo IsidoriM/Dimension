@@ -1,0 +1,6 @@
+C:\Progetti\PinProvUtilita\PinProvEntity\bin\Debug\PinProvEntity.dll
+C:\Progetti\PinProvUtilita\PinProvEntity\bin\Debug\PinProvEntity.pdb
+C:\Progetti\PinProvUtilita\PinProvEntity\obj\Debug\PinProvEntity.csproj.AssemblyReference.cache
+C:\Progetti\PinProvUtilita\PinProvEntity\obj\Debug\PinProvEntity.csproj.CoreCompileInputs.cache
+C:\Progetti\PinProvUtilita\PinProvEntity\obj\Debug\PinProvEntity.dll
+C:\Progetti\PinProvUtilita\PinProvEntity\obj\Debug\PinProvEntity.pdb

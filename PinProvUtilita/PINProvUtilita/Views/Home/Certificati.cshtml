@@ -1,0 +1,92 @@
+﻿@model List<PINProvUtilita.Models.Certificati>
+
+
+@{
+    var CodiceFiscale = (String) Session["CodiceFiscale"];
+    var cod11 = (Boolean)(ViewData["cod11"]);
+}
+<table id="elencosegnRPC" class="table2 table2-striped table2-bordered">   
+    <thead>                    
+        <tr>
+            <th>
+                Tipologia
+            </th>
+            <th>
+                Common Name
+            </th>
+            <th>
+                Emissione
+            </th>
+            <th>
+                Scadenza
+            </th>
+        </tr>                           
+    </thead>                  
+    <tbody>
+    @foreach (var cert in Model.ToList())    
+    {                
+          using (Html.BeginForm("InsertEntratel", "Home", cert, FormMethod.Post))
+          {                    
+            <tr>
+                  <td>  @Html.DisplayFor(model => cert.Tipo)</td>
+
+                        @if (@CodiceFiscale.Length==11)
+                        {
+                            if (cert.Tipo != "") 
+                            { 
+                                <td>  @Html.DisplayFor(model => cert.Commonname)</td>
+                                <td>  @Html.Label(cert.Dataemissione.Substring(0,10))</td>   
+                            }
+                            else
+                            {  
+                                <td>  @Html.Label("CF: " + cert.CodiceFiscale.ToUpper().ToString())</td>
+                                <td>  @Html.Label("delegato il: "+ cert.Dataemissione.Substring(0,10))</td>     
+                            }
+                        }
+                        else
+                        {
+                            <td>  @Html.DisplayFor(model => cert.Commonname)</td>
+                            <td>  @Html.Label(cert.Dataemissione.Substring(0,10))</td>
+                        }
+ 
+                        @if (cert.Datascadenza != "")
+                        {                                                
+                            <td>  @Html.Label(cert.Datascadenza.Substring(0,10))</td>
+                        }
+                        else
+                        {
+                            <td>  @Html.Label(cert.Datascadenza)</td>
+                        }
+                        @if(@cod11)
+                        {
+                           if (cert.CodiceFiscale.Length == 11)
+                           {
+                               
+                                 var CertificatoOK = PINProvUtilita.Controllers.utility.ControllaCertificatiEntratel(cert.Tipo);
+                                
+                                if (@CertificatoOK)
+                                {
+                                    <td> <input  class="BtnRevoca" type="submit" value="Inserisci Delegato" /> </td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
+
+                           }
+                           else
+                           {
+                               <td> 
+                                      <a href="@Url.Action("DeleteAction", "Home",new { confirm = true, serialnumber = cert.Serialnumber, codiceFiscale = cert.CodiceFiscale ,commonname=cert.Commonname} )"  onclick="return confirm('Confermi la cancellazione del delegato @cert.CodiceFiscale.ToUpper() ?');">
+                                          @*<img src="../../images/cancella.png" />*@
+                                          <img src="@Url.Content("~/Images/cancella.png")" />
+                                      </a>                             
+                                    @* @Html.ActionLink(" ","DeleteAction", new { confirm = true, serialnumber = cert.Serialnumber,codiceFiscale = cert.CodiceFiscale,commonname=cert.Commonname },new {@class = "modal-link1", onclick = "return confirm('Confermi la cancellazione del delegato "+@cert.CodiceFiscale +" ?');"  }) *@                               
+                               </td>                        
+                            }
+                        }
+            </tr>
+          }
+    }
+    </tbody> 
+</table>

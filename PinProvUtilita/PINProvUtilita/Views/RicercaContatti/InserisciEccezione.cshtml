@@ -1,0 +1,92 @@
+﻿ @model PINProvUtilita.Models.WhiteListNumContatto
+@{
+    var listItems = new List<System.Web.UI.WebControls.ListItem> { 
+        new System.Web.UI.WebControls.ListItem { Text = "Email", Value = "E" }, 
+        new System.Web.UI.WebControls.ListItem { Text = "PEC", Value = "P" }, 
+        new System.Web.UI.WebControls.ListItem { Text = "Cellulare", Value = "C" } 
+    };
+    
+    String contatto="";
+    
+    if(Session["ContattoNonCensito"] != null)
+    {
+        contatto = (String)Session["ContattoNonCensito"];
+    } 
+}
+
+<fieldset class="field_set_insert_eccezioni">
+    @using (Html.BeginForm("InserimentoEccezione", "RicercaContatti", Model, FormMethod.Post))
+    {
+        <div class="myLabel">   
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Contatto)
+                        </div>
+                        <div class="col-sm-5">  
+                            @Html.TextBoxFor(model => model.Contatto, new { @Value = @contatto, @class = "wideEccezione", @maxlength = "100" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.LabelFor(model => model.TipoContatto)  
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(model => model.TipoContatto, new SelectList(listItems), "-- Seleziona --", new { @class = "wideTipo" })
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Limite)   
+                        </div>
+                        <div class="col-sm-5">
+                            @Html.TextBoxFor(model => model.Limite, new { @class = "wideLimite", onkeypress="return soloNumeri(event);" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.LabelFor(model => model.CodiceFiscaleSegnalazione)  
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.CodiceFiscaleSegnalazione, new { @class = "wideSegnalato",@style = "text-transform:uppercase", @maxlength = "16"})
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Note) 
+                        </div>
+                        <div class="col-sm-11">
+                            @Html.TextAreaFor(model => model.Note, new { @class = "visNoteNero", @maxlength = "500" })   
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-11">
+                            <div class="center">
+                                <div style="float: left; padding: 0; margin-left: 2%; vertical-align: top;">
+                                    <input type="button"  class="BtnRevoca" value="Annulla"  onclick ="location.href='@Url.Action("AnnullaEccezione", "RicercaContatti")    '" />
+                                </div>
+                               <div style="float: left; padding: 0; margin-left: 2%; vertical-align: top;">
+                                    <input class ="BtnGrafica" type="submit" value="Conferma" />
+                                </div>
+                                <div style="float: left; padding: 0; margin: 0; vertical-align: top;">
+                                    <img src="@Url.Content("~/Images/arrow-right.gif")" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    }
+</fieldset>

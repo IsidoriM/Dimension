@@ -1,0 +1,57 @@
+﻿
+<script type="text/javascript" src=@Url.Content("~/Scripts/ModalPopupWindow.js")></script>
+
+ <script type="text/javascript">
+
+     var modalWin = new CreateModalPopUpObject();
+     //modalWin.SetLoadingImagePath("images/loading.gif");
+     modalWin.SetCloseButtonImagePath("images/remove.gif");
+     //Uncomment below line to make look buttons as link
+     //modalWin.SetButtonStyle("background:none;border:none;textDecoration:underline;cursor:pointer");
+
+     function ShowNewPage(strUrl) {
+         var callbackFunctionArray = new Array(EnrollNow, EnrollLater);
+         modalWin.ShowURL(strUrl, 157, 480, 'Message', null, callbackFunctionArray);
+     }
+
+
+
+     function Action1() {
+         alert('Action1 is excuted');
+         modalWin.HideModalPopUp();
+     }
+
+     function Action2() {
+         alert('Action2 is excuted');
+         modalWin.HideModalPopUp();
+     }
+
+     function EnrollNow(msg) {
+         modalWin.HideModalPopUp();
+         modalWin.ShowMessage(msg, 200, 400, 'User Information', null, null);
+     }
+
+     function EnrollLater() {
+         modalWin.HideModalPopUp();
+         modalWin.ShowMessage(msg, 200, 400, 'User Information', null, null);
+     }
+
+     function HideModalWindow() {
+         modalWin.HideModalPopUp();
+     }
+
+
+ </script>
+
+
+@if (ViewData["alertMessage"] != null)
+{  
+        if (ViewBag.JavaScriptFunction != null)
+        {
+            TempData["PassaggioErrore"] = ViewBag.Message.ToString();
+            <script type="text/javascript">
+                @Html.Raw(ViewBag.JavaScriptFunction)
+            </script>
+        }
+
+}

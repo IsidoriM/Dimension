@@ -1,0 +1,114 @@
+﻿ @model PINProvUtilita.Models.WhiteListNumContatto
+@{
+    PINProvUtilita.Models.WhiteListNumContatto visEccezione = (PINProvUtilita.Models.WhiteListNumContatto)ViewData["gestioneEccezione"];
+    var Tipo="";
+    if (visEccezione.TipoContatto.Equals("C"))
+    {
+        Tipo = "Cellulare";
+    }
+    if (visEccezione.TipoContatto.Equals("E"))
+    {
+        Tipo = "Email";
+    }
+    if (visEccezione.TipoContatto.Equals("P"))
+    {
+        Tipo = "PEC";
+    }
+ }
+
+
+<fieldset class="field_set_visualizza_eccezioni">
+    @using (Html.BeginForm("ModificaEccezione", "RicercaContatti", visEccezione, FormMethod.Post))
+    {
+
+        <div class="myLabel">   
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Contatto, new {@class="VisEccezione" })   
+                        </div>
+                        <div class="col-sm-5">
+                            <label class="VisContattoNero">@visEccezione.Contatto</label>
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.LabelFor(model => model.TipoContatto,new {@class="VisEccezione" })  
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.Label(Tipo,new {@class="VisEccezioneNero" })
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Limite,new {@class="VisEccezione" })   
+                        </div>
+                        <div class="col-sm-5">
+                            @Html.Label(visEccezione.Limite.ToString(),new {@class="VisContattoNero" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.LabelFor(model => model.CodiceFiscaleSegnalazione,new {@class="VisEccezione" })  
+                        </div>
+                        <div class="col-sm-4">
+                            @if(visEccezione.CodiceFiscaleSegnalazione != null)
+                            {
+                                @Html.Label(visEccezione.CodiceFiscaleSegnalazione,new {@class="VisEccezioneNero" })
+                            }
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.DataInserimento,new {@class="VisEccezione" })   
+                        </div>
+                        <div class="col-sm-11">
+                           @Html.Label(visEccezione.DataInserimento.Substring(0,10),new {@class="VisEccezioneNero" })
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Note,new {@class="VisEccezione" }) 
+                        </div>
+                        <div class="col-sm-11">
+                            @Html.TextArea("Note",visEccezione.Note, new {  @class = "visNoteNero",disabled = true}) 
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-11">
+                            <div class="center">
+                                <div style="float: left; padding: 0; margin-left: 2%; vertical-align: top;">
+                                    <input type="button"  class="BtnRevoca" value="Annulla"  onclick ="location.href='@Url.Action("AnnullaEccezione", "RicercaContatti")    '" />
+                                </div>
+                                <div style="float: left; padding: 0; margin-left: 2%; vertical-align: top;" class="BtnElimina">
+                                    <a href="@Url.Action("EliminaEccezione", "RicercaContatti",new { confirm = true, contatto = visEccezione.Contatto} )"  onclick="return confirm('Confermi l\'eliminazione del contatto?');" type="button" style="color:#636363 !important;margin:auto">Elimina</a>                                            
+                                </div>
+                                <div style="float: left; padding: 0; margin-left: 2%; vertical-align: top;">
+                                    <input class ="BtnGrafica" type="submit" value="Modifica" />
+                                </div>
+                                <div style="float: left; padding: 0; margin: 0; vertical-align: top;">
+                                    <img src="@Url.Content("~/Images/arrow-right.gif")" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    }
+</fieldset>

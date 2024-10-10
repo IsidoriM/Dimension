@@ -1,0 +1,35 @@
+﻿
+ @model List<PINProvUtilita.Models.Certificati>
+
+    <table id="elencosegnRPC" class="table2 table2-striped table2-bordered">
+
+        <thead>
+            <tr>
+                <th>Tipologia
+                </th>
+                <th>Common Name
+                </th>
+                <th>Emissione
+                </th>
+                <th>Scadenza
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (var ListaCF in Model.ToList())
+      
+        {
+                    
+            <tr>
+                <td>@Html.DisplayFor(model => ListaCF.Tipo)</td>
+                <td>@Html.DisplayFor(model => ListaCF.Commonname)</td>
+                <td>@Html.Label(ListaCF.Dataemissione.Substring(0,10))</td>
+                <td>@Html.Label(ListaCF.Datascadenza.Substring(0,10))</td>
+
+            </tr>
+        }
+
+        </tbody>                 
+    </table>

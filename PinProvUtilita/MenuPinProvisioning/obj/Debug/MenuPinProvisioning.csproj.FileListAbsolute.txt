@@ -1,0 +1,6 @@
+C:\Progetti\PinProvUtilita\MenuPinProvisioning\bin\Debug\MenuPinProvisioning.dll
+C:\Progetti\PinProvUtilita\MenuPinProvisioning\bin\Debug\MenuPinProvisioning.pdb
+C:\Progetti\PinProvUtilita\MenuPinProvisioning\obj\Debug\MenuPinProvisioning.csproj.AssemblyReference.cache
+C:\Progetti\PinProvUtilita\MenuPinProvisioning\obj\Debug\MenuPinProvisioning.csproj.CoreCompileInputs.cache
+C:\Progetti\PinProvUtilita\MenuPinProvisioning\obj\Debug\MenuPinProvisioning.dll
+C:\Progetti\PinProvUtilita\MenuPinProvisioning\obj\Debug\MenuPinProvisioning.pdb

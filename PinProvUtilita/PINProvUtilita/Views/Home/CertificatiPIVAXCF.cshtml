@@ -1,0 +1,70 @@
+﻿@model List<PINProvUtilita.Models.Certificati>
+
+
+
+@using (Html.BeginForm("SalvaCertificato", "Home", FormMethod.Post))
+{ 
+    
+                                     
+    var ContaCertificatoOK = 0;
+    
+    
+    <table id="CertificatiAttivi" class="table2 table2-striped table2-bordered">             
+         <thead>
+                    <tr>
+                        <th>
+                                                
+                        </th>
+                        <th>
+                            Tipologia
+                        </th>
+                        <th>
+                            Common Name
+                        </th>
+                        <th>
+                            Emissione
+                        </th>
+                        <th>
+                            Scadenza
+                        </th>
+                    </tr>
+          </thead>
+
+          <tbody>
+                
+                 @for (int j = 0; j < Model.Count; j++)  
+                 {
+                   
+                      <tr>
+                            @{
+                                     
+                                    var CertificatoOK = PINProvUtilita.Controllers.utility.ControllaCertificatiEntratel(Model[j].Tipo);
+                              }
+                            @if (@CertificatoOK)
+                            {
+                                ContaCertificatoOK = ContaCertificatoOK + 1;
+                                <td>  @Html.RadioButton("SelectCertificato",  Model[j].Serialnumber + ";" + Model[j].Commonname+";"+Model[j].CodiceFiscale)   </td>
+                            }
+                            else 
+                            {
+                                <td>    </td>
+                            }
+                            
+                            <td>  @Html.DisplayFor(model => Model[j].Tipo)</td>
+                            <td>  @Html.DisplayFor(model => Model[j].Commonname)</td>
+                            <td>  @Html.Label(Model[j].Dataemissione.Substring(0,10))</td>
+                            <td>  @Html.Label(Model[j].Datascadenza.Substring(0,10))</td>                  
+                      </tr>
+
+                                
+                 }                               
+          </tbody> 
+    </table>
+    <p>
+        @if(@ContaCertificatoOK > 0)
+        {
+             <input  class="BtnRevoca" type="submit" value="Salva" />
+        }
+    </p>
+    
+}

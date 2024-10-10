@@ -1,0 +1,11 @@
+C:\Progetti\PinProvUtilita\PinProvBLL\bin\Debug\PinProvBLL.dll
+C:\Progetti\PinProvUtilita\PinProvBLL\bin\Debug\PinProvBLL.pdb
+C:\Progetti\PinProvUtilita\PinProvBLL\bin\Debug\PinProvEntity.dll
+C:\Progetti\PinProvUtilita\PinProvBLL\bin\Debug\UtenteDal.dll
+C:\Progetti\PinProvUtilita\PinProvBLL\bin\Debug\PinProvEntity.pdb
+C:\Progetti\PinProvUtilita\PinProvBLL\bin\Debug\UtenteDal.pdb
+C:\Progetti\PinProvUtilita\PinProvBLL\obj\Debug\PinProvBLL.csproj.AssemblyReference.cache
+C:\Progetti\PinProvUtilita\PinProvBLL\obj\Debug\PinProvBLL.csproj.CoreCompileInputs.cache
+C:\Progetti\PinProvUtilita\PinProvBLL\obj\Debug\PinProvBLL.csproj.CopyComplete
+C:\Progetti\PinProvUtilita\PinProvBLL\obj\Debug\PinProvBLL.dll
+C:\Progetti\PinProvUtilita\PinProvBLL\obj\Debug\PinProvBLL.pdb

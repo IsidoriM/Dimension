@@ -1,0 +1,265 @@
+2018-10-04 14:28:44|ruoli AssegnazionePIN:operatore|A1850:P2715|A1850:P9473 matricolaoperatore lpellegrini03 accountWindows lpellegrini03
+2018-10-04 14:28:44|
+
+start - rsCheckAbilitazioneApprovazione  : lpellegrini03 
+2018-10-04 14:28:44|
+
+sCheckAbilitazioneApprovazione  : lpellegrini03  retrun: 1
+2018-10-04 14:28:44|
+
+start -  sottomenu Ver. Rapp. Lavoro
+2018-10-04 14:28:44|
+
+start -  sottomenu Gestione Deleghe
+2018-10-04 14:28:44|
+
+start -  sottomenu Anagrafica Unica Aziende
+2018-10-04 14:28:44|
+
+start -  sottomenu Ricerca Busta
+2018-10-04 14:28:44|
+
+start -  sottomenu Storico Utente
+2018-10-04 14:28:44|
+
+start -  sottomenu Abilitazioni Precedenti
+2018-10-04 14:28:44| node: Gestione Utente
+2018-10-04 14:28:44| node: Gestione Richieste Enti
+2018-10-04 14:28:44| node: Consultazione Utente
+2018-10-04 14:28:44| node: Converti pin online
+2018-10-04 14:28:44| node: Catalogo autorizzazioni
+2018-10-04 14:28:44| node: Segnalazioni Sicurezza IRT
+2018-10-04 14:28:44| node: Report Autorizzazioni
+2018-10-04 14:28:44| node: Utilità
+2018-10-04 14:28:45|Errore getCssDynamic URI non valido: impossibile analizzare il nome host. #?m=30 
+2018-10-04 14:28:45| subnode : Ver. Rapp. Lavoro
+2018-10-04 14:28:45| node: Ver. Rapp. Lavoro
+2018-10-04 14:28:45| subnode : Gestione Deleghe
+2018-10-04 14:28:45| node: Gestione Deleghe
+2018-10-04 14:28:45| subnode : Anagrafica Unica Aziende
+2018-10-04 14:28:45| node: Anagrafica Unica Aziende
+2018-10-04 14:28:45| subnode : Ricerca Busta
+2018-10-04 14:28:45| node: Ricerca Busta
+2018-10-04 14:28:45| subnode : Storico Utente
+2018-10-04 14:28:45| node: Storico Utente
+2018-10-04 14:28:45| subnode : Abilitazioni Precedenti
+2018-10-04 14:28:45| node: Abilitazioni Precedenti
+2018-10-04 14:28:45| node: Statistiche PIN
+2018-10-04 14:28:45| node: Ricerca Convenzioni
+2018-10-04 14:28:45| node: Reinvio PIN
+2018-10-04 14:28:45| node: Test1
+2018-10-04 14:28:45| node: Test2
+2018-10-04 14:28:45| node: Delegati Entratel
+2018-10-04 14:28:45|<div Style="margin-left:10px; margin-right:10px; margin-top:10px;"><div style="background-color:#ffffff;MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px"><div id="DivLogo"><div id="Logo"><a href="PinProvisioningDefault.aspx"><img src="/images/menu/logo.png" title="Home" /></a><a class="homeButton" href="PinProvisioningDefault.aspx"><img src="/images/menu/home.png" title="Home"/></a></div></div></div><div Style="margin-top:5px;"><div Style="MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"><TABLE cellSpacing=0 cellPadding=0 width="99%" border=0><TBODY><tr id="TrBordoSupMenu" runat="server"><TD><div id="bordoSup"  style="MARGIN-BOTTOM: 5px; HEIGHT: 1px; MARGIN-TOP: 5px; BACKGROUND-COLOR: #f26822" runat="server" ></div></td></tr><tr id="TrMenuItems" runat="server" ><td><DIV id="DivMenu" role="navigation"><div id='menuWrapper'><ul class='menu'><li class="top"><a id='nav-2' href='GestioneUtente.aspx?m=2' class='top_link' target='' title='Gestione anagrafica utente, PIN, profili ed autorizzazioni'><span>Gestione Utente</span></a></li><li class="top"><a id='nav-3' href='GestioneRichiesteEntiOnline.aspx?m=3' class='top_link' target='' title='Gestione Richieste Enti'><span>Gestione Richieste Enti</span></a></li><li class="top"><a id='nav-4' href='RicercaRiepilogoUtente.aspx?m=4' class='top_link' target='' title='Consultazione Utente'><span>Consultazione Utente</span></a></li><li class="top"><a id='nav-11' href='PINDISPOSITIVODefault.aspx?m=11' class='top_link' target='' title='Converti un pin online in pin dispositivo'><span>Converti pin online</span></a></li><li class="top"><a id='nav-12' href='ElencoAutorizzazioni.aspx?m=12' class='top_link' target='' title='Elenco delle autorizzazioni possibili per ciascun profilo'><span>Catalogo autorizzazioni</span></a></li><li class="top"><a id='nav-23' href='Seg.aspx?m=23' class='top_link' target='' title='Segnalazioni antifrode'><span>Segnalazioni Sicurezza IRT</span></a></li><li class="top"><a id='nav-24' href='ReportGSAssociati.aspx?m=24' class='top_link' target='' title='Consultazione Autorizzazioni Utenti'><span>Report Autorizzazioni</span></a></li><li class="top"><a id='nav-30' href='#?m=30' class='top_link' target='' title='Funzioni di utilit&#224;'><span>Utilit&#224;</span></a><ul class='sub'><li><a id='nav-13' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica rapporto di lavoro'>   <span>Ver. Rapp. Lavoro</span></a></li><li><a id='nav-25' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Archivio Deleghe e Intermediari certificati, per assegnazione profili azienda e intermediari'>   <span>Gestione Deleghe</span></a></li><li><a id='nav-26' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica soggetti collegati alle aziende, per assegnazione profilo azienda'>   <span>Anagrafica Unica Aziende</span></a></li><li><a id='nav-27' href='ricercabusta.aspx?m=30' class='fly' target='' title='Ricerca per codice busta'>   <span>Ricerca Busta</span></a></li><li><a id='nav-28' href='StoricoUtente.aspx?m=30' class='fly' target='' title='Storico utente'>   <span>Storico Utente</span></a></li><li><a id='nav-29' href='ServiziAutorizzati.aspx?m=30' class='fly' target='' title='Abilitazioni precedente'>   <span>Abilitazioni Precedenti</span></a></li></ul><li class="top"><a id='nav-31' href='Dashboard_PIN.aspx?m=31' class='top_link' target='' title='Statistiche PIN'><span>Statistiche PIN</span></a></li><li class="top"><a id='nav-33' href='RicercaConvenzioni.aspx?m=33' class='top_link' target='' title='Ricerca Convenzioni'><span>Ricerca Convenzioni</span></a></li><li class="top"><a id='nav-35' href='RinvioPin.aspx?m=35' class='top_link' target='' title='Reinvio della prima parte del PIN'><span>Reinvio PIN</span></a></li><li class="top"><a id='nav-36' href='http://passiprovisioning.sviluppo.inps.it/GestioneUtente.aspx?m=36' class='top_link' target='' title='Test1'><span>Test1</span></a></li><li class="top"><a id='nav-37' href='http://localhost:7105/Default.aspx?m=37' class='top_link' target='' title='Test2'><span>Test2</span></a></li><li class="top"><a id='nav-38' href='http://localhost:39956/DelegatiEntratel/Home/About?m=38' class='select top_link' target='' title='Gestione dei delegati Entratel'><span>Delegati Entratel</span></a></li></ul></div></div></td></tr><TR id="TrBordoInfMenu" runat="server"><TD><div id="bordoInf" style='MARGIN-BOTTOM:5px; HEIGHT: 1px; MARGIN-TOP:5px; BACKGROUND-COLOR:#f26822'  runat="server" ></div></td></tr></TABLE></div></div>
+2018-10-04 14:44:25|ruoli AssegnazionePIN:operatore|A1850:P2715|A1850:P9473 matricolaoperatore lpellegrini03 accountWindows lpellegrini03
+2018-10-04 14:44:25|
+
+start - rsCheckAbilitazioneApprovazione  : lpellegrini03 
+2018-10-04 14:44:25|
+
+sCheckAbilitazioneApprovazione  : lpellegrini03  retrun: 1
+2018-10-04 14:44:25|
+
+start -  sottomenu Ver. Rapp. Lavoro
+2018-10-04 14:44:25|
+
+start -  sottomenu Gestione Deleghe
+2018-10-04 14:44:25|
+
+start -  sottomenu Anagrafica Unica Aziende
+2018-10-04 14:44:25|
+
+start -  sottomenu Ricerca Busta
+2018-10-04 14:44:25|
+
+start -  sottomenu Storico Utente
+2018-10-04 14:44:25|
+
+start -  sottomenu Abilitazioni Precedenti
+2018-10-04 14:44:25| node: Gestione Utente
+2018-10-04 14:44:26| node: Gestione Richieste Enti
+2018-10-04 14:44:26| node: Consultazione Utente
+2018-10-04 14:44:26| node: Converti pin online
+2018-10-04 14:44:26| node: Catalogo autorizzazioni
+2018-10-04 14:44:26| node: Segnalazioni Sicurezza IRT
+2018-10-04 14:44:26| node: Report Autorizzazioni
+2018-10-04 14:44:26| node: Utilità
+2018-10-04 14:44:26|Errore getCssDynamic URI non valido: impossibile analizzare il nome host. #?m=30 
+2018-10-04 14:44:26| subnode : Ver. Rapp. Lavoro
+2018-10-04 14:44:26| node: Ver. Rapp. Lavoro
+2018-10-04 14:44:26| subnode : Gestione Deleghe
+2018-10-04 14:44:26| node: Gestione Deleghe
+2018-10-04 14:44:26| subnode : Anagrafica Unica Aziende
+2018-10-04 14:44:26| node: Anagrafica Unica Aziende
+2018-10-04 14:44:26| subnode : Ricerca Busta
+2018-10-04 14:44:26| node: Ricerca Busta
+2018-10-04 14:44:26| subnode : Storico Utente
+2018-10-04 14:44:26| node: Storico Utente
+2018-10-04 14:44:26| subnode : Abilitazioni Precedenti
+2018-10-04 14:44:26| node: Abilitazioni Precedenti
+2018-10-04 14:44:26| node: Statistiche PIN
+2018-10-04 14:44:26| node: Ricerca Convenzioni
+2018-10-04 14:44:26| node: Reinvio PIN
+2018-10-04 14:44:26| node: Test1
+2018-10-04 14:44:26| node: Test2
+2018-10-04 14:44:26| node: Delegati Entratel
+2018-10-04 14:44:26|<div Style="margin-left:10px; margin-right:10px; margin-top:10px;"><div style="background-color:#ffffff;MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px"><div id="DivLogo"><div id="Logo"><a href="PinProvisioningDefault.aspx"><img src="/images/menu/logo.png" title="Home" /></a><a class="homeButton" href="PinProvisioningDefault.aspx"><img src="/images/menu/home.png" title="Home"/></a></div></div></div><div Style="margin-top:5px;"><div Style="MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"><TABLE cellSpacing=0 cellPadding=0 width="99%" border=0><TBODY><tr id="TrBordoSupMenu" runat="server"><TD><div id="bordoSup"  style="MARGIN-BOTTOM: 5px; HEIGHT: 1px; MARGIN-TOP: 5px; BACKGROUND-COLOR: #f26822" runat="server" ></div></td></tr><tr id="TrMenuItems" runat="server" ><td><DIV id="DivMenu" role="navigation"><div id='menuWrapper'><ul class='menu'><li class="top"><a id='nav-2' href='GestioneUtente.aspx?m=2' class='top_link' target='' title='Gestione anagrafica utente, PIN, profili ed autorizzazioni'><span>Gestione Utente</span></a></li><li class="top"><a id='nav-3' href='GestioneRichiesteEntiOnline.aspx?m=3' class='top_link' target='' title='Gestione Richieste Enti'><span>Gestione Richieste Enti</span></a></li><li class="top"><a id='nav-4' href='RicercaRiepilogoUtente.aspx?m=4' class='top_link' target='' title='Consultazione Utente'><span>Consultazione Utente</span></a></li><li class="top"><a id='nav-11' href='PINDISPOSITIVODefault.aspx?m=11' class='top_link' target='' title='Converti un pin online in pin dispositivo'><span>Converti pin online</span></a></li><li class="top"><a id='nav-12' href='ElencoAutorizzazioni.aspx?m=12' class='top_link' target='' title='Elenco delle autorizzazioni possibili per ciascun profilo'><span>Catalogo autorizzazioni</span></a></li><li class="top"><a id='nav-23' href='Seg.aspx?m=23' class='top_link' target='' title='Segnalazioni antifrode'><span>Segnalazioni Sicurezza IRT</span></a></li><li class="top"><a id='nav-24' href='ReportGSAssociati.aspx?m=24' class='top_link' target='' title='Consultazione Autorizzazioni Utenti'><span>Report Autorizzazioni</span></a></li><li class="top"><a id='nav-30' href='#?m=30' class='top_link' target='' title='Funzioni di utilit&#224;'><span>Utilit&#224;</span></a><ul class='sub'><li><a id='nav-13' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica rapporto di lavoro'>   <span>Ver. Rapp. Lavoro</span></a></li><li><a id='nav-25' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Archivio Deleghe e Intermediari certificati, per assegnazione profili azienda e intermediari'>   <span>Gestione Deleghe</span></a></li><li><a id='nav-26' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica soggetti collegati alle aziende, per assegnazione profilo azienda'>   <span>Anagrafica Unica Aziende</span></a></li><li><a id='nav-27' href='ricercabusta.aspx?m=30' class='fly' target='' title='Ricerca per codice busta'>   <span>Ricerca Busta</span></a></li><li><a id='nav-28' href='StoricoUtente.aspx?m=30' class='fly' target='' title='Storico utente'>   <span>Storico Utente</span></a></li><li><a id='nav-29' href='ServiziAutorizzati.aspx?m=30' class='fly' target='' title='Abilitazioni precedente'>   <span>Abilitazioni Precedenti</span></a></li></ul><li class="top"><a id='nav-31' href='Dashboard_PIN.aspx?m=31' class='top_link' target='' title='Statistiche PIN'><span>Statistiche PIN</span></a></li><li class="top"><a id='nav-33' href='RicercaConvenzioni.aspx?m=33' class='top_link' target='' title='Ricerca Convenzioni'><span>Ricerca Convenzioni</span></a></li><li class="top"><a id='nav-35' href='RinvioPin.aspx?m=35' class='top_link' target='' title='Reinvio della prima parte del PIN'><span>Reinvio PIN</span></a></li><li class="top"><a id='nav-36' href='http://passiprovisioning.sviluppo.inps.it/GestioneUtente.aspx?m=36' class='top_link' target='' title='Test1'><span>Test1</span></a></li><li class="top"><a id='nav-37' href='http://localhost:7105/Default.aspx?m=37' class='top_link' target='' title='Test2'><span>Test2</span></a></li><li class="top"><a id='nav-38' href='http://localhost:39956/DelegatiEntratel/Home/About?m=38' class='select top_link' target='' title='Gestione dei delegati Entratel'><span>Delegati Entratel</span></a></li></ul></div></div></td></tr><TR id="TrBordoInfMenu" runat="server"><TD><div id="bordoInf" style='MARGIN-BOTTOM:5px; HEIGHT: 1px; MARGIN-TOP:5px; BACKGROUND-COLOR:#f26822'  runat="server" ></div></td></tr></TABLE></div></div>
+2018-10-04 14:46:36|ruoli AssegnazionePIN:operatore|A1850:P2715|A1850:P9473 matricolaoperatore lpellegrini03 accountWindows lpellegrini03
+2018-10-04 14:46:36|
+
+start - rsCheckAbilitazioneApprovazione  : lpellegrini03 
+2018-10-04 14:46:37|
+
+sCheckAbilitazioneApprovazione  : lpellegrini03  retrun: 1
+2018-10-04 14:46:37|
+
+start -  sottomenu Ver. Rapp. Lavoro
+2018-10-04 14:46:37|
+
+start -  sottomenu Gestione Deleghe
+2018-10-04 14:46:37|
+
+start -  sottomenu Anagrafica Unica Aziende
+2018-10-04 14:46:37|
+
+start -  sottomenu Ricerca Busta
+2018-10-04 14:46:37|
+
+start -  sottomenu Storico Utente
+2018-10-04 14:46:37|
+
+start -  sottomenu Abilitazioni Precedenti
+2018-10-04 14:46:37| node: Gestione Utente
+2018-10-04 14:46:37| node: Gestione Richieste Enti
+2018-10-04 14:46:37| node: Consultazione Utente
+2018-10-04 14:46:37| node: Converti pin online
+2018-10-04 14:46:37| node: Catalogo autorizzazioni
+2018-10-04 14:46:37| node: Segnalazioni Sicurezza IRT
+2018-10-04 14:46:37| node: Report Autorizzazioni
+2018-10-04 14:46:37| node: Utilità
+2018-10-04 14:46:37|Errore getCssDynamic URI non valido: impossibile analizzare il nome host. #?m=30 
+2018-10-04 14:46:37| subnode : Ver. Rapp. Lavoro
+2018-10-04 14:46:37| node: Ver. Rapp. Lavoro
+2018-10-04 14:46:37| subnode : Gestione Deleghe
+2018-10-04 14:46:37| node: Gestione Deleghe
+2018-10-04 14:46:37| subnode : Anagrafica Unica Aziende
+2018-10-04 14:46:37| node: Anagrafica Unica Aziende
+2018-10-04 14:46:37| subnode : Ricerca Busta
+2018-10-04 14:46:37| node: Ricerca Busta
+2018-10-04 14:46:37| subnode : Storico Utente
+2018-10-04 14:46:37| node: Storico Utente
+2018-10-04 14:46:37| subnode : Abilitazioni Precedenti
+2018-10-04 14:46:37| node: Abilitazioni Precedenti
+2018-10-04 14:46:37| node: Statistiche PIN
+2018-10-04 14:46:37| node: Ricerca Convenzioni
+2018-10-04 14:46:37| node: Reinvio PIN
+2018-10-04 14:46:37| node: Test1
+2018-10-04 14:46:37| node: Test2
+2018-10-04 14:46:37| node: Delegati Entratel
+2018-10-04 14:46:37|<div Style="margin-left:10px; margin-right:10px; margin-top:10px;"><div style="background-color:#ffffff;MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px"><div id="DivLogo"><div id="Logo"><a href="PinProvisioningDefault.aspx"><img src="/images/menu/logo.png" title="Home" /></a><a class="homeButton" href="PinProvisioningDefault.aspx"><img src="/images/menu/home.png" title="Home"/></a></div></div></div><div Style="margin-top:5px;"><div Style="MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"><TABLE cellSpacing=0 cellPadding=0 width="99%" border=0><TBODY><tr id="TrBordoSupMenu" runat="server"><TD><div id="bordoSup"  style="MARGIN-BOTTOM: 5px; HEIGHT: 1px; MARGIN-TOP: 5px; BACKGROUND-COLOR: #f26822" runat="server" ></div></td></tr><tr id="TrMenuItems" runat="server" ><td><DIV id="DivMenu" role="navigation"><div id='menuWrapper'><ul class='menu'><li class="top"><a id='nav-2' href='GestioneUtente.aspx?m=2' class='top_link' target='' title='Gestione anagrafica utente, PIN, profili ed autorizzazioni'><span>Gestione Utente</span></a></li><li class="top"><a id='nav-3' href='GestioneRichiesteEntiOnline.aspx?m=3' class='top_link' target='' title='Gestione Richieste Enti'><span>Gestione Richieste Enti</span></a></li><li class="top"><a id='nav-4' href='RicercaRiepilogoUtente.aspx?m=4' class='top_link' target='' title='Consultazione Utente'><span>Consultazione Utente</span></a></li><li class="top"><a id='nav-11' href='PINDISPOSITIVODefault.aspx?m=11' class='top_link' target='' title='Converti un pin online in pin dispositivo'><span>Converti pin online</span></a></li><li class="top"><a id='nav-12' href='ElencoAutorizzazioni.aspx?m=12' class='top_link' target='' title='Elenco delle autorizzazioni possibili per ciascun profilo'><span>Catalogo autorizzazioni</span></a></li><li class="top"><a id='nav-23' href='Seg.aspx?m=23' class='top_link' target='' title='Segnalazioni antifrode'><span>Segnalazioni Sicurezza IRT</span></a></li><li class="top"><a id='nav-24' href='ReportGSAssociati.aspx?m=24' class='top_link' target='' title='Consultazione Autorizzazioni Utenti'><span>Report Autorizzazioni</span></a></li><li class="top"><a id='nav-30' href='#?m=30' class='top_link' target='' title='Funzioni di utilit&#224;'><span>Utilit&#224;</span></a><ul class='sub'><li><a id='nav-13' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica rapporto di lavoro'>   <span>Ver. Rapp. Lavoro</span></a></li><li><a id='nav-25' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Archivio Deleghe e Intermediari certificati, per assegnazione profili azienda e intermediari'>   <span>Gestione Deleghe</span></a></li><li><a id='nav-26' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica soggetti collegati alle aziende, per assegnazione profilo azienda'>   <span>Anagrafica Unica Aziende</span></a></li><li><a id='nav-27' href='ricercabusta.aspx?m=30' class='fly' target='' title='Ricerca per codice busta'>   <span>Ricerca Busta</span></a></li><li><a id='nav-28' href='StoricoUtente.aspx?m=30' class='fly' target='' title='Storico utente'>   <span>Storico Utente</span></a></li><li><a id='nav-29' href='ServiziAutorizzati.aspx?m=30' class='fly' target='' title='Abilitazioni precedente'>   <span>Abilitazioni Precedenti</span></a></li></ul><li class="top"><a id='nav-31' href='Dashboard_PIN.aspx?m=31' class='top_link' target='' title='Statistiche PIN'><span>Statistiche PIN</span></a></li><li class="top"><a id='nav-33' href='RicercaConvenzioni.aspx?m=33' class='top_link' target='' title='Ricerca Convenzioni'><span>Ricerca Convenzioni</span></a></li><li class="top"><a id='nav-35' href='RinvioPin.aspx?m=35' class='top_link' target='' title='Reinvio della prima parte del PIN'><span>Reinvio PIN</span></a></li><li class="top"><a id='nav-36' href='http://passiprovisioning.sviluppo.inps.it/GestioneUtente.aspx?m=36' class='top_link' target='' title='Test1'><span>Test1</span></a></li><li class="top"><a id='nav-37' href='http://localhost:7105/Default.aspx?m=37' class='top_link' target='' title='Test2'><span>Test2</span></a></li><li class="top"><a id='nav-38' href='http://localhost:39956/DelegatiEntratel/Home/About?m=38' class='select top_link' target='' title='Gestione dei delegati Entratel'><span>Delegati Entratel</span></a></li></ul></div></div></td></tr><TR id="TrBordoInfMenu" runat="server"><TD><div id="bordoInf" style='MARGIN-BOTTOM:5px; HEIGHT: 1px; MARGIN-TOP:5px; BACKGROUND-COLOR:#f26822'  runat="server" ></div></td></tr></TABLE></div></div>
+2018-10-04 14:54:09|ruoli AssegnazionePIN:operatore|A1850:P2715|A1850:P9473 matricolaoperatore lpellegrini03 accountWindows lpellegrini03
+2018-10-04 14:54:09|
+
+start - rsCheckAbilitazioneApprovazione  : lpellegrini03 
+2018-10-04 14:54:09|
+
+sCheckAbilitazioneApprovazione  : lpellegrini03  retrun: 1
+2018-10-04 14:54:09|
+
+start -  sottomenu Ver. Rapp. Lavoro
+2018-10-04 14:54:09|
+
+start -  sottomenu Gestione Deleghe
+2018-10-04 14:54:09|
+
+start -  sottomenu Anagrafica Unica Aziende
+2018-10-04 14:54:09|
+
+start -  sottomenu Ricerca Busta
+2018-10-04 14:54:09|
+
+start -  sottomenu Storico Utente
+2018-10-04 14:54:09|
+
+start -  sottomenu Abilitazioni Precedenti
+2018-10-04 14:54:09| node: Gestione Utente
+2018-10-04 14:54:09| node: Gestione Richieste Enti
+2018-10-04 14:54:09| node: Consultazione Utente
+2018-10-04 14:54:09| node: Converti pin online
+2018-10-04 14:54:09| node: Catalogo autorizzazioni
+2018-10-04 14:54:09| node: Segnalazioni Sicurezza IRT
+2018-10-04 14:54:09| node: Report Autorizzazioni
+2018-10-04 14:54:09| node: Utilità
+2018-10-04 14:54:09|Errore getCssDynamic URI non valido: impossibile analizzare il nome host. #?m=30 
+2018-10-04 14:54:09| subnode : Ver. Rapp. Lavoro
+2018-10-04 14:54:09| node: Ver. Rapp. Lavoro
+2018-10-04 14:54:09| subnode : Gestione Deleghe
+2018-10-04 14:54:09| node: Gestione Deleghe
+2018-10-04 14:54:09| subnode : Anagrafica Unica Aziende
+2018-10-04 14:54:09| node: Anagrafica Unica Aziende
+2018-10-04 14:54:09| subnode : Ricerca Busta
+2018-10-04 14:54:09| node: Ricerca Busta
+2018-10-04 14:54:09| subnode : Storico Utente
+2018-10-04 14:54:09| node: Storico Utente
+2018-10-04 14:54:09| subnode : Abilitazioni Precedenti
+2018-10-04 14:54:09| node: Abilitazioni Precedenti
+2018-10-04 14:54:09| node: Statistiche PIN
+2018-10-04 14:54:09| node: Ricerca Convenzioni
+2018-10-04 14:54:09| node: Reinvio PIN
+2018-10-04 14:54:09| node: Test1
+2018-10-04 14:54:09| node: Test2
+2018-10-04 14:54:09| node: Delegati Entratel
+2018-10-04 14:54:09|<div Style="margin-left:10px; margin-right:10px; margin-top:10px;"><div style="background-color:#ffffff;MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px"><div id="DivLogo"><div id="Logo"><a href="PinProvisioningDefault.aspx"><img src="/images/menu/logo.png" title="Home" /></a><a class="homeButton" href="PinProvisioningDefault.aspx"><img src="/images/menu/home.png" title="Home"/></a></div></div></div><div Style="margin-top:5px;"><div Style="MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"><TABLE cellSpacing=0 cellPadding=0 width="99%" border=0><TBODY><tr id="TrBordoSupMenu" runat="server"><TD><div id="bordoSup"  style="MARGIN-BOTTOM: 5px; HEIGHT: 1px; MARGIN-TOP: 5px; BACKGROUND-COLOR: #f26822" runat="server" ></div></td></tr><tr id="TrMenuItems" runat="server" ><td><DIV id="DivMenu" role="navigation"><div id='menuWrapper'><ul class='menu'><li class="top"><a id='nav-2' href='GestioneUtente.aspx?m=2' class='top_link' target='' title='Gestione anagrafica utente, PIN, profili ed autorizzazioni'><span>Gestione Utente</span></a></li><li class="top"><a id='nav-3' href='GestioneRichiesteEntiOnline.aspx?m=3' class='top_link' target='' title='Gestione Richieste Enti'><span>Gestione Richieste Enti</span></a></li><li class="top"><a id='nav-4' href='RicercaRiepilogoUtente.aspx?m=4' class='top_link' target='' title='Consultazione Utente'><span>Consultazione Utente</span></a></li><li class="top"><a id='nav-11' href='PINDISPOSITIVODefault.aspx?m=11' class='top_link' target='' title='Converti un pin online in pin dispositivo'><span>Converti pin online</span></a></li><li class="top"><a id='nav-12' href='ElencoAutorizzazioni.aspx?m=12' class='top_link' target='' title='Elenco delle autorizzazioni possibili per ciascun profilo'><span>Catalogo autorizzazioni</span></a></li><li class="top"><a id='nav-23' href='Seg.aspx?m=23' class='top_link' target='' title='Segnalazioni antifrode'><span>Segnalazioni Sicurezza IRT</span></a></li><li class="top"><a id='nav-24' href='ReportGSAssociati.aspx?m=24' class='top_link' target='' title='Consultazione Autorizzazioni Utenti'><span>Report Autorizzazioni</span></a></li><li class="top"><a id='nav-30' href='#?m=30' class='top_link' target='' title='Funzioni di utilit&#224;'><span>Utilit&#224;</span></a><ul class='sub'><li><a id='nav-13' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica rapporto di lavoro'>   <span>Ver. Rapp. Lavoro</span></a></li><li><a id='nav-25' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Archivio Deleghe e Intermediari certificati, per assegnazione profili azienda e intermediari'>   <span>Gestione Deleghe</span></a></li><li><a id='nav-26' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica soggetti collegati alle aziende, per assegnazione profilo azienda'>   <span>Anagrafica Unica Aziende</span></a></li><li><a id='nav-27' href='ricercabusta.aspx?m=30' class='fly' target='' title='Ricerca per codice busta'>   <span>Ricerca Busta</span></a></li><li><a id='nav-28' href='StoricoUtente.aspx?m=30' class='fly' target='' title='Storico utente'>   <span>Storico Utente</span></a></li><li><a id='nav-29' href='ServiziAutorizzati.aspx?m=30' class='fly' target='' title='Abilitazioni precedente'>   <span>Abilitazioni Precedenti</span></a></li></ul><li class="top"><a id='nav-31' href='Dashboard_PIN.aspx?m=31' class='top_link' target='' title='Statistiche PIN'><span>Statistiche PIN</span></a></li><li class="top"><a id='nav-33' href='RicercaConvenzioni.aspx?m=33' class='top_link' target='' title='Ricerca Convenzioni'><span>Ricerca Convenzioni</span></a></li><li class="top"><a id='nav-35' href='RinvioPin.aspx?m=35' class='top_link' target='' title='Reinvio della prima parte del PIN'><span>Reinvio PIN</span></a></li><li class="top"><a id='nav-36' href='http://passiprovisioning.sviluppo.inps.it/GestioneUtente.aspx?m=36' class='top_link' target='' title='Test1'><span>Test1</span></a></li><li class="top"><a id='nav-37' href='http://localhost:7105/Default.aspx?m=37' class='top_link' target='' title='Test2'><span>Test2</span></a></li><li class="top"><a id='nav-38' href='http://localhost:39956/DelegatiEntratel/Home/About?m=38' class='select top_link' target='' title='Gestione dei delegati Entratel'><span>Delegati Entratel</span></a></li></ul></div></div></td></tr><TR id="TrBordoInfMenu" runat="server"><TD><div id="bordoInf" style='MARGIN-BOTTOM:5px; HEIGHT: 1px; MARGIN-TOP:5px; BACKGROUND-COLOR:#f26822'  runat="server" ></div></td></tr></TABLE></div></div>
+2018-10-04 14:59:09|ruoli AssegnazionePIN:operatore|A1850:P2715|A1850:P9473 matricolaoperatore lpellegrini03 accountWindows lpellegrini03
+2018-10-04 14:59:09|
+
+start - rsCheckAbilitazioneApprovazione  : lpellegrini03 
+2018-10-04 14:59:09|
+
+sCheckAbilitazioneApprovazione  : lpellegrini03  retrun: 1
+2018-10-04 14:59:09|
+
+start -  sottomenu Ver. Rapp. Lavoro
+2018-10-04 14:59:09|
+
+start -  sottomenu Gestione Deleghe
+2018-10-04 14:59:09|
+
+start -  sottomenu Anagrafica Unica Aziende
+2018-10-04 14:59:09|
+
+start -  sottomenu Ricerca Busta
+2018-10-04 14:59:09|
+
+start -  sottomenu Storico Utente
+2018-10-04 14:59:09|
+
+start -  sottomenu Abilitazioni Precedenti
+2018-10-04 14:59:09| node: Gestione Utente
+2018-10-04 14:59:09| node: Gestione Richieste Enti
+2018-10-04 14:59:09| node: Consultazione Utente
+2018-10-04 14:59:09| node: Converti pin online
+2018-10-04 14:59:09| node: Catalogo autorizzazioni
+2018-10-04 14:59:09| node: Segnalazioni Sicurezza IRT
+2018-10-04 14:59:09| node: Report Autorizzazioni
+2018-10-04 14:59:09| node: Utilità
+2018-10-04 14:59:10|Errore getCssDynamic URI non valido: impossibile analizzare il nome host. #?m=30 
+2018-10-04 14:59:10| subnode : Ver. Rapp. Lavoro
+2018-10-04 14:59:10| node: Ver. Rapp. Lavoro
+2018-10-04 14:59:10| subnode : Gestione Deleghe
+2018-10-04 14:59:10| node: Gestione Deleghe
+2018-10-04 14:59:10| subnode : Anagrafica Unica Aziende
+2018-10-04 14:59:10| node: Anagrafica Unica Aziende
+2018-10-04 14:59:10| subnode : Ricerca Busta
+2018-10-04 14:59:10| node: Ricerca Busta
+2018-10-04 14:59:10| subnode : Storico Utente
+2018-10-04 14:59:10| node: Storico Utente
+2018-10-04 14:59:10| subnode : Abilitazioni Precedenti
+2018-10-04 14:59:10| node: Abilitazioni Precedenti
+2018-10-04 14:59:10| node: Statistiche PIN
+2018-10-04 14:59:10| node: Ricerca Convenzioni
+2018-10-04 14:59:10| node: Reinvio PIN
+2018-10-04 14:59:10| node: Test1
+2018-10-04 14:59:10| node: Test2
+2018-10-04 14:59:10| node: Delegati Entratel
+2018-10-04 14:59:10|<div Style="margin-left:10px; margin-right:10px; margin-top:10px;"><div style="background-color:#ffffff;MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px"><div id="DivLogo"><div id="Logo"><a href="PinProvisioningDefault.aspx"><img src="/images/menu/logo.png" title="Home" /></a><a class="homeButton" href="PinProvisioningDefault.aspx"><img src="/images/menu/home.png" title="Home"/></a></div></div></div><div Style="margin-top:5px;"><div Style="MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"><TABLE cellSpacing=0 cellPadding=0 width="99%" border=0><TBODY><tr id="TrBordoSupMenu" runat="server"><TD><div id="bordoSup"  style="MARGIN-BOTTOM: 5px; HEIGHT: 1px; MARGIN-TOP: 5px; BACKGROUND-COLOR: #f26822" runat="server" ></div></td></tr><tr id="TrMenuItems" runat="server" ><td><DIV id="DivMenu" role="navigation"><div id='menuWrapper'><ul class='menu'><li class="top"><a id='nav-2' href='GestioneUtente.aspx?m=2' class='top_link' target='' title='Gestione anagrafica utente, PIN, profili ed autorizzazioni'><span>Gestione Utente</span></a></li><li class="top"><a id='nav-3' href='GestioneRichiesteEntiOnline.aspx?m=3' class='top_link' target='' title='Gestione Richieste Enti'><span>Gestione Richieste Enti</span></a></li><li class="top"><a id='nav-4' href='RicercaRiepilogoUtente.aspx?m=4' class='top_link' target='' title='Consultazione Utente'><span>Consultazione Utente</span></a></li><li class="top"><a id='nav-11' href='PINDISPOSITIVODefault.aspx?m=11' class='top_link' target='' title='Converti un pin online in pin dispositivo'><span>Converti pin online</span></a></li><li class="top"><a id='nav-12' href='ElencoAutorizzazioni.aspx?m=12' class='top_link' target='' title='Elenco delle autorizzazioni possibili per ciascun profilo'><span>Catalogo autorizzazioni</span></a></li><li class="top"><a id='nav-23' href='Seg.aspx?m=23' class='top_link' target='' title='Segnalazioni antifrode'><span>Segnalazioni Sicurezza IRT</span></a></li><li class="top"><a id='nav-24' href='ReportGSAssociati.aspx?m=24' class='top_link' target='' title='Consultazione Autorizzazioni Utenti'><span>Report Autorizzazioni</span></a></li><li class="top"><a id='nav-30' href='#?m=30' class='top_link' target='' title='Funzioni di utilit&#224;'><span>Utilit&#224;</span></a><ul class='sub'><li><a id='nav-13' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica rapporto di lavoro'>   <span>Ver. Rapp. Lavoro</span></a></li><li><a id='nav-25' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Archivio Deleghe e Intermediari certificati, per assegnazione profili azienda e intermediari'>   <span>Gestione Deleghe</span></a></li><li><a id='nav-26' href='javascript:alert(&quot;Funzionalit&#224; in sviluppo&quot;)' class='fly' target='_blank' title='Verifica soggetti collegati alle aziende, per assegnazione profilo azienda'>   <span>Anagrafica Unica Aziende</span></a></li><li><a id='nav-27' href='ricercabusta.aspx?m=30' class='fly' target='' title='Ricerca per codice busta'>   <span>Ricerca Busta</span></a></li><li><a id='nav-28' href='StoricoUtente.aspx?m=30' class='fly' target='' title='Storico utente'>   <span>Storico Utente</span></a></li><li><a id='nav-29' href='ServiziAutorizzati.aspx?m=30' class='fly' target='' title='Abilitazioni precedente'>   <span>Abilitazioni Precedenti</span></a></li></ul><li class="top"><a id='nav-31' href='Dashboard_PIN.aspx?m=31' class='top_link' target='' title='Statistiche PIN'><span>Statistiche PIN</span></a></li><li class="top"><a id='nav-33' href='RicercaConvenzioni.aspx?m=33' class='top_link' target='' title='Ricerca Convenzioni'><span>Ricerca Convenzioni</span></a></li><li class="top"><a id='nav-35' href='RinvioPin.aspx?m=35' class='top_link' target='' title='Reinvio della prima parte del PIN'><span>Reinvio PIN</span></a></li><li class="top"><a id='nav-36' href='http://passiprovisioning.sviluppo.inps.it/GestioneUtente.aspx?m=36' class='top_link' target='' title='Test1'><span>Test1</span></a></li><li class="top"><a id='nav-37' href='http://localhost:7105/Default.aspx?m=37' class='top_link' target='' title='Test2'><span>Test2</span></a></li><li class="top"><a id='nav-38' href='http://localhost:39956/DelegatiEntratel/Home/About?m=38' class='select top_link' target='' title='Gestione dei delegati Entratel'><span>Delegati Entratel</span></a></li></ul></div></div></td></tr><TR id="TrBordoInfMenu" runat="server"><TD><div id="bordoInf" style='MARGIN-BOTTOM:5px; HEIGHT: 1px; MARGIN-TOP:5px; BACKGROUND-COLOR:#f26822'  runat="server" ></div></td></tr></TABLE></div></div>

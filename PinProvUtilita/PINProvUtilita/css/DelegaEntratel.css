@@ -1,0 +1,376 @@
+﻿body 
+{
+ 
+}
+
+ .field_set{
+  border: 1px solid #F26822;
+  width:600px;
+  border-radius:6px;
+  
+}
+
+
+ .center {
+    margin: auto;
+    width: 50%;
+    /*padding: 0px;*/
+}
+
+  .centerFuori {
+    width: 98%;
+    padding-top:0px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+ .border_radius { border-radius: 10px 10px 10px 10px; }
+
+
+  .field_set1{
+overflow:hidden;
+margin-right:1px;
+margin-left:3px;
+border-right-color:#F26822;
+border-left-color:#F26822;
+border-top-color:#F26822;
+border-top-left-radius:initial;
+border-right-width:3px;
+border-left-width:3px;
+border-right-style:solid;
+border-left-style:solid;
+
+padding-top:3px;
+/*background-color:transparent;*/
+}
+.wrapper{ text-align:center; margin: 0 auto;} 
+.leftCol{ width: 30%;  margin: 0 auto; display: inline-block;} 
+.rightCol{ width: 70%; margin: 0 auto; display: inline-block; }
+
+
+.btn-Entratel {
+	font-family: Verdana;
+	color: White;
+	background-color: #8d8e90;
+	border: 0;
+	margin-left: 0;
+	font-size: 13px;
+	font-weight: bold;
+	height: 22px;
+	text-align:center;
+}
+
+
+.DivCorpoPagineCert
+{
+	background-image: url(../images/bg_pinpro2.gif);
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	background-position: left top;
+}
+
+
+
+
+/********************************************************
+ SV: table.gridtempl
+     definisce il template per la griglia generata dal
+     controllo ListView
+
+     colore gainsboro = #DCDCDC 
+*********************************************************/
+table.gridtempl
+{
+	width: 80%;
+	border: 1px solid #F26822;
+	border-color: #f26822;
+	border-collapse: collapse;
+}
+
+table.gridtempl tr
+{
+    background-color: white;
+ }
+
+table.gridtempl th
+{
+	padding: 4px;
+	font-weight: bold;
+	background-color: white;
+}
+
+table.gridtempl th.data
+{
+	width: 148px;
+}
+
+table.gridtempl td
+{
+	padding: 4px;
+}
+
+table.gridtempl input[type=image]
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+
+
+
+
+/********************************************************
+ SV: table.gridtempl
+     definisce il template per la griglia generata dal
+     controllo ListView
+
+     colore gainsboro = #DCDCDC 
+*********************************************************/
+
+
+
+table2 {
+  background-color: transparent;
+}
+caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+.table2 {
+  width: 70%;
+  max-width: 70%;
+}
+.table2 > thead > tr > th,
+.table2 > tbody > tr > th,
+.table2 > tfoot > tr > th,
+.table2 > thead > tr > td,
+.table2 > tbody > tr > td,
+.table2 > tfoot > tr > td {
+  vertical-align: top;
+  line-height:28px;
+
+}
+.table2 > thead > tr > th {
+  vertical-align: bottom;
+}
+.table2 > caption + thead > tr:first-child > th,
+.table2 > colgroup + thead > tr:first-child > th,
+.table2 > thead:first-child > tr:first-child > th,
+.table2 > caption + thead > tr:first-child > td,
+.table2 > colgroup + thead > tr:first-child > td,
+.table2 > thead:first-child > tr:first-child > td {
+ 
+}
+.table2 > tbody + tbody {
+  border-top: #000;
+}
+.table .table {
+  background-color: #fff;
+}
+.table2-condensed > thead > tr > th,
+.table2-condensed > tbody > tr > th,
+.table2-condensed > tfoot > tr > th,
+.table2-condensed > thead > tr > td,
+.table2-condensed > tbody > tr > td,
+.table2-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+.table2-bordered {
+  
+}
+.table2-bordered > thead > tr > th,
+.table2-bordered > tbody > tr > th,
+.table2-bordered > tfoot > tr > th,
+.table2-bordered > thead > tr > td,
+.table2-bordered > tbody > tr > td,
+.table2-bordered > tfoot > tr > td {
+  
+}
+.table2-bordered > thead > tr > th,
+.table2-bordered > thead > tr > td {
+  text-decoration:underline;
+  text-align:center;
+  padding:4px;
+  font-weight:bold;
+}
+.table2-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #dbdbdb;
+}
+.table2-hover > tbody > tr:hover {
+  background-color: #dbdbdb;
+}
+table2 col[class*="col-"] {
+  position: static;
+  display: table-column;
+  float: none;
+}
+table2 td[class*="col-"],
+table2 th[class*="col-"] {
+  position: static;
+  display: table-cell;
+  float: none;
+}
+.table2 > thead > tr > td.active,
+.table2 > tbody > tr > td.active,
+.table2 > tfoot > tr > td.active,
+.table2 > thead > tr > th.active,
+.table2 > tbody > tr > th.active,
+.table2 > tfoot > tr > th.active,
+.table2 > thead > tr.active > td,
+.table2 > tbody > tr.active > td,
+.table2 > tfoot > tr.active > td,
+.table2 > thead > tr.active > th,
+.table2 > tbody > tr.active > th,
+.table2 > tfoot > tr.active > th {
+  background-color: #f5f5f5;
+}
+.table2-hover > tbody > tr > td.active:hover,
+.table2-hover > tbody > tr > th.active:hover,
+.table2-hover > tbody > tr.active:hover > td,
+.table2-hover > tbody > tr:hover > .active,
+.table2-hover > tbody > tr.active:hover > th {
+  background-color: #e8e8e8;
+}
+.table2 > thead > tr > td.success,
+.table2 > tbody > tr > td.success,
+.table2 > tfoot > tr > td.success,
+.table2 > thead > tr > th.success,
+.table2 > tbody > tr > th.success,
+.table2 > tfoot > tr > th.success,
+.table2 > thead > tr.success > td,
+.table2 > tbody > tr.success > td,
+.table2 > tfoot > tr.success > td,
+.table2 > thead > tr.success > th,
+.table2 > tbody > tr.success > th,
+.table2 > tfoot > tr.success > th {
+  background-color: #dff0d8;
+}
+.table2-hover > tbody > tr > td.success:hover,
+.table2-hover > tbody > tr > th.success:hover,
+.table2-hover > tbody > tr.success:hover > td,
+.table2-hover > tbody > tr:hover > .success,
+.table2-hover > tbody > tr.success:hover > th {
+  background-color: #d0e9c6;
+}
+.table2 > thead > tr > td.info,
+.table2 > tbody > tr > td.info,
+.table2 > tfoot > tr > td.info,
+.table2 > thead > tr > th.info,
+.table2 > tbody > tr > th.info,
+.table2 > tfoot > tr > th.info,
+.table2 > thead > tr.info > td,
+.table2 > tbody > tr.info > td,
+.table2 > tfoot > tr.info > td,
+.table2 > thead > tr.info > th,
+.table2 > tbody > tr.info > th,
+.table2 > tfoot > tr.info > th {
+  background-color: #d9edf7;
+}
+.table2-hover > tbody > tr > td.info:hover,
+.table2-hover > tbody > tr > th.info:hover,
+.table2-hover > tbody > tr.info:hover > td,
+.table2-hover > tbody > tr:hover > .info,
+.table2-hover > tbody > tr.info:hover > th {
+  background-color: #c4e3f3;
+}
+.table2 > thead > tr > td.warning,
+.table2 > tbody > tr > td.warning,
+.table2 > tfoot > tr > td.warning,
+.table2 > thead > tr > th.warning,
+.table2 > tbody > tr > th.warning,
+.table2 > tfoot > tr > th.warning,
+.table2 > thead > tr.warning > td,
+.table2 > tbody > tr.warning > td,
+.table2 > tfoot > tr.warning > td,
+.table2 > thead > tr.warning > th,
+.table2 > tbody > tr.warning > th,
+.table2 > tfoot > tr.warning > th {
+  background-color: #fcf8e3;
+}
+.table2-hover > tbody > tr > td.warning:hover,
+.table2-hover > tbody > tr > th.warning:hover,
+.table2-hover > tbody > tr.warning:hover > td,
+.table2-hover > tbody > tr:hover > .warning,
+.table2-hover > tbody > tr.warning:hover > th {
+  background-color: #faf2cc;
+}
+.table2 > thead > tr > td.danger,
+.table2 > tbody > tr > td.danger,
+.table2 > tfoot > tr > td.danger,
+.table2 > thead > tr > th.danger,
+.table2 > tbody > tr > th.danger,
+.table2 > tfoot > tr > th.danger,
+.table2 > thead > tr.danger > td,
+.table2 > tbody > tr.danger > td,
+.table2 > tfoot > tr.danger > td,
+.table2 > thead > tr.danger > th,
+.table2 > tbody > tr.danger > th,
+.table2 > tfoot > tr.danger > th {
+  background-color: #f2dede;
+}
+.table2-hover > tbody > tr > td.danger:hover,
+.table2-hover > tbody > tr > th.danger:hover,
+.table2-hover > tbody > tr.danger:hover > td,
+.table2-hover > tbody > tr:hover > .danger,
+.table2-hover > tbody > tr.danger:hover > th {
+  background-color: #ebcccc;
+}
+.table2-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: #000;
+  }
+  .table2-responsive > .table {
+    margin-bottom: 0;
+  }
+  .table2-responsive > .table > thead > tr > th,
+  .table2-responsive > .table > tbody > tr > th,
+  .table2-responsive > .table > tfoot > tr > th,
+  .table2-responsive > .table > thead > tr > td,
+  .table2-responsive > .table > tbody > tr > td,
+  .table2-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  .table2-responsive > .table-bordered {
+    border: 1;
+  }
+  .table2-responsive > .table-bordered > thead > tr > th:first-child,
+  .table2-responsive > .table-bordered > tbody > tr > th:first-child,
+  .table2-responsive > .table-bordered > tfoot > tr > th:first-child,
+  .table2-responsive > .table-bordered > thead > tr > td:first-child,
+  .table2-responsive > .table-bordered > tbody > tr > td:first-child,
+  .table2-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  .table2-responsive > .table-bordered > thead > tr > th:last-child,
+  .table2-responsive > .table-bordered > tbody > tr > th:last-child,
+  .table2-responsive > .table-bordered > tfoot > tr > th:last-child,
+  .table2-responsive > .table-bordered > thead > tr > td:last-child,
+  .table2-responsive > .table-bordered > tbody > tr > td:last-child,
+  .table2-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  .table2-responsive > .table-bordered > tbody > tr:last-child > th,
+  .table2-responsive > .table-bordered > tfoot > tr:last-child > th,
+  .table2-responsive > .table-bordered > tbody > tr:last-child > td,
+  .table2-responsive > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+
+ 
+}
+

@@ -1,0 +1,113 @@
+﻿ @model PINProvUtilita.Models.WhiteListNumContatto
+@{
+    PINProvUtilita.Models.WhiteListNumContatto visEccezione = (PINProvUtilita.Models.WhiteListNumContatto)ViewData["gestioneEccezione"];
+    PINProvUtilita.Models.WhiteListNumContatto visEccezioneTutto = (PINProvUtilita.Models.WhiteListNumContatto)ViewData["gestioneEccezione"];
+    if (Session["vecchiaEccezione"] != null)
+    {
+        visEccezioneTutto = (PINProvUtilita.Models.WhiteListNumContatto)Session["vecchiaEccezione"];
+    }
+    else
+    {     
+        Session["vecchiaEccezione"] = visEccezione;
+        
+    }
+}
+
+<fieldset class="field_set_modifica_eccezioni">
+    @using (Html.BeginForm("InserimentoModificaEccezione", "RicercaContatti", FormMethod.Post, new { modEccezone = Model }))
+    {
+        <div class="myLabel">   
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Contatto, new{@class="labelMod"})   
+                        </div>
+                        <div class="col-sm-5">
+                           <label class="VisContattoNero">@visEccezioneTutto.Contatto</label>
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.LabelFor(model => model.TipoContatto, new{@class="labelMod"})  
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(model => model.TipoContatto,
+                            new SelectList(new List<SelectListItem>
+                            {
+                                new SelectListItem { Text = "Email", Value = "E" },
+                                new SelectListItem { Text = "PEC", Value = "P" },
+                                new SelectListItem { Text = "Cellulare", Value = "C" }
+                            },
+                            "Value", // property to be set as Value of dropdown item
+                             "Text",  // property to be used as text of dropdown item
+                            visEccezione.TipoContatto), // value that should be set selected of dropdown
+                            new { @class = "wideTipo" })
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Limite, new{@class="labelMod"})   
+                        </div>
+                        <div class="col-sm-5">
+                            @Html.TextBoxFor(model => model.Limite, new { @class = "wideLimite", onkeypress = "return soloNumeri(event);", @value = visEccezione.Limite })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.LabelFor(model => model.CodiceFiscaleSegnalazione, new{@class="labelMod"})  
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.CodiceFiscaleSegnalazione, new { @class = "wideModSegnalato",@style = "text-transform:uppercase", @maxlength = "16" })
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.DataInserimento)   
+                        </div>
+                        <div class="col-sm-11">
+                            @Html.Label(visEccezione.DataInserimento.Substring(0, 10), new { @class = "ModEccezioneNero" })
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                            @Html.LabelFor(model => model.Note) 
+                        </div>
+                        <div class="col-sm-11">
+                            @Html.TextAreaFor(model => Model.Note, new { @class = "visNoteNero", @maxlength = "500" , @value = visEccezione.Note  }) 
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-sm-12">
+                    <fieldset class="form-group">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-11">
+                            <div class="center">
+                                <div style="float: left; padding: 0; margin-left: 2%; vertical-align: top;">
+                                    <input type="button"  class="BtnRevoca" value="Annulla"  onclick ="location.href='@Url.Action("AnnullaEccezione", "RicercaContatti")    '" />
+                                </div>
+                                <div style="float: left; padding: 0; margin-left: 2%; vertical-align: top;">
+                                    <input class ="BtnGrafica" type="submit" value="Modifica" />
+                                </div>
+                                <div style="float: left; padding: 0; margin: 0; vertical-align: top;">
+                                    <img src="@Url.Content("~/Images/arrow-right.gif")" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    }
+</fieldset>

@@ -1,0 +1,95 @@
+﻿@model List<PINProvUtilita.Models.ListaContatti>
+@{
+
+    var linkPin = System.Configuration.ConfigurationManager.AppSettings["LINKGC"].ToString();
+}
+<table id="elencoContatti" class="table3 table3-striped table3-bordered">   
+    <thead>                    
+        <tr>
+            <th>
+                Codice Fiscale
+            </th>
+            <th>
+                Cognome
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Telefono
+            </th>
+            <th>
+                Cellulare
+            </th>
+            <th>
+                C
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                C
+            </th>
+            <th>
+                PEC
+            </th>
+            <th>
+                C
+            </th>
+            <th>
+                Data ultimo accesso
+            </th>
+        </tr>                           
+    </thead>                  
+    <tbody>
+        @foreach (var contatti in Model.ToList())
+        {
+            if(contatti.Infoprivacy != null)
+            {
+                <tr  style="background-color:#b7fd06">          
+                    <td>
+                        @{
+                        var url = linkPin + "?CF=" + contatti.CodiceFiscale;
+                        }
+                                                 
+                        <a href="@url" target="_blank"><u>@contatti.CodiceFiscale</u></a>
+                    </td>       
+                    <td>  @Html.DisplayFor(model => contatti.Cognome)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Nome)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Telefono)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Cellulare)</td>    
+                    <td>  @Html.DisplayFor(model => contatti.Statoverificacellulare)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Email)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Statoverificaemail)</td>   
+                    <td>  @Html.DisplayFor(model => contatti.Pec)</td>       
+                    <td>  @Html.DisplayFor(model => contatti.Statoverificapec)</td>   
+                    <td>  @Html.DisplayFor(model => contatti.Data_ultimo_accesso)</td>                                                        
+                </tr>   
+
+            } 
+            else
+            {
+                <tr> 
+                    <td>
+                        @{
+                        var url = linkPin + "?CF=" + contatti.CodiceFiscale;
+                        }
+                                                 
+                        <a href="@url" target="_blank"><u>@contatti.CodiceFiscale</u></a>
+                    </td>   
+                    <td>  @Html.DisplayFor(model => contatti.Cognome)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Nome)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Telefono)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Cellulare)</td>    
+                    <td>  @Html.DisplayFor(model => contatti.Statoverificacellulare)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Email)</td>        
+                    <td>  @Html.DisplayFor(model => contatti.Statoverificaemail)</td>   
+                    <td>  @Html.DisplayFor(model => contatti.Pec)</td>       
+                    <td>  @Html.DisplayFor(model => contatti.Statoverificapec)</td>   
+                    <td>  @Html.DisplayFor(model => contatti.Data_ultimo_accesso)</td>                                                        
+                </tr>   
+            }        
+            
+        }
+    </tbody>
+</table>

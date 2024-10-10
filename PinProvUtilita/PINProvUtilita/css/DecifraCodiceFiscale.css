@@ -1,0 +1,33 @@
+﻿body {
+}
+
+ .field_set_decifraCodiceFiscale{
+  border: 1px solid #F26822;
+  width: 100%;
+  border-radius: 6px;
+  padding-top: 22px;
+  padding-bottom: 8px;
+  height:130px;
+
+ 
+}
+
+.centra1 {
+    width: 70%;
+    margin: auto;
+}
+
+
+.wideDecifracodicefiscale
+{
+    color:black;
+    margin-left:15px;
+    width: 280px;
+}
+
+.wideDecifracodicefisscaleErrore
+{
+     margin-left:15px;
+     width: 280px;
+}
+

@@ -1,0 +1,956 @@
+﻿div#modalDialogAlert
+{
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	background: url('immagini/background.modal.trasparent.png') repeat;
+}
+
+/********************************************************
+ SV: Grafica generica pulsanti tabelle di ricerca ecc...
+*********************************************************/
+
+input[type="submit"], input[type="button"]
+{
+	cursor: pointer;
+}
+
+.btnOK
+{
+	background-color: #8D8E90;
+	border-color: #8D8E90;
+	border-style: solid;
+	color: #FFFFFF;
+	font-family: Verdana;
+	font-size: 13px;
+	font-weight: bold;
+	height: 22px;
+	cursor: pointer;
+}
+
+.BtnGrafica
+{
+	font-family: Verdana;
+	color: White;
+	background-color: #8d8e90;
+	border: 0;
+	margin-left: 0;
+	font-size: 13px;
+	font-weight: bold;
+	height: 22px;
+	cursor: pointer;
+}
+
+.BtnRevoca
+{
+	font-family: Verdana;
+	color: #636363;
+	background-color: #ffffff;
+	border: solid 1px #c5c4c4;
+	font-size: 13px;
+	font-weight: bold;
+	height: 22px;
+	cursor: pointer;
+}
+
+.BtnPulsanteScrittaRossa
+{
+	font-family: Verdana;
+	color: red;
+	background-color: #ffffff;
+	border: solid 1px #c5c4c4;
+	font-size: 13px;
+	font-weight: bold;
+	height: 22px;
+	cursor: pointer;
+}
+
+.divSpacer
+{
+	margin-top: 60px;
+}
+
+.divSpacerSmall
+{
+	margin-top: 30px;
+}
+
+/********************************************************
+ SV: table.gridtempl
+     definisce il template per la griglia generata dal
+     controllo ListView
+
+     colore gainsboro = #DCDCDC 
+*********************************************************/
+table.gridtempl
+{
+	width: 80%;
+	border: 1px solid #F26822;
+	border-color: #f26822;
+	border-collapse: collapse;
+}
+
+table.gridtempl tr
+{
+	color: black;
+	background-color: #DCDCDC;
+}
+
+table.gridtempl tr.alttempl
+{
+	background-color: white;
+}
+
+table.gridtempl th
+{
+	padding: 4px;
+	font-weight: bold;
+	background-color: white;
+}
+
+table.gridtempl th.data
+{
+	width: 148px;
+}
+
+table.gridtempl td
+{
+	padding: 4px;
+}
+
+table.gridtempl input[type=image]
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+table.gridtempl2
+{
+	width: 100%;
+	border: 1px solid #F26822;
+	border-color: #f26822;
+	border-collapse: collapse;
+}
+
+table.gridtempl2 tr
+{
+	color: black;
+	background-color: #DCDCDC;
+}
+
+table.gridtempl2 tr.alttempl
+{
+	background-color: white;
+}
+
+table.gridtempl2 th
+{
+	font-weight: bold;
+	background-color: white;
+}
+
+table.gridtempl2 th.data
+{
+	width: 148px;
+}
+
+table.gridtempl2 input[type=image]
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+
+/********************************************************
+ SV: stili per gli option select 
+/********************************************************/
+
+select option.unautorized
+{
+	font-style: italic; /*background-color:#E5E5E5;*/
+	color: #6D6D6D; 
+}
+select option.RichiedeConvenzione
+{
+	font-style: italic;  /*background-color:#E5E5E5;*/
+	color:#6D6D6D;
+}
+select option.RichiedeConvenzioneDataScaduta
+{
+	font-style: italic; /*background-color:#E5E5E5;*/
+	color:#6D6D6D;
+}
+/* Inserimento Anagrafica */
+
+/********************************************************
+ SV: versione grafica celle raggruppate
+/********************************************************/
+
+th.date-time, td.date-time
+{
+	width: 148px;
+}
+
+.table-collapsed
+{
+	border-collapse: collapse;
+	padding: 0;
+}
+
+.table-cell-collapsed th
+{
+	padding: 0;
+}
+
+.table-cell-collapsed td
+{
+	padding: 0;
+}
+
+.tableAccordion td.normalfield
+{
+	font-weight: normal;
+}
+
+.table-background tr
+{
+	background-color: #F2F2F2;
+}
+
+tr.alternateBackground
+{
+	background-color: White;
+}
+
+.table-background tr.alternateBackground tr
+{
+	background-color: White;
+}
+
+tr.emptyRow
+{
+	background-color: White;
+	height: 12px;
+}
+
+.tableAccordion td.padding-style1, th.padding-style1
+{
+	padding: 18px 8px 18px 8px !important;
+}
+
+.tableAccordion td.borderedTop
+{
+	padding-top: 6px;
+	border-top: solid 1px #F26822;
+}
+
+.tableAccordion th.borderedTop
+{
+	padding-top: 6px;
+	border-top: solid 1px #F26822;
+}
+
+.tableAccordion td.borderedBottom
+{
+	padding-bottom: 6px;
+	border-bottom: solid 1px #F26822;
+}
+
+.tableAccordion th.borderedBottom
+{
+	padding-bottom: 6px;
+	border-bottom: solid 1px #F26822;
+}
+
+.tableAccordion td.borderedLeft
+{
+	padding-left: 4px;
+	border-left: solid 1px #F26822;
+}
+
+.tableAccordion th.borderedLeft
+{
+	padding-left: 4px;
+	border-left: solid 1px #F26822;
+}
+
+.tableAccordion td.borderedRight
+{
+	padding-right: 4px;
+	border-right: solid 1px #F26822;
+}
+
+.tableAccordion th.borderedRight
+{
+	padding-right: 4px;
+	border-right: solid 1px #F26822;
+}
+
+.tableAccordion
+{
+	/*width: 734px;*/
+	width: 825px;
+}
+
+.tableAccordion td.normalfield
+{
+	font-weight: normal;
+}
+
+.myLabel
+{
+	color: #F26822;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	padding: 3px;
+	padding-left: 10px; /*height: 12pt;*/
+    font-family:Verdana;
+}
+
+.myLabelUpperCase
+{
+	color: #F26822;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	padding: 3px;
+	padding-left: 10px; /*height: 12pt;*/
+    text-transform: uppercase;
+}
+
+.myLabelLeft
+{
+	color: #F26822;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	padding: 3px;
+	padding-left: 0px; /*height: 12pt;*/
+}
+
+.floatLeft
+{
+	float: left;
+	width: 48%;
+}
+.floatRight
+{
+	float: right;
+	width: 48%;
+}
+.otpStyle
+{
+	text-align: left;
+	margin-right: 24px;
+}
+/* Fine Inserimento Anagrafica */
+
+/********************************************************
+ SV: Stili generici.
+ ********************************************************/
+
+input[type=text].flatStyle, input[type=password].flatStyle, textarea.flatStyle
+{
+	outline: none;
+	border: solid 1px #BBB;
+	padding: 3px;
+	font-size: 12px;
+}
+
+input[type=text]:focus.flatStyle, input[type=password]:focus.flatStyle, textarea:focus.flatStyle
+{
+	border: solid 1px #0000FF;
+}
+
+.alertMessage
+{
+	background-image: url('immagini/icon_exclamation_12.png');
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	color: #0066cc;
+}
+
+div.title1
+{
+	/* color: #0000EE; */
+	color: #0066cc;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	margin-left: 4px;
+}
+
+body
+{
+	padding: 0;
+	margin: 0;
+	font: 0.8em Verdana, Sans-serif;
+}
+
+#Logo
+{
+	border: 0;
+	padding: 10px;
+	min-height: 44px;
+}
+
+#Logo img
+{
+	float: left;
+	border: 0;
+}
+
+#Logo .homeButton img
+{
+	position: relative;
+	float: right;
+	right: 10px;
+	top: 22px;
+	border: 0; /*width: 40px;*/
+	height: 22px;
+	min-height: 22px;
+}
+
+ 
+
+.MenuUp
+{
+	font-family: Arial,Verdana;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 5px;
+	text-transform: uppercase;
+	background-color: #8d8e90;
+}
+
+.MenuUpHover
+{
+	color: #000000;
+	text-decoration: none;
+	background-color: #f26822;
+}
+
+.MenuUpHover a
+{
+	color: #000000;
+	text-decoration: none;
+	background-color: #f26822;
+}
+
+.MenuUpHover a:hover
+{
+	color: #000000;
+	text-decoration: none;
+	background-color: #f26822;
+}
+
+.MenuSx
+{
+	font-family: Arial,Verdana;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 5px;
+	text-transform: uppercase;
+	background-color: #8d8e90;
+}
+
+.MenuSx a:hover
+{
+	text-decoration: none;
+	background-color: #f26822;
+	width: 210px;
+}
+
+.MenuSxSel
+{
+	font-family: Arial,Verdana;
+	font-size: 14px; /*font-weight: bold;*/
+	color: #000000;
+	text-decoration: none;
+	padding: 5px;
+	text-transform: uppercase;
+	background-color: #f26822;
+}
+
+.modalBackground
+{
+	background-color: #DDDDDD;
+	filter: alpha(opacity=80);
+	opacity: 0.10;
+}
+
+.DivCorpoPagine
+{
+	background-image: url(immagini/bg_pinpro2.gif);
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	background-position: left top;
+}
+
+.ModalWindow
+{
+	border: #ffffff 1px solid;
+	background: #3B5998;
+	padding: 0px 10px 10px 10px;
+	position: absolute;
+	top: -1000px;
+	font-family: Verdana;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+
+table.tableAccordion
+{
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: Black;
+	padding: 10px;
+}
+
+.BordoTabelle
+{
+	border: solid 1px #f26822;
+}
+
+#tableDefault, .tableDefault
+{
+	font-family: Verdana;
+	font-size: 12px;
+	vertical-align: middle; /*border:solid 1px #f26822;*/
+	padding: 35px 0;
+}
+
+#tableDefault, .tableDefault th
+{
+	white-space: nowrap;
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #F26822;
+	text-align: left;
+	padding: 5px;
+}
+
+#tableDefault, .tableDefault td
+{
+	text-align: left;
+	font-weight: bold;
+}
+
+#tableDefault2
+{
+	font-family: Verdana;
+	font-size: 12px;
+	vertical-align: middle; /*border:solid 1px #f26822;*/
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#tableDefault2 th
+{
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #F26822;
+	text-align: left;
+	padding: 5px;
+}
+
+#tableDefault2 td
+{
+	text-align: left;
+	font-weight: bold;
+}
+
+span.spanError
+{
+	font: 85% Verdana;
+	color: Red;
+	background-color: #ffffff;
+	border: 1px solid red;
+	height: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+table.tableAccordion th
+{
+	color: #F26822;
+	font-size: 12px;
+	font-weight: bold;
+	white-space: nowrap;
+	text-align: left;
+	padding: 3px;
+	padding-left: 10px; /*height: 12pt;*/
+}
+
+
+
+table.tableAccordion td
+{
+	text-align: left;
+	font-family: Verdana;
+	font-size: 12px; /*height: 2em;*/
+}
+
+.tdHeaderOrange
+{
+	color: #F26822;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	padding: 3px;
+	padding-left: 10px;
+}
+
+.tdHeaderBlack
+{
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	padding: 3px;
+	padding-left: 10px;
+}
+
+.unvalid
+{
+/*
+	background-color: mistyrose;
+	border: solid 1px red;
+*/
+	background-color:#ffe4e1;
+	background:MistyRose;
+	border: solid 1px red;	
+}
+
+.listBox
+{
+	width: 100%;
+	font-size: 1.0em;
+	height: 65px;
+}
+
+.listBoxLabel
+{
+	font: bold 0.8em Verdana;
+	color: #3b5998;
+}
+
+.listBoxLabelAppOrange
+{
+	font: bold 0.8em Verdana;
+	color: #f26822;
+}
+
+.grid
+{
+	background-color: #ffffff;
+	font-size: 85%;
+}
+.grid th
+{
+	background-color: #3b5998;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 3px;
+}
+.grid td
+{
+	/*background-color: #ffffff;*/
+	color: #000000;
+	padding: 3px;
+}
+
+.alternate
+{
+	background-color: #dcdcdc;
+	color: #000000;
+	padding: 3px;
+}
+
+.button
+{
+	background-color: #fffafa;
+	border: solid 1px #507CD1;
+	color: #284E98;
+	margin: 2px 0;
+}
+
+.rtop, .rbottom
+{
+	display: block;
+}
+.rtop *, .rbottom *
+{
+	display: block;
+	height: 1px;
+	overflow: hidden;
+}
+.r1
+{
+	margin: 0 5px;
+	background: #9BD1FA;
+}
+.r2
+{
+	margin: 0 3px;
+	background: #9BD1FA;
+}
+.r3
+{
+	margin: 0 2px;
+	background: #9BD1FA;
+}
+.r4
+{
+	margin: 0 1px;
+	height: 2px;
+	background: #9BD1FA;
+}
+.contain
+{
+	background: #9BD1FA;
+	text-align: center;
+}
+
+.divSanitaria
+{
+    width: 99.8%;
+	background-color: white;
+	border: solid 1px #8d8e90;
+	text-align: center;
+	vertical-align: middle;
+	/*background-image: url(/App_Themes/Tema1/immagini/tsanitaria.gif);*/
+	background-position: left center;
+	background-repeat: no-repeat;
+	min-height: 300px;
+	position: relative;
+	z-index: auto;
+}
+
+.divContenitore
+{
+	width: 99.8%;
+	background-color: white;
+	border: solid 1px #8d8e90;
+	text-align: center;
+	min-height: 300px;
+}
+
+.divContenitore2
+{
+	width: 99.8%;
+	background-color: white;
+	text-align: center;
+}
+
+/*Controlli PINDISPOSITIVO*/
+.BoxEsterno
+{
+	text-align: center;
+	width: 82%;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	border: solid 1px silver;
+}
+
+.UpperCase
+{
+	text-transform: uppercase;
+}
+
+.Hidden
+{
+	display: none;
+}
+
+.BottoneRidotto
+{
+    background-color:#f5f5f5;
+	background:WhiteSmoke;
+	border-color: #507CD1;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Verdana, Arial;
+	font-size: 7pt;
+	height: 20px;
+}
+
+/* GRIGLIA */
+.IntestazioneGriglia
+{
+	font-family: Verdana;
+	font-size: 9pt;
+	font-weight: bold;
+	color: Black;
+	background-color: #dcdcdc;
+	height: 30px;
+	width: 80%;
+}
+
+.RigaGriglia
+{
+	font-family: Verdana;
+	font-size: 9pt;
+	color: Black;
+	background-color: #f8f8ff;
+}
+
+.RigaGrigliaAlt
+{
+	font-family: Verdana;
+	font-size: 9pt;
+	color: Black;
+	background-color: #fdf5e6;
+}
+
+/*MODAL POPUP*/
+.modalBackground
+{
+	background-color: Gray;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+
+.modalPopUp
+{
+	background-color: #f0f0f0;
+	border-right: solid 1px #000000;
+	border-bottom: solid 1px #000000;
+	border-top: solid 1px #000000;
+	border-left: solid 1px #000000;
+	padding: 3px;
+}
+.modalPopUp .ppHeader
+{
+	text-align: left;
+	padding: 3px;
+	background-color: #aec7e1;
+	border-bottom: dotted 1px silver;
+	font-family: Arial;
+	font-size: 12px;
+	cursor: move;
+}
+.modalPopUp .ppContent
+{
+	background-color: White;
+	padding: 3px;
+	font-family: Arial;
+	font-size: 12px;
+	text-align: left;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+h3.header3orange
+{
+	text-align: center;
+	color: #F26822;
+	font-weight: bold;
+	padding: 3px;
+}
+
+table.tableAccordionInternal th
+{
+	width: 0;
+	font-weight: bold;
+	color: Black;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 12px; /*height: 2em;*/
+}
+
+table.tableAccordionInternal td
+{
+	text-align: left;
+	font-family: Verdana;
+	font-size: 12px; /*height: 2em;*/ /*padding-left: 12px;*/
+	font-weight: normal;
+}
+
+.testoBiancoVerdana12Bold
+{
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.linkBiancoVerdana12Bold
+{
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.testoRossoVerdana12Bold
+{
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #BD2125;
+}
+
+a.linkPaginazione
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+a.linkPaginazione:hover
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: underline;
+}
+
+.testoVerdana10Bold
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.testoVerdana10
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+}
+
+.CampiHidden
+{
+	display: none;
+	width: 0px;
+}
+
+
+.FormattazioneColonnaMaxWidth {
+    word-wrap:break-word;
+}
+.FormattazioneTabellaMaxWidth {
+    table-layout:fixed;
+    width:100%;
+}
+
+/* ------------------------------------------------------- */

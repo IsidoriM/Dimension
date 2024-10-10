@@ -1,0 +1,59 @@
+﻿@model List<PINProvUtilita.Models.Certificati>
+@{
+    PINProvUtilita.Models.Certificati CertificatoSelezionato = new PINProvUtilita.Models.Certificati();
+    CertificatoSelezionato = (PINProvUtilita.Models.Certificati)(Session["CertificatoSelezionato"]);
+}
+ <table id="elencosegnRPC" class="table2 table2-striped table2-bordered"">
+        <thead>
+            <tr>
+                <th>
+                    Tipologia
+                </th>
+                <th>
+                    Common Name
+                </th>
+                <th>
+                    Emissione
+                </th>
+                <th>
+                    Scadenza
+                </th>                            
+                <th>
+                                
+                </th>
+            </tr>
+        </thead>
+        <tbody>                       
+            @foreach (var cert in Model.ToList())
+            {                  
+                <tr>
+                    <td>  @Html.DisplayFor(model => cert.Tipo)</td>
+                    @if (cert.Datascadenza != "")
+                    {                                         
+                        <td>  @Html.DisplayFor(model => cert.Commonname)</td>
+                        <td>  @Html.Label(cert.Dataemissione.Substring(0,10))</td>
+                        <td>  @Html.Label(cert.Datascadenza.Substring(0,10))</td>
+                    }
+                    else
+                    {
+                        <td>  @Html.Label("CF: " + cert.CodiceFiscale.ToUpper().ToString())</td>
+                        <td>  @Html.Label("delegato il: "+ cert.Dataemissione.Substring(0,10))</td>
+                        <td>  @Html.Label(cert.Datascadenza)</td>
+                    }
+                    @if (cert.Serialnumber.Equals(CertificatoSelezionato.Serialnumber) && cert.CodiceFiscale.Equals(CertificatoSelezionato.CodiceFiscale))
+                    {           
+                         <td>                           
+                              <img src="@Url.Content("~/Images/icon_ok.png")" height="20" width="20"/>
+                         </td>
+                    } 
+                    else 
+                    {
+                         <td> @Html.Label("") </td>
+                    }
+                </tr>
+            }
+    </tbody> 
+
+</table>
+
+

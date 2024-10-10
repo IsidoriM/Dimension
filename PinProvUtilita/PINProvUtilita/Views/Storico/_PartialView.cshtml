@@ -1,0 +1,277 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<PinProvEntity.UtenteContatti>
+@{
+    ViewBag.Title = "_PartialView.cshtml";
+    var utente = ViewBag.utente;
+    var infoprivacy = "";
+    var labelStorico = "Storico Contatti";
+    var dati = Model.Count;
+    var riga = ViewBag.riga;
+    if (dati == 0 )
+    {
+        labelStorico = "";
+    }
+
+}
+<head>
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            /* Selects all elements matched by <li> that have an even index value.*/
+            $("tr:odd").css("background-color", "white");
+        });
+    </script>
+</head>
+<style>
+
+
+    #pager {
+        padding-left: 5%
+    }
+
+        #pager p {
+            margin-left: 5%;
+        }
+
+    .testopiccolo {
+        font-family: Helvetica,Arial,sans-serif;
+        line-height: 2.3em;
+        margin: 0 auto;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .testomedio {
+        font-family: Helvetica,Arial,sans-serif;
+        font-size: 18px;
+        color: #666;
+    }
+
+    .centrato {
+        position: relative;
+        left: 200px;
+        margin-left: 15px;
+        width: 800px;
+        margin-right: 5px;
+    }
+
+    .centratocont2 {
+        position: relative;
+        left: -13px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+    .centratocont3 {
+        position: relative;
+        left: -34px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+    .centratopage {
+        position: relative;
+        left: 200px;
+        margin-left: 15px;
+        width: 800px;
+        margin-right: 5px;
+    }
+
+    .tabella {
+        width: 1200px;
+    }
+
+    tr {
+        width: 100px;
+    }
+
+    .sfondo {
+        font-weight: bold;
+    }
+    .centratobottom {
+        position: relative;
+        left: 5px;
+        margin-left: 2px;
+        
+        margin-right: 5px;
+        top: 100px;
+    }
+</style>
+<!-- _PartialView.cshtml -->
+
+<div>
+    @if (riga > 0)
+    {
+        <table class="table sfield_set_decifraCodiceFiscale tabella">
+
+            <thead>
+
+
+
+                <tr>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">Data Validazione Email</font></th>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">Email</font></th>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">Data Validazione Pec</font></th>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">PEC</font></th>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">Stato PEC</font></th>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">Data Validazione Cellulare</font></th>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">Cellulare</font></th>
+                    <th style="border:1px solid orange;" scope="col"><font color="black">Telefono Fisso</font></th>
+
+
+                </tr>
+               
+            </thead>
+            <tbody>
+                <tr>
+                    @if (utente.DataEmail != null && utente.DataEmail.Length > 0)
+                    {
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@utente.DataEmail.Substring(0, 16)</font></td>
+                    }
+                    else
+                    {
+                        <td style="border:1px solid orange;"></td>
+                    }
+
+                    <td style="border:1px solid orange;"><font class="testopiccolo">@utente.Email</font></td>
+
+                    @if (utente.DataPec != null && utente.DataPec.Length > 0)
+                    {
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@utente.DataPec.Substring(0, 16)</font></td>
+                    }
+                    else
+                    {
+                        <td style="border:1px solid orange;"></td>
+                    }
+
+                    <td style="border:1px solid orange;"><font class="testopiccolo" color="black">@utente.Pec</font></td>
+                    <td style="border:1px solid orange;"><font class="testopiccolo">@utente.StatoPec</font></td>
+
+                    @if (utente.DataCellulare != null && utente.DataCellulare.Length > 0)
+                    {
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@utente.DataCellulare.Substring(0, 16)</font></td>
+                    }
+                    else
+                    {
+                        <td style="border:1px solid orange;"></td>
+                    }
+                    <td style="border:1px solid orange;"><font class="testopiccolo">@utente.Cellulare</font></td>
+                    <td style="border:1px solid orange;"><font class="testopiccolo">@utente.TelefonoCasa</font></td>
+                </tr>
+
+            </tbody>
+        </table>
+    }
+
+        <table id="tabstorico " class="table field_set_decifraCodiceFiscale">
+
+            <caption><font class ="sfondo centratocont2" color="black">@labelStorico</font></caption>
+
+
+
+            <thead>
+                @if (Model.Count > 0)
+                {
+                    <tr>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Dal-Al</font></th>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Email</font></th>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Data Validazione Email</font></th>
+
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">PEC</font></th>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Stato PEC</font></th>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Data Validazione Pec</font></th>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Cellulare</font></th>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Data Validazione Cell.</font></th>
+
+                        <th style="border:1px solid orange;" scope="col"><font color="black">Telefono Fisso</font></th>
+
+
+
+                    </tr>
+                }
+
+            </thead>
+            @if (Model.Count == 0)
+            {
+                <tr><font class="sfondo testomedio centratobottom" color="black">Non sono presenti contatti storicizzati</font></tr>
+
+            }
+            @foreach (var storico in Model)
+            {
+                <tbody>
+                    <tr style="border:2px solid orange;">
+                        @if (storico.DataStorico.Length > 0 && storico.DataUltimaModifica.Length > 0)
+                        {
+                            <td style="border:1px solid orange;"><font class="testopiccolo">@storico.DataStorico.Substring(0, 16) - @storico.DataUltimaModifica.Substring(0, 16) </font></td>
+                        }
+
+                        @if (storico.DataStorico.Length > 0 && storico.DataUltimaModifica.Length == 0)
+                        {
+                            <td style="border:1px solid orange;"><font class="testopiccolo">@storico.DataStorico.Substring(0, 16)</font></td>
+                        }
+
+                        @if (storico.DataStorico.Length == 0 && storico.DataUltimaModifica.Length == 0)
+                        {
+                            <td style="border:1px solid orange;"></td>
+                        }
+
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@storico.Email</font></td>
+
+                        @if (storico.DataEmail.Length > 0)
+                        {
+                            <td style="border:1px solid orange;"><font class="testopiccolo">@storico.DataEmail.Substring(0, 16)</font></td>
+                        }
+                        else
+                        {
+                            <td style="border:1px solid orange;"></td>
+                        }
+
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@storico.Pec</font></td>
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@storico.StatoPec</font></td>
+
+
+                        @if (storico.DataPec.Length > 0)
+                        {
+                            <td style="border:1px solid orange;"><font class="testopiccolo">@storico.DataPec.Substring(0, 16)</font></td>
+                        }
+                        else
+                        {
+                            <td style="border:1px solid orange;"></td>
+                        }
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@storico.Cellulare</font></td>
+
+                        @if (storico.DataCell.Length > 0)
+                        {
+                            <td style="border:1px solid orange;"><font class="testopiccolo">@storico.DataCell.Substring(0, 16)</font></td>
+                        }
+                        else
+                        {
+                            <td style="border:1px solid orange;"></td>
+                        }
+
+                        <td style="border:1px solid orange;"><font class="testopiccolo">@storico.TelefonoCasa</font></td>
+                    </tr>
+
+                </tbody>
+            }
+        </table>
+
+
+        @if (riga > 0)
+        {
+            <div class="centratopage" id="pager">
+                <p class="centrato"> Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+        }
+    </div>

@@ -1,0 +1,24 @@
+﻿
+@{
+  var AttivaSchermata = (String)Session["eccezione"];
+}
+
+<div class="center">
+    <div class="divSpacer"></div>
+    @if (AttivaSchermata.Equals("RICERCA"))    
+    {
+          @Html.Partial("RicercaEccezione")
+    }  
+    @if (AttivaSchermata.Equals("INSERIMENTO"))    
+    {
+          @Html.Partial("InserisciEccezione")
+    }
+    @if (AttivaSchermata.Equals("VISUALIZZA"))    
+    {
+          @Html.Partial("VisualizzaEccezione")
+    }       
+    @if (AttivaSchermata.Equals("MODIFICA"))    
+    {
+          @Html.Partial("ModificaEccezione")
+    }   
+</div>

@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="PINProvUtilita.Views.Shared.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <link href="../../css/menu/FoglioStyle.css" rel="stylesheet" />
+    <link href="../../css/menu/Menu.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.8.3.min.js"></script>
+    <script src="../../Scripts/jquery-1.9.1.js"></script>
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <link href="../../Content/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/Bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../Content/Bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
+
+
+    <link href="../../css/DelegaEntratel.css" rel="stylesheet" />
+    <link href="../../css/Contatti.css" rel="stylesheet" />
+    <link href="../../css/DecifraCodiceFiscale.css" rel="stylesheet" />
+ </head>
+
+<body style="margin: 0 0 0 0;" class="DivCorpoPagineCert">
+   
+  <div id="menuPinPro" runat="server">
+    
+        <% =(string)Session["listaCertificati"] %>
+   
+    </div>
+    
+
+        <div id="main">
+             
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+               
+            <div id="footer">
+            </div>
+        </div>
+  
+</body>
+</html>

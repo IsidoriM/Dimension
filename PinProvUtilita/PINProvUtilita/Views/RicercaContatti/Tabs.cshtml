@@ -1,0 +1,105 @@
+﻿
+<script type="text/javascript">
+    $('#tabstrip a').click(function (e) {
+        e.preventDefault()
+        var tabID = $(this).attr("href").substr(1);
+        $(".tab-pane").each(function () {
+            console.log("clearing " + $(this).attr("id") + " tab");
+            $(this).empty();
+        });
+
+        $.ajax({
+            url: "/@ViewContext.RouteData.Values["controller"]/" + tabID,
+            cache: false,
+            type: "get",
+            dataType: "html",
+            success: function (result) {
+                $("#" + tabID).html(result);
+            }
+
+        })
+        $(this).tab('show')
+    });
+</script>
+
+
+@{
+    TestMenuEnteMvc.Class.ProfilazioneIam P = new TestMenuEnteMvc.Class.ProfilazioneIam();
+    String AttivaTabEccezione = System.Configuration.ConfigurationManager.AppSettings["AttivaTabEccezione"];
+    string Ruoli = P.LoadRuoli();
+    string[] ArrayCodice = Ruoli.Split('|');
+    Boolean visualizzaTabEccezione = PINProvUtilita.Controllers.utility.stringFormatQuery(ArrayCodice, AttivaTabEccezione);
+
+    String visTabEccezione = "ko";
+
+    String visibilityTabEccezione = "hidden";
+    if (visualizzaTabEccezione)
+    {
+        visTabEccezione = "ok";
+        visibilityTabEccezione = "visible";
+    }
+    String Attivo = "";
+    var valueTab1 = "";
+    var valueTab2 = "";
+    }
+
+    @if (ViewData["tabAttivo"] != null)
+    {
+        Attivo = (String)ViewData["tabAttivo"];
+    }
+    else
+    {
+        Attivo = "Ricerca_Contatti";
+    }
+
+<ul class="riccon riccon-tabs">
+    @if (Attivo.Equals("Ricerca_Contatti"))
+    {    
+        <li class="active">
+            <a href="#_FirstTab" role="tab" data-toggle="tab">Ricerca Contatti</a>
+        </li>
+        valueTab1 = "tab-pane fade in active";
+    }
+    else
+    {    
+        <li>
+            <a href="#_FirstTab" role="tab" data-toggle="tab">Ricerca Contatti</a>
+        </li>
+        valueTab1 = "tab-pane fade";
+    }
+
+
+   @if (visTabEccezione == "ok")
+   {
+       if (Attivo.Equals("Gestione_Eccezioni"))
+       {     
+            <li class="active">
+                <a href="#_SecondTab" role="tab" data-toggle="tab">Gestione Eccezioni</a>
+            </li>
+           valueTab2 = "tab-pane fade in active";
+
+       }
+       else
+       {    
+            <li>
+               <a href="#_SecondTab" role="tab" data-toggle="tab">Gestione Eccezioni</a>
+            </li>
+           valueTab2 = "tab-pane fade";
+       }
+   }
+   
+</ul>
+
+<!-- Tab Content Containers -->
+<div class="tab-content">
+    <div class='@valueTab1' id="_FirstTab">
+        <!-- Call partial view to load initial page load data -->
+        @Html.Partial("RicercaContatti")
+    </div>
+
+
+
+    <div class='@valueTab2' id="_SecondTab" style="visibility:@visibilityTabEccezione">
+        @Html.Partial("GestioneEccezione")
+    </div>
+</div>

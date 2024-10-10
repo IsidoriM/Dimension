@@ -1,0 +1,9 @@
+C:\Progetti\PinProvUtilita\UtenteDal\bin\Debug\UtenteDal.dll
+C:\Progetti\PinProvUtilita\UtenteDal\bin\Debug\UtenteDal.pdb
+C:\Progetti\PinProvUtilita\UtenteDal\bin\Debug\PinProvEntity.dll
+C:\Progetti\PinProvUtilita\UtenteDal\bin\Debug\PinProvEntity.pdb
+C:\Progetti\PinProvUtilita\UtenteDal\obj\Debug\UtenteDal.csproj.AssemblyReference.cache
+C:\Progetti\PinProvUtilita\UtenteDal\obj\Debug\UtenteDal.csproj.CoreCompileInputs.cache
+C:\Progetti\PinProvUtilita\UtenteDal\obj\Debug\UtenteDal.csproj.CopyComplete
+C:\Progetti\PinProvUtilita\UtenteDal\obj\Debug\UtenteDal.dll
+C:\Progetti\PinProvUtilita\UtenteDal\obj\Debug\UtenteDal.pdb
